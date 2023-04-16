@@ -51,7 +51,19 @@ At a later date I may start to record other data points such as lot numbers for 
 
 ### Directories
 
+- angular-tour-of-heroes - Created when in the `Angular_Tour_Of_Heros` branch and for exploring "regular" Angular.
+
+* Vue - Created for Vue projects.
+
 ### Files
+
+- LICENSE
+
+- README.md - This readme file.
+
+- ToDo.md - Tasks the need to be completed.
+
+* Status.md - Not yet created.
 
 ## Associated Links
 
@@ -60,13 +72,17 @@ At a later date I may start to record other data points such as lot numbers for 
 ## Branches
 
 ```
-main - live/production branch
+main - The live/production branch.
     |
-    + dev - development branch
+    + dev - The development branch.
         |
         + library - For determining which library to use.
             |
             + Angular - For exploring Angular.
+                |
+                + Angular_Tour_Of_Heros - For exploring "regular" Angular.
+                |
+                + Angular_Mobile - For exploring Angular that I'd build my app with.
             |
             + Vue - For exploring Vue.
             |
@@ -74,5 +90,5 @@ main - live/production branch
             |
             + Svelte Native - For exploring Svelte Native.
             |
-            + Iconic - For developing the app using Iconic, possibly in conjunction with Angular, Vue, React Native, or Svelte Native.
+            + Ionic - For developing the app using Iconic, possibly in conjunction with Angular, Vue, React Native, or Svelte Native.
 ```
