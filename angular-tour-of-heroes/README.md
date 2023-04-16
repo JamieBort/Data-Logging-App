@@ -2,6 +2,13 @@
 
 Created by following this https://angular.io/tutorial/tour-of-heroes/toh-pt0 tutorial.
 
+## Status
+
+Left off with `Style the Heros`:
+https://angular.io/tutorial/tour-of-heroes/toh-pt2#style-the-heroes
+
+---
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
 
 ## Development server
