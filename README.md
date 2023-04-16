@@ -74,21 +74,21 @@ At a later date I may start to record other data points such as lot numbers for 
 ```
 main - The live/production branch.
     |
-    + dev - The development branch.
+    + - dev - The development branch.
         |
-        + library - For determining which library to use.
+        + - library - For determining which library to use.
             |
-            + Angular - For exploring Angular.
-                |
-                + Angular_Tour_Of_Heros - For exploring "regular" Angular.
-                |
-                + Angular_Mobile - For exploring Angular that I'd build my app with.
+            + - Angular - For exploring Angular.
+            |   |
+            |   + - Angular_Tour_Of_Heros - For exploring "regular" Angular.
+            |   |
+            |   + - Angular_Mobile - For exploring Angular that I'd build my app with.
             |
-            + Vue - For exploring Vue.
+            + - Vue - For exploring Vue.
             |
-            + React Native - For exploring React Native.
+            + - React Native - For exploring React Native.
             |
-            + Svelte Native - For exploring Svelte Native.
+            + - Svelte Native - For exploring Svelte Native.
             |
-            + Ionic - For developing the app using Iconic, possibly in conjunction with Angular, Vue, React Native, or Svelte Native.
+            + - Ionic - For developing the app using Iconic, possibly in conjunction with Angular, Vue, React Native, or Svelte Native.
 ```
