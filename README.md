@@ -60,7 +60,7 @@ At a later date I may start to record other data points such as lot numbers for 
 ## Branches
 
 ```
-main - live/production branch
+main - The live/production branch.
     |
     + dev - development branch
         |
