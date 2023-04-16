@@ -12,6 +12,12 @@
 
      - Svelte
 
+       - JavaScript
+
+       - Typescript
+
+       - SvelteKit
+
      - A different one
 
    - which language

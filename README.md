@@ -53,11 +53,15 @@ At a later date I may start to record other data points such as lot numbers for 
 
 - angular-tour-of-heroes - Created when in the `Angular_Tour_Of_Heros` branch and for exploring "regular" Angular.
 
-* Vue - Created for Vue projects.
+- Svelte - Created for Svelte projects.
+
+- Vue - Created for Vue projects.
 
 ### Files
 
 - LICENSE
+
+- NextSteps.md - The next things that need to be accomplished, in order, based on the list found in the `ToDo.md` file.
 
 - README.md - This readme file.
 
