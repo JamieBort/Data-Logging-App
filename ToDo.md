@@ -1,29 +1,35 @@
 # ToDo.md
 
-## 1. Decide on
+1. Decide on
 
-- which library
+   - which library
 
-  - Vue
+     - Vue
 
-  - React Native
+     - React Native
 
-  - Vue Native
+     - Vue Native
 
-  - Svelte
+     - Svelte
 
-  - A different one
+       - JavaScript
 
-- which language
+       - Typescript
 
-  - JavaScript
+       - SvelteKit
 
-  - TypeScript
+     - A different one
 
-## 2. Start to build something with just a button. From my phone have it load a timestamp into
+   - which language
 
-- Airtable
+     - JavaScript
 
-- and/or google drive spreadsheet
+     - TypeScript
 
-- and/or another online platform.
+2. Start to build something with just a button. From my phone have it load a timestamp into
+
+   - Airtable
+
+   - and/or google drive spreadsheet
+
+   - and/or another online platform.
