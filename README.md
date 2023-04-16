@@ -86,9 +86,9 @@ main - The live/production branch.
             |
             + - Vue - For exploring Vue.
             |
-            + - React Native - For exploring React Native.
+            + - React_Native - For exploring React Native.
             |
-            + - Svelte Native - For exploring Svelte Native.
+            + - Svelte_Native - For exploring Svelte Native.
             |
             + - Ionic - For developing the app using Iconic, possibly in conjunction with Angular, Vue, React Native, or Svelte Native.
 ```
