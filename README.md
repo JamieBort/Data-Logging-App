@@ -67,6 +67,10 @@ main - The live/production branch.
         + library - For determining which library to use.
             |
             + Angular - For exploring Angular.
+                |
+                + Angular_Tour_Of_Heros - For exploring "regular" Angular.
+                |
+                + Angular_Mobile - For exploring Angular that I'd build my app with.
             |
             + Vue - For exploring Vue.
             |
@@ -74,5 +78,5 @@ main - The live/production branch.
             |
             + Svelte Native - For exploring Svelte Native.
             |
-            + Iconic - For developing the app using Iconic, possibly in conjunction with Angular, Vue, React Native, or Svelte Native.
+            + Ionic - For developing the app using Iconic, possibly in conjunction with Angular, Vue, React Native, or Svelte Native.
 ```
