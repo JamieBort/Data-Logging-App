@@ -51,6 +51,8 @@ At a later date I may start to record other data points such as lot numbers for 
 
 ### Directories
 
+- angular-tour-of-heroes - Created when in the `Angular_Tour_Of_Heros` branch and for exploring "regular" Angular.
+
 ### Files
 
 ## Associated Links
