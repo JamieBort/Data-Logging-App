@@ -62,7 +62,7 @@ At a later date I may start to record other data points such as lot numbers for 
 ```
 main - The live/production branch.
     |
-    + dev - development branch
+    + dev - The development branch.
         |
         + library - For determining which library to use.
             |
