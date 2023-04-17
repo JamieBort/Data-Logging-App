@@ -1,6 +1,6 @@
 # Svelte
 
-Created for Svelte projects.
+Created for Svelte Native projects.
 
 **Note,** the three directories below are not Svelte Native.
 

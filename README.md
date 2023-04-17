@@ -53,7 +53,9 @@ At a later date I may start to record other data points such as lot numbers for 
 
 - angular-tour-of-heroes - Created when in the `Angular_Tour_Of_Heros` branch and for exploring "regular" Angular.
 
-- Svelte - Created for Svelte projects.
+- ReactNative/ - Created for React Native projects.
+
+- Svelte - Created for Svelte Native projects.
 
 - Vue - Created for Vue projects.
 
