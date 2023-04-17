@@ -4,7 +4,9 @@ The next things that need to be accomplished, in order, based on the list found 
 
 ## Next Steps
 
-- Based on `1.` from the `ToDo.md` file, for Svelte decide on
+- Create a React Native app.
+
+* Based on `1.` from the `ToDo.md` file, for Svelte decide on
 
   - JavaScript,
 
@@ -17,3 +19,5 @@ The next things that need to be accomplished, in order, based on the list found 
   - What is SvelteKit?
 
   - What is the difference between Typescript and SvelteKit?
+
+- Consider my library options. Choose one.
