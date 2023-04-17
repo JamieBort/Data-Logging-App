@@ -7,3 +7,5 @@ I ran this `npx create-expo-app AwesomeProject` command.
 But I am having trouble with Split Tunneling via my VPN.
 
 Waiting to hear back from their tech support.
+
+To start this with Expo, run `npx expo start`.

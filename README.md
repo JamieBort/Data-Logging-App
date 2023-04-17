@@ -51,6 +51,8 @@ At a later date I may start to record other data points such as lot numbers for 
 
 ### Directories
 
+- .expo - See the `.expo/README.md` file.
+
 - angular-tour-of-heroes - Created when in the `Angular_Tour_Of_Heros` branch and for exploring "regular" Angular.
 
 - ReactNative/ - Created for React Native projects.
@@ -83,18 +85,21 @@ main - The live/production branch.
     + - dev - The development branch.
         |
         + - library - For determining which library to use.
+        |   |
+        |   + - Angular - For exploring Angular.
+        |   |   |
+        |   |   + - Angular_Tour_Of_Heros - For exploring "regular" Angular.
+        |   |   |
+        |   |   + - Angular_Mobile - For exploring Angular that I'd build my app with.
+        |   |
+        |   + - Vue - For exploring Vue.
+        |   |
+        |   + - React_Native - For exploring React Native.
+        |   |
+        |   + - Svelte_Native - For exploring Svelte Native.
+        |   |
+        |   + - Ionic - For developing the app using Iconic, possibly in conjunction with Angular, Vue, React Native, or Svelte Native.
+        |
+        + - database_button - For setting up a database (Airtable, Google Drive doc., etc.) and having a button in the app create a timestamp in the database. NOTE: name of branch to change.
             |
-            + - Angular - For exploring Angular.
-            |   |
-            |   + - Angular_Tour_Of_Heros - For exploring "regular" Angular.
-            |   |
-            |   + - Angular_Mobile - For exploring Angular that I'd build my app with.
-            |
-            + - Vue - For exploring Vue.
-            |
-            + - React_Native - For exploring React Native.
-            |
-            + - Svelte_Native - For exploring Svelte Native.
-            |
-            + - Ionic - For developing the app using Iconic, possibly in conjunction with Angular, Vue, React Native, or Svelte Native.
 ```
