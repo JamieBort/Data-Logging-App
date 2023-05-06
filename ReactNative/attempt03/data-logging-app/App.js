@@ -1,5 +1,3 @@
-import { StatusBar } from "expo-status-bar";
-// import { StyleSheet, Text, View } from 'react-native';
 import {
   StyleSheet,
   Button,
@@ -9,14 +7,7 @@ import {
   Alert,
 } from "react-native";
 
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <Text>Open up App.js to start working on your app!</Text>
-//       <StatusBar style="auto" />
-//     </View>
-//   );
-// }
+const timeStamp = () => console.log(Date.now());
 
 const Separator = () => <View style={styles.separator} />;
 
@@ -28,10 +19,7 @@ const App = () => (
         The title and onPress handler are required. It is recommended to set
         accessibilityLabel to help make your app usable by everyone.
       </Text>
-      <Button
-        title="Press me"
-        onPress={() => Alert.alert("Simple Button pressed")}
-      />
+      <Button title="Time stamp" onPress={() => timeStamp()} />
     </View>
     <Separator />
     <View>
@@ -41,7 +29,7 @@ const App = () => (
         adjusts the background color of the button.
       </Text>
       <Button
-        title="Press me"
+        title="This button does nothing"
         color="#f194ff"
         onPress={() => Alert.alert("Button with adjusted color pressed")}
       />
@@ -52,7 +40,7 @@ const App = () => (
         All interaction for the component are disabled.
       </Text>
       <Button
-        title="Press me"
+        title="This button does nothing"
         disabled
         onPress={() => Alert.alert("Cannot press this one")}
       />
@@ -64,26 +52,17 @@ const App = () => (
       </Text>
       <View style={styles.fixToText}>
         <Button
-          title="Left button"
+          title="This button does nothing"
           onPress={() => Alert.alert("Left button pressed")}
         />
         <Button
-          title="Right button"
+          title="This button does nothing"
           onPress={() => Alert.alert("Right button pressed")}
         />
       </View>
     </View>
   </SafeAreaView>
 );
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
 
 const styles = StyleSheet.create({
   container: {

@@ -15,3 +15,5 @@ Created for React Native projects.
 ### Files
 
 - README.md - This readme file.
+
+- Resources.md - Resources used in the attempt03/ directory. Everything I will learn I can keep track of here.

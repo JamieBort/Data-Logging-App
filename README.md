@@ -77,7 +77,7 @@ At a later date I may start to record other data points such as lot numbers for 
 
 ## Associated Links
 
-- https://trello.com/c/0dGDNxkk/1351-data-logging-app
+- GitHub repo https://trello.com/c/0dGDNxkk/1351-data-logging-app
 
 ## Branches
 
@@ -113,6 +113,10 @@ main - The live/production branch.
         |   |
         |   + - Ionic - For developing the app using Iconic, possibly in conjunction with Angular, Vue, React Native, or Svelte Native.
         |
-        + - database_button - For setting up a database (Airtable, Google Drive doc., etc.) and having a button in the app create a timestamp in the database. NOTE: name of branch to change.
-            |
+        + - database_button - For setting up a database (Airtable, Google Drive doc., etc.).
+                              And having a button in the app create a timestamp in the database. NOTE: name of branch to change.
+        |
+        + - sdk_install - For installing the sdk file or otherwise getting the app permanently on the phone.
+                          Right now exp needs to be running on my computer for the app to work on my phone.
+                          See sub-sections under https://docs.expo.dev/archive/expo-cli/#commands
 ```
