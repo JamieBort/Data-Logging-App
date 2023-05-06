@@ -98,16 +98,12 @@ main - The live/production branch.
         |   |
         |   + - React_Native - For exploring React Native.
         |   |   |
-        |   |   + - React_Native_attempt01 -  For work to be done during the first attempt.
-                                              However this branch was never created.
-                                              All work was done in the React_Native branch.
-        |   |   |
-        |   |   + - React_Native_attempt02 -  For work to be done during the second attempt.
-                                              However this branch was never created.
-                                              All work was done in the React_Native branch.
-        |   |   |
-        |   |   + - React_Native_attempt03 -  For work to be done during the third attempt.
-                                              Not yet created.
+        |   |   + - React_Native_api -  For making api calls.
+                                        Ultimately pushing data to the database.
+        |   |       |
+        |   |       + - React_Native_api_airtable - For making api calls to Airtable.
+        |   |       |
+        |   |       + - React_Native_api_google_sheets - For making api calls to Google Drive.
         |   |
         |   + - Svelte_Native - For exploring Svelte Native.
         |   |

@@ -8,9 +8,11 @@ Created for React Native projects.
 
 ### Directories
 
-- attempt01/ -
+- attempt01/ - This `attempt01/` directory can be deleted.
 
-- attempt02/ -
+- attempt02/ - This `attempt02/` directory can be deleted.
+
+- attempt03/ - Successful so far.
 
 ### Files
 
