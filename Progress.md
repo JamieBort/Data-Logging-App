@@ -36,9 +36,15 @@ NEXT STEPS
 
 STATUS
 
-Got it working. See `./Data-Logging-App/ReactNative/README.md`
+Got it working. See the `./Data-Logging-App/ReactNative/README.md` file.
+
+Modified the code a bit.
 
 NEXT STEPS
+
+Connect it to Airtable and/or a Google Drive spreadsheet.
+
+Then start updating one or both of those from the app.
 
 #### Svelte_Native
 
