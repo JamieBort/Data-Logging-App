@@ -67,6 +67,8 @@ At a later date I may start to record other data points such as lot numbers for 
 
 - NextSteps.md - The next things that need to be accomplished, in order, based on the list found in the `ToDo.md` file.
 
+- Progress.md
+
 - README.md - This readme file.
 
 - ToDo.md - Tasks the need to be completed.
