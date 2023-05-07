@@ -12,6 +12,8 @@ See sub-sections under https://docs.expo.dev/archive/expo-cli/#commands
 
 ### Airtable
 
+https://github.com/Code-the-Dream-School/dove-react/wiki/Lesson-1.8
+
 ### Google Drive Spreadsheets
 
 ### React Native

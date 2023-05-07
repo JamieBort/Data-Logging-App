@@ -47,6 +47,10 @@ At a later date I may start to record other data points such as lot numbers for 
 - I hadn't thought about this yet.
   But I think it is important to have the ability to add and change info without my phone/via a browser.
 
+## Future Features
+
+Replace Airtable with a more secure database.
+
 ## Directories and Files
 
 ### Directories
