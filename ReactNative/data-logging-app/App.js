@@ -11,12 +11,12 @@ import { API_URL, API_TOKEN } from "@env";
 import React, { useState, useEffect } from "react";
 // import { Text, View, StyleSheet } from 'react-native';
 
-Config.API_URL; // 'https://myapi.com'
-Config.GOOGLE_MAPS_API_KEY; // 'abcdefgh'
+// Config.API_URL; // 'https://myapi.com'
+// Config.GOOGLE_MAPS_API_KEY; // 'abcdefgh'
 
-console.log(Config.API_URL);
-console.log(API_URL);
-console.log(API_TOKEN);
+// console.log(Config.API_URL);
+// console.log(API_URL);
+// console.log(API_TOKEN);
 
 const url = "https://jsonplaceholder.typicode.com/posts";
 
@@ -28,12 +28,75 @@ const App = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // useEffect(() => {
+  //   fetch(url)
+  //     .then((resp) => resp.json())
+  //     .then((json) => setData(json))
+  //     .catch((error) => console.error(error))
+  //     .finally(() => setLoading(false));
+  // }, []);
+
+  // An API POST request is a type of API request that is used to create or update a resource on a web server.
+  // It sends data to the server in the form of a request body which usually contains information such as the title, description, and other relevant details. If the data is accepted, the server responds with a success code and the resource is created or updated.
+  // When making a POST request with the FetchAPI, you must specify the method as ‘POST’. Here’s an example of a POST to the fake server from our React Native app:
+  // useEffect(() => {
+  //   fetch("https://jsonplaceholder.typicode.com/posts", {
+  //     method: "POST",
+  //     headers: {
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       userId: 55,
+  //       id: 101,
+  //       title: "Post title",
+  //       body: "Post body",
+  //     }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((responseData) => {
+  //       console.log(JSON.stringify(responseData));
+  //     })
+  //     .catch((error) => console.error(error));
+  //   // .done();
+  // }, []);
+
+  // Similar to a POST request, the server sends back a response to tell you if the resource was updated on the server or not (and why it failed).
+  // In a PUT request, you need to specify the ID of the resource you want to update on the server as well as the new values. Here’s an example which updates the title and body of post one on the server:
+  // useEffect(() => {
+  //   fetch("https://jsonplaceholder.typicode.com/posts/1", {
+  //     method: "PUT",
+  //     body: JSON.stringify({
+  //       userId: 155,
+  //       id: 101,
+  //       title: "New Post title",
+  //       body: "New Post body",
+  //     }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((responseData) => {
+  //       console.log(JSON.stringify(responseData));
+  //     })
+  //     .catch((error) => console.error(error));
+  //   // .done();
+  // }, []);
+
+  // In a DELETE request, you only specify the ID of resource you want to delete on the server:
+  // Once the server is done with processing the request, it sends back a response to tell you if the resource was deleted on the server or not (and why it failed).
   useEffect(() => {
-    fetch(url)
-      .then((resp) => resp.json())
-      .then((json) => setData(json))
-      .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
+    fetch("https://jsonplaceholder.typicode.com/posts/50", {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((responseData) => {
+        console.log(JSON.stringify(responseData));
+      })
+      .catch((error) => console.error(error));
+    // .done();
   }, []);
 
   return (
