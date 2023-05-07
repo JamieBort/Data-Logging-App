@@ -6,6 +6,21 @@ import {
   Text,
   Alert,
 } from "react-native";
+import Config from "react-native-config"; // NOTE: not being used.
+import { API_URL, API_TOKEN } from "@env";
+
+Config.API_URL; // 'https://myapi.com'
+Config.GOOGLE_MAPS_API_KEY; // 'abcdefgh'
+
+console.log(Config.API_URL);
+console.log(API_URL);
+console.log(API_TOKEN);
+
+// fetch(`${API_URL}/users`, {
+//   headers: {
+//     'Authorization': `Bearer ${API_TOKEN}`
+//   }
+// })
 
 const timeStamp = () => console.log(Date.now());
 
@@ -17,7 +32,8 @@ const App = () => (
     <View>
       <Text style={styles.title}>
         The title and onPress handler are required. It is recommended to set
-        accessibilityLabel to help make your app usable by everyone.
+        accessibilityLabel to help make your app usable by everyone. URL:{" "}
+        {API_URL}
       </Text>
       <Button title="Time stamp" onPress={() => timeStamp()} />
     </View>

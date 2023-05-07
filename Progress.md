@@ -28,9 +28,15 @@ NEXT STEPS
 
 STATUS
 
-Started but am having issues with Expo. See https://trello.com/c/rJ8YYlsp/1365-nordvpn-expo-split-tunneling-issue
+Got dotenv working using: https://www.npmjs.com/package/react-native-dotenv
+
+Did not get https://www.npmjs.com/package/react-native-config working. Also used https://medium.com/armenotech/configure-environment-variables-with-react-native-config-for-ios-and-android-7079c0842d8b
 
 NEXT STEPS
+
+Look into using react-native-config instead.
+
+Also look at https://12factor.net/config
 
 ##### React_Native_attempt03
 
