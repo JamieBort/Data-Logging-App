@@ -35,52 +35,52 @@ const Separator = () => <View style={styles.separator} />;
 
 const App = () => {
   // POST event in Data Logging Base base in Airtable.
-  useEffect(() => {
-    const postEvent = async () => {
-      try {
-        const airtableData = {
-          fields: {
-            Type: "Second event",
-          },
-        };
 
-        const response = await fetch(
-          `https://api.airtable.com/v0/${AIRTABLE_BASE_ID_DATA_LOGGING_BASE}/${TABLE_ID}`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${AIRTABLE_TOKEN}`,
-            },
-            body: JSON.stringify(airtableData),
-          },
-        );
+  const postEvent = async () => {
+    // function async postEvent(){
+    try {
+      const airtableData = {
+        fields: {
+          Type: "Event from phone",
+        },
+      };
 
-        if (!response.ok) {
-          const message = `Error has ocurred:
+      const response = await fetch(
+        `https://api.airtable.com/v0/${AIRTABLE_BASE_ID_DATA_LOGGING_BASE}/${TABLE_ID}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${AIRTABLE_TOKEN}`,
+          },
+          body: JSON.stringify(airtableData),
+        },
+      );
+
+      if (!response.ok) {
+        const message = `Error has ocurred:
                                  ${response.status}`;
-          throw new Error(message);
-        }
-
-        const dataResponse = await response.json();
-        console.log(dataResponse);
-        return dataResponse;
-      } catch (error) {
-        console.log(error.message);
-        return null;
+        throw new Error(message);
       }
-    };
-    // postTodo({
-    //   id: 6666666666,
-    //   // createdTime: "2023-03-03T14:22:08.000Z",
-    //   fields: { Title: "DO THIS NOW!!!!" },
-    // });
 
-    // postEvent("DO THIS NOW AGAIN!!!!");
-    postEvent();
+      const dataResponse = await response.json();
+      console.log(dataResponse);
+      return dataResponse;
+    } catch (error) {
+      console.log(error.message);
+      return null;
+    }
+  };
+  // postTodo({
+  //   id: 6666666666,
+  //   // createdTime: "2023-03-03T14:22:08.000Z",
+  //   fields: { Title: "DO THIS NOW!!!!" },
+  // });
 
-    // postTodo();
-  }, []);
+  // postEvent("DO THIS NOW AGAIN!!!!");
+  // postEvent();
+
+  // postTodo();
 
   // GET from Data Logging Base base in Airtable.
   useEffect(() => {
@@ -102,7 +102,7 @@ const App = () => {
 
         const todosFromAPI = await response.json();
 
-        console.log(todosFromAPI);
+        // console.log(todosFromAPI);
 
         const todos = todosFromAPI.records.map((todo) => {
           const newTodo = {
@@ -312,9 +312,9 @@ const App = () => {
           color adjusts the background color of the button.
         </Text>
         <Button
-          title="This button does nothing"
+          title="This button does Something"
           color="#f194ff"
-          onPress={() => Alert.alert("Button with adjusted color pressed")}
+          onPress={() => postEvent()}
         />
       </View>
       <Separator />
@@ -325,7 +325,7 @@ const App = () => {
         <Button
           title="This button does nothing"
           disabled
-          onPress={() => Alert.alert("Cannot press this one")}
+          onPress={() => Alert.alert("Button with adjusted color pressed")}
         />
       </View>
       <Separator />
