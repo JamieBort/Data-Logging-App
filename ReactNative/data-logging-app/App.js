@@ -1,11 +1,4 @@
-import {
-  StyleSheet,
-  Button,
-  View,
-  SafeAreaView,
-  Text,
-  Alert,
-} from "react-native";
+import { StyleSheet, Button, View, Text, Alert } from "react-native";
 import {
   AIRTABLE_API_KEY,
   AIRTABLE_BASE_ID,
@@ -14,8 +7,7 @@ import {
   TABLE_ID,
   AIRTABLE_TOKEN,
 } from "@env";
-import React, { useEffect } from "react";
-import Button2 from "./Button2";
+import React, { useEffect, useState } from "react";
 
 // ()=>{
 // // console.log("ID:", AIRTABLE_BASE_ID);
@@ -34,14 +26,17 @@ import Button2 from "./Button2";
 const Separator = () => <View style={styles.separator} />;
 
 const App = () => {
+  // const [newAction, setNewAction] = useState();
+
   // POST event in Data Logging Base base in Airtable.
 
-  const postEvent = async () => {
+  const postEvent = async (param) => {
     // function async postEvent(){
     try {
       const airtableData = {
         fields: {
-          Type: "Event from phone",
+          Type: param,
+          TimeStamp: Date.now(),
         },
       };
 
@@ -64,23 +59,25 @@ const App = () => {
       }
 
       const dataResponse = await response.json();
-      console.log(dataResponse);
-      return dataResponse;
+      console.log("dataResponse:", dataResponse);
+
+      Alert.alert("Time created:", dataResponse.createdTime);
+      Alert.alert("Name:", dataResponse.fields.Type);
+
+      // Alert.alert(
+      //   "Time created:" +
+      //     dataResponse.createdTime +
+      //     "Name:" +
+      //     dataResponse.fields.Type,
+      // );
+
+      // return dataResponse;
+      // setNewAction(dataResponse);
     } catch (error) {
       console.log(error.message);
       return null;
     }
   };
-  // postTodo({
-  //   id: 6666666666,
-  //   // createdTime: "2023-03-03T14:22:08.000Z",
-  //   fields: { Title: "DO THIS NOW!!!!" },
-  // });
-
-  // postEvent("DO THIS NOW AGAIN!!!!");
-  // postEvent();
-
-  // postTodo();
 
   // GET from Data Logging Base base in Airtable.
   useEffect(() => {
@@ -274,77 +271,77 @@ const App = () => {
   //   // .done();
   // }, []);
 
+  const actionFunction = (param) => {
+    console.log(param);
+    // console.log("TimeStamp is sent.");
+    // console.log("Confirmation that it's been received.");
+
+    // Alert.alert(
+    //   `${param}. \n TimeStamp is sent. \nConfirmation that it's been received.`,
+    // );
+
+    const test = postEvent(param);
+    // console.log("test", test);
+    // Alert.alert(test);
+
+    // return postEvent(param);
+  };
+
+  const displayResults = () => {
+    Alert.alert(newAction.createdTime);
+    console.log("newAction:", newAction);
+  };
+
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <Text style={styles.bigTitle}>Data Logger</Text>
-      <View>
-        <Button2>HIT ME</Button2>
-      </View>
-
-      {/* TODO: DELETE THIS. */}
-      {/* <View style={styles.container2}>
-        {loading ? (
-          <Text>Loading...</Text>
-        ) : (
-          data.map((post) => {
-            return (
-              <View key={post.id}>
-                <Text style={styles.title}>{post.title}</Text>
-                <Text>{post.body}</Text>
-              </View>
-            );
-          })
-        )}
-      </View> */}
-
-      <View>
-        <Text style={styles.title}>
-          The title and onPress handler are required. It is recommended to set
-          accessibilityLabel to help make your app usable by everyone.
-        </Text>
-        {/* <Button title="Time stamp" onPress={() => timeStamp()} /> */}
-      </View>
       <Separator />
       <View>
-        <Text style={styles.title}>
-          Adjust the color in a way that looks standard on each platform. On
-          iOS, the color prop controls the color of the text. On Android, the
-          color adjusts the background color of the button.
-        </Text>
+        <Text>Sensor</Text>
         <Button
-          title="This button does Something"
+          title="Replaced the old sensor for a new sensor."
           color="#f194ff"
-          onPress={() => postEvent()}
-        />
+          onPress={() =>
+            actionFunction("Replaced the old sensor for a new sensor.")
+          }
+        ></Button>
       </View>
       <Separator />
+      <Separator />
       <View>
-        <Text style={styles.title}>
-          All interaction for the component are disabled.
-        </Text>
+        <Text>Insulin</Text>
+
         <Button
-          title="This button does nothing"
-          disabled
-          onPress={() => Alert.alert("Button with adjusted color pressed")}
-        />
+          title="Refilled the old reservoir with insulin"
+          color="#f0f"
+          onPress={() =>
+            actionFunction("Refilled the old reservoir with insulin")
+          }
+        ></Button>
+        <Separator />
+        <Button
+          title="Change only my tubing"
+          color="#f0f"
+          onPress={() => actionFunction("Change only my tubing")}
+        ></Button>
+        <Separator />
+        <Button
+          title="Changed an old reservoir for a new reservoir"
+          color="#f0f"
+          onPress={() =>
+            actionFunction("Changed an old reservoir for a new reservoir")
+          }
+        ></Button>
       </View>
       <Separator />
-      <View>
-        <Text style={styles.title}>
-          This layout strategy lets the title define the width of the button.
-        </Text>
-        <View style={styles.fixToText}>
-          <Button
-            title="This button does nothing"
-            onPress={() => Alert.alert("Left button pressed")}
-          />
-          <Button
-            title="This button does nothing"
-            onPress={() => Alert.alert("Right button pressed")}
-          />
-        </View>
-      </View>
-    </SafeAreaView>
+      <Button
+        title="Results"
+        // color="#f0f"
+        onPress={() => displayResults()}
+      ></Button>
+
+      <Separator />
+    </View>
   );
 };
 
@@ -352,13 +349,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
+    // TODO: What does this do?
     marginHorizontal: 16,
-  },
-  container2: {
-    flex: 1,
-    justifyContent: "center",
-    backgroundColor: "#ecf0f1",
-    padding: 8,
   },
   title: {
     fontSize: 30,
