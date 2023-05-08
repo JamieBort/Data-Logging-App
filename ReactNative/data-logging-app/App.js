@@ -1,6 +1,12 @@
 // API call resources:
 // https://www.freecodecamp.org/news/react-native-networking-api-requests-using-fetchapi/
 
+// NOTE: for tomorrow
+// 1. implement deleting the last entry
+// 2. implement deleting other entries.
+// 3. moving the api functions to other components.
+// 4. while in the React_Native branch git rm all the other directories.
+
 import { StyleSheet, Button, View, Text, Alert } from "react-native";
 import {
   AIRTABLE_BASE_ID_DATA_LOGGING_BASE,
@@ -10,6 +16,7 @@ import {
 } from "@env";
 import React from "react";
 import Toggle from "./Toggle";
+import PostEventComponent from "./PostEventComponent";
 
 const Separator = () => <View style={styles.separator} />;
 
@@ -52,49 +59,14 @@ const App = () => {
     }
   };
 
-  // // GET from Data Logging Base base in Airtable.
-  // useEffect(() => {
-  //   const loadTable = async () => {
-  //     try {
-  //       const response = await fetch(
-  //         `https://api.airtable.com/v0/${AIRTABLE_BASE_ID_DATA_LOGGING_BASE}/${TABLE_ID}`,
-  //         {
-  //           headers: {
-  //             Authorization: `Bearer ${AIRTABLE_TOKEN}`,
-  //           },
-  //         },
-  //       );
-
-  //       if (!response.ok) {
-  //         const message = `Error: ${response.status}`;
-  //         throw new Error(message);
-  //       }
-
-  //       const todosFromAPI = await response.json();
-  //       // console.log(todosFromAPI);
-
-  //       const todos = todosFromAPI.records.map((todo) => {
-  //         const newTodo = {
-  //           id: todo.id,
-  //           title: todo.fields.Title,
-  //           // title: todo,
-  //         };
-
-  //         return newTodo;
-  //       });
-
-  //       // console.log(todos);
-  //       //  setTodos(todos);
-  //     } catch (error) {
-  //       console.log(error.message);
-  //     }
-  //   };
-  //   loadTable();
-  // }, []);
+  // DELETE event in Data Logging Base base in Airtable.
+  const deleteEvent = async () => {
+    console.log("event deleted");
+  };
 
   // Function for sending the event/action to the database.
   const actionFunction = (param) => {
-    console.log("Event sent:", param);
+    // console.log("Event sent:", param);
     Alert.alert("Event to send:", param, [
       {
         text: "Cancel",
@@ -105,6 +77,7 @@ const App = () => {
         text: "Accept",
         onPress: () => {
           postEvent(param);
+          // PostEventComponent.postEvent(param);
           console.log("Accept Pressed");
         },
       },
@@ -154,6 +127,10 @@ const App = () => {
       <Separator />
       <Toggle name="Edit Entries" />
       <Separator />
+      <Button title="Delete event" onPress={() => deleteEvent()}></Button>
+      {/* <View>
+        <Toggle name="Toggle to page of all entries" />
+      </View> */}
     </View>
   );
 };
