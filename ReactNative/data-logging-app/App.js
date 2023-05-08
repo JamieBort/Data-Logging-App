@@ -2,26 +2,13 @@ import { StyleSheet, Button, View, Text, Alert } from "react-native";
 import {
   AIRTABLE_API_KEY,
   AIRTABLE_BASE_ID,
-  TABLE_NAME,
   AIRTABLE_BASE_ID_DATA_LOGGING_BASE,
   TABLE_ID,
   AIRTABLE_TOKEN,
 } from "@env";
 import React, { useEffect, useState } from "react";
-
-// ()=>{
-// // console.log("ID:", AIRTABLE_BASE_ID);
-// // console.log("KEY:", AIRTABLE_API_KEY);
-// // console.log(
-// //   "AIRTABLE_BASE_ID_DATA_LOGGING_BASE:",
-// //   AIRTABLE_BASE_ID_DATA_LOGGING_BASE,
-// // );
-// // console.log("TABLE_ID:", TABLE_ID);
-// // console.log(Date.now());
-// // console.log(Date.now().toString().length);
-// }
-
-// const timeStamp = () => console.log(Date.now());
+import Toggle from "./Toggle";
+// import AlertComponent from "./AlertComponent";
 
 const Separator = () => <View style={styles.separator} />;
 
@@ -53,16 +40,23 @@ const App = () => {
       );
 
       if (!response.ok) {
-        const message = `Error has ocurred:
-                                 ${response.status}`;
+        const message = `Error has ocurred:${response.status}`;
         throw new Error(message);
       }
 
       const dataResponse = await response.json();
       console.log("dataResponse:", dataResponse);
 
-      Alert.alert("Time created:", dataResponse.createdTime);
-      Alert.alert("Name:", dataResponse.fields.Type);
+      Alert.alert("Time created:", dataResponse.createdTime); // Commented out
+      Alert.alert("Name:", dataResponse.fields.Type); // Commented out
+      Alert.alert("Alert Title", "My Alert Msg", [
+        {
+          text: "Cancel",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel",
+        },
+        { text: "OK", onPress: () => console.log("OK Pressed") },
+      ]);
 
       // Alert.alert(
       //   "Time created:" +
@@ -288,16 +282,17 @@ const App = () => {
   };
 
   const displayResults = () => {
-    Alert.alert(newAction.createdTime);
+    Alert.alert(newAction.createdTime); // Commented out
     console.log("newAction:", newAction);
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.bigTitle}>Data Logger</Text>
+      <Text style={styles.h1}>Data Logger</Text>
+      {/* <AlertComponent /> */}
       <Separator />
       <View>
-        <Text>Sensor</Text>
+        <Text style={styles.h2}>Sensor</Text>
         <Button
           title="Replaced the old sensor for a new sensor."
           color="#f194ff"
@@ -309,7 +304,7 @@ const App = () => {
       <Separator />
       <Separator />
       <View>
-        <Text>Insulin</Text>
+        <Text style={styles.h2}>Insulin</Text>
 
         <Button
           title="Refilled the old reservoir with insulin"
@@ -333,13 +328,23 @@ const App = () => {
           }
         ></Button>
       </View>
-      <Separator />
-      <Button
-        title="Results"
-        // color="#f0f"
-        onPress={() => displayResults()}
-      ></Button>
 
+      <Separator />
+      <Toggle name="Edit Entries" />
+      <Separator />
+      <View>
+        <Text style={styles.h2}>Temporary</Text>
+        <Text>List:</Text>
+        <Text>{`\u2022`}Button to confirm the selection.</Text>
+        {/* <Text>{`\u2022`}Confirmed response that the selection was added.</Text> */}
+        {/* <Text>{`\u2022`}Option to edit and delete the last entry.</Text>
+        <Text>{`\u2022`}Edit button to modify the previous entries.</Text> */}
+        <Button
+          title="Results"
+          // color="#f0f"
+          onPress={() => displayResults()}
+        ></Button>
+      </View>
       <Separator />
     </View>
   );
@@ -352,19 +357,8 @@ const styles = StyleSheet.create({
     // TODO: What does this do?
     marginHorizontal: 16,
   },
-  title: {
-    fontSize: 30,
-    fontWeight: "bold",
-  },
-  bigTitle: { fontSize: 33, textAlign: "center" },
-  title: {
-    textAlign: "center",
-    marginVertical: 8,
-  },
-  fixToText: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
+  h1: { fontSize: 33, textAlign: "center", fontWeight: "bold" },
+  h2: { fontSize: 20, textAlign: "center" },
   separator: {
     marginVertical: 8,
     borderBottomColor: "#737373",
