@@ -1,6 +1,6 @@
 // ListComponent.js
 // For listing all records in the database.
-// Not yet implemented
+// NOTE: If this is going to be used I need to implement something to keep all the records from loading at one time. I am receiving a warning for this on the phone. Additionally, the UI gets messed up.
 
 import React, { useEffect, useState } from "react";
 import { View, StyleSheet, Text, Button, Alert } from "react-native";
@@ -90,27 +90,27 @@ const ListComponent = () => {
           <Text>All Records</Text>
 
           <View>
+            {/* TODO: pull the map out of the return() method. */}
             {newEvents.map((event) => {
               return (
                 <View key={event.id} style={styles.event}>
-                  {/* <ul key={event.id}> */}
                   <Text>Title: {event.title}</Text>
-                  <ul>
-                    <li>ID: {event.id}</li>
-                    <li>Primary Field: {event.primaryField}</li>
-                    <li>TimeStamp: {event.createdTime}</li>
-                    <Button
-                      title="Delete this event"
-                      onPress={() => deleteFunction(event.id)}
-                    ></Button>
-                  </ul>
+                  <Text>ID: {event.id}</Text>
+                  <Text>Primary Field: {event.primaryField}</Text>
+                  <Text>TimeStamp: {event.createdTime}</Text>
+                  <Button
+                    title="Delete this event"
+                    onPress={() => deleteFunction(event.id)}
+                  ></Button>
                 </View>
               );
             })}
           </View>
         </View>
       ) : (
-        <Text>Loading all records....</Text>
+        <View>
+          <Text>Loading all records....</Text>
+        </View>
       )}
     </View>
   );

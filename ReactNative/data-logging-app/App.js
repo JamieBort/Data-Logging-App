@@ -14,7 +14,7 @@ import {
   AIRTABLE_TOKEN,
   wrong_TOKEN,
 } from "@env";
-import React from "react";
+import React, { useState } from "react";
 import Toggle from "./Toggle";
 import ListAllComponent from "./ListAllComponent";
 import PostEventComponent from "./PostEventComponent";
@@ -22,6 +22,8 @@ import PostEventComponent from "./PostEventComponent";
 const Separator = () => <View style={styles.separator} />;
 
 const App = () => {
+  // TODO: Add
+  const [lastEvent, setLastEvent] = useState("");
   // POST event in Data Logging Base base in Airtable.
   const postEvent = async (param) => {
     try {
@@ -39,7 +41,7 @@ const App = () => {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${AIRTABLE_TOKEN}`,
-            // Authorization: `Bearer ${wrong_TOKEN}`,
+            // Authorization: `Bearer ${wrong_TOKEN}`, // NOTE: for testing.
           },
           body: JSON.stringify(airtableData),
         },
@@ -52,37 +54,64 @@ const App = () => {
 
       const dataResponse = await response.json();
       console.log("dataResponse:", dataResponse);
-      Alert.alert("Event Created:", dataResponse.fields.Type);
+      // console.log("typeof dataResponse.id:", typeof dataResponse.id);
+      setLastEvent(dataResponse.id);
+      // // NOTE: commented out for web development.
+      // Alert.alert("Event Created:", dataResponse.fields.Type);
     } catch (error) {
       console.log(error.message);
-      Alert.alert("Event NOT Created:", error.message);
+      // // NOTE: commented out for web development.
+      // Alert.alert("Event NOT Created:", error.message);
       return null;
     }
   };
 
-  // DELETE event in Data Logging Base base in Airtable.
-  const deleteEvent = async () => {
-    console.log("event deleted");
+  // The DELETE event in Data Logging Base base in Airtable.
+  const deleteEvent = async (param) => {
+    console.log("ID of event to be deleted:", param);
+    fetch(
+      `https://api.airtable.com/v0/${AIRTABLE_BASE_ID_DATA_LOGGING_BASE}/${TABLE_ID}/${param}`,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${AIRTABLE_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+      },
+    )
+      .then((response) => response.json())
+      .then((res) => {
+        console.log(res);
+        console.log(res.id, " was deleted.");
+
+        // const newTodoList = todoList.filter((todo) => id !== todo.id);
+        // setTodoList(newTodoList);
+      });
+
+    console.log(param, " was deleted.");
+    setLastEvent("");
   };
 
   // Function for sending the event/action to the database.
   const actionFunction = (param) => {
-    // console.log("Event sent:", param);
-    Alert.alert("Event to send:", param, [
-      {
-        text: "Cancel",
-        onPress: () => console.log("Cancel Pressed - don't send yet."),
-        style: "cancel",
-      },
-      {
-        text: "Accept",
-        onPress: () => {
-          postEvent(param);
-          // PostEventComponent.postEvent(param);
-          console.log("Accept Pressed");
-        },
-      },
-    ]);
+    console.log("Event sent:", param);
+    postEvent(param);
+    // // NOTE: commented out for web development.
+    // Alert.alert("Event to send:", param, [
+    //   {
+    //     text: "Cancel",
+    //     onPress: () => console.log("Cancel Pressed - don't send yet."),
+    //     style: "cancel",
+    //   },
+    //   {
+    //     text: "Accept",
+    //     onPress: () => {
+    //       postEvent(param);
+    //       // PostEventComponent.postEvent(param);
+    //       console.log("Accept Pressed");
+    //     },
+    //   },
+    // ]);
   };
 
   return (
@@ -128,12 +157,20 @@ const App = () => {
       <Separator />
       <Toggle name="Edit Entries" />
       <Separator />
-      <Button title="Delete event" onPress={() => deleteEvent()}></Button>
+      <Button
+        title="Delete event"
+        onPress={() => deleteEvent(lastEvent)}
+      ></Button>
       {/* <View>
         <Toggle name="Toggle to page of all entries" />
       </View> */}
+      <Separator />
+      <Button
+        title="Check Last Event"
+        onPress={() => console.log("lastEvent", lastEvent)}
+      ></Button>
 
-      <ListAllComponent />
+      {/* <ListAllComponent /> */}
     </View>
   );
 };
