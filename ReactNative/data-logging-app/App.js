@@ -16,6 +16,7 @@ import {
 } from "@env";
 import React from "react";
 import Toggle from "./Toggle";
+import ListAllComponent from "./ListAllComponent";
 import PostEventComponent from "./PostEventComponent";
 
 const Separator = () => <View style={styles.separator} />;
@@ -131,6 +132,8 @@ const App = () => {
       {/* <View>
         <Toggle name="Toggle to page of all entries" />
       </View> */}
+
+      <ListAllComponent />
     </View>
   );
 };

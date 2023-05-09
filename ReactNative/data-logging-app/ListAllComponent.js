@@ -2,10 +2,18 @@
 // For listing all records in the database.
 // Not yet implemented
 
-import React, { useEffect } from "react";
-import { View, StyleSheet, Button, Alert } from "react-native";
+import React, { useEffect, useState } from "react";
+import { View, StyleSheet, Text, Button, Alert } from "react-native";
+import {
+  AIRTABLE_BASE_ID_DATA_LOGGING_BASE,
+  TABLE_ID,
+  AIRTABLE_TOKEN,
+  wrong_TOKEN,
+} from "@env";
 
 const ListComponent = () => {
+  const [newEvents, setNewEvents] = useState();
+  const [loading, setLoading] = useState(false);
   // GET from Data Logging Base base in Airtable.
   useEffect(() => {
     const loadTable = async () => {
@@ -24,21 +32,24 @@ const ListComponent = () => {
           throw new Error(message);
         }
 
-        const todosFromAPI = await response.json();
-        console.log(todosFromAPI);
+        const eventsFromAPI = await response.json();
+        // console.log(eventsFromAPI);
 
-        const todos = todosFromAPI.records.map((todo) => {
-          const newTodo = {
+        const events = eventsFromAPI.records.map((todo) => {
+          const newEvent = {
             id: todo.id,
-            title: todo.fields.Title,
-            // title: todo,
+            title: todo.fields.Type,
+            createdTime: todo.createdTime,
           };
 
-          return newTodo;
+          return newEvent;
         });
 
         // console.log(todos);
         //  setTodos(todos);
+        setNewEvents(events);
+        // console.log(events);
+        setLoading(true);
       } catch (error) {
         console.log(error.message);
       }
@@ -46,9 +57,33 @@ const ListComponent = () => {
     loadTable();
   }, []);
 
+  // console.log(newEvents);
+
   return (
     <View style={styles.container}>
-      <Text>List all records....</Text>
+      {loading ? (
+        <View>
+          <Text>All Records</Text>
+
+          <View>
+            {newEvents.map((event) => {
+              return (
+                <View key={event.id} style={styles.event}>
+                  {/* <ul key={event.id}> */}
+                  <Text>Title: {event.title}</Text>
+                  <ul>
+                    <li>ID: {event.id}</li>
+                    {/* <li>{event.title}</li> */}
+                    <li>TimeStamp: {event.createdTime}</li>
+                  </ul>
+                </View>
+              );
+            })}
+          </View>
+        </View>
+      ) : (
+        <Text>Loading all records....</Text>
+      )}
     </View>
   );
 };
@@ -58,6 +93,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "space-around",
     alignItems: "center",
+  },
+  event: {
+    backgroundColor: "beige",
+    borderWidth: 2,
+    marginBottom: 5,
+    marginTop: 5,
   },
 });
 
