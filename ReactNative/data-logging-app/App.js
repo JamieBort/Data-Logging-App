@@ -1,11 +1,12 @@
 // API call resources:
 // https://www.freecodecamp.org/news/react-native-networking-api-requests-using-fetchapi/
 
-// NOTE: for tomorrow
-// 1. implement deleting the last entry
-// 2. implement deleting other entries.
-// 3. moving the api functions to other components.
-// 4. while in the React_Native branch git rm all the other directories.
+// TODO:
+// - Determine whether I should use <View> when it apparently is not needed - when I am not getting any warnings to use one.
+// - Determine whether I want to move the api calls to other file(s).
+// - Implement deleting other entries.
+// - While in the "React_Native" branch git rm all the other directories.
+// - Add more data points to use.
 
 import { StyleSheet, Button, View, Text, Alert } from "react-native";
 import {
@@ -16,16 +17,15 @@ import {
 } from "@env";
 import React, { useState } from "react";
 import Toggle from "./Toggle";
-import ListAllComponent from "./ListAllComponent";
-import PostEventComponent from "./PostEventComponent";
+// import ListAllComponent from "./ListAllComponent";
+// import PostEventComponent from "./PostEventComponent";
 
 const Separator = () => <View style={styles.separator} />;
 
 const App = () => {
-  // TODO: Add
-  const [lastEvent, setLastEvent] = useState("");
+  const [lastEvent, setLastEvent] = useState([]);
   // POST event in Data Logging Base base in Airtable.
-  const postEvent = async (param) => {
+  const postAnEvent = async (param) => {
     try {
       const airtableData = {
         fields: {
@@ -41,7 +41,7 @@ const App = () => {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${AIRTABLE_TOKEN}`,
-            // Authorization: `Bearer ${wrong_TOKEN}`, // NOTE: for testing.
+            // Authorization: `Bearer ${wrong_TOKEN}`, // NOTE: Used for testing.
           },
           body: JSON.stringify(airtableData),
         },
@@ -55,19 +55,23 @@ const App = () => {
       const dataResponse = await response.json();
       console.log("dataResponse:", dataResponse);
       // console.log("typeof dataResponse.id:", typeof dataResponse.id);
-      setLastEvent(dataResponse.id);
-      // // NOTE: commented out for web development.
-      // Alert.alert("Event Created:", dataResponse.fields.Type);
+      setLastEvent([dataResponse.id, dataResponse.fields.Type]);
+
+      // NOTE: COMMENT OUT for web development.
+      Alert.alert("Event Created:", dataResponse.fields.Type);
     } catch (error) {
       console.log(error.message);
-      // // NOTE: commented out for web development.
-      // Alert.alert("Event NOT Created:", error.message);
+
+      // NOTE: COMMENT OUT for web development.
+      Alert.alert("Event NOT Created:", error.message);
+
+      // TODO: Determine whether to keep or remove this "return null". And why.
       return null;
     }
   };
 
   // The DELETE event in Data Logging Base base in Airtable.
-  const deleteEvent = async (param) => {
+  const deleteLastEvent = async (param) => {
     console.log("ID of event to be deleted:", param);
     fetch(
       `https://api.airtable.com/v0/${AIRTABLE_BASE_ID_DATA_LOGGING_BASE}/${TABLE_ID}/${param}`,
@@ -81,37 +85,53 @@ const App = () => {
     )
       .then((response) => response.json())
       .then((res) => {
-        console.log(res);
+        console.log("res:", res);
         console.log(res.id, " was deleted.");
+        console.log('"', lastEvent[1], '"was deleted.');
+        console.log("lastEvent:", lastEvent);
+
+        // NOTE: COMMENT OUT for web development.
+        Alert.alert("Event was deleted:", res.id);
 
         // const newTodoList = todoList.filter((todo) => id !== todo.id);
         // setTodoList(newTodoList);
       });
 
     console.log(param, " was deleted.");
-    setLastEvent("");
+    setLastEvent([]);
   };
 
   // Function for sending the event/action to the database.
-  const actionFunction = (param) => {
+  const confirmation = (param) => {
     console.log("Event sent:", param);
-    postEvent(param);
-    // // NOTE: commented out for web development.
-    // Alert.alert("Event to send:", param, [
-    //   {
-    //     text: "Cancel",
-    //     onPress: () => console.log("Cancel Pressed - don't send yet."),
-    //     style: "cancel",
-    //   },
-    //   {
-    //     text: "Accept",
-    //     onPress: () => {
-    //       postEvent(param);
-    //       // PostEventComponent.postEvent(param);
-    //       console.log("Accept Pressed");
-    //     },
-    //   },
-    // ]);
+
+    // // NOTE: COMMENT OUT for mobile development.
+    // postAnEvent(param);
+
+    // NOTE: COMMENT OUT for web development.
+    Alert.alert("Send this event?", param, [
+      {
+        text: "Cancel",
+        onPress: () => console.log("Cancel Pressed - don't send yet."),
+        style: "cancel",
+      },
+      {
+        text: "Accept",
+        onPress: () => {
+          postAnEvent(param);
+          // PostEventComponent.postAnEvent(param);
+          console.log("Accept Pressed");
+        },
+      },
+    ]);
+  };
+
+  const checkLastEvent = () => {
+    console.log("lastEvent", lastEvent);
+
+    // NOTE: COMMENT OUT for web development.
+    Alert.alert("lastEvent ID:", lastEvent[0]);
+    Alert.alert("lastEvent Name:", lastEvent[1]);
   };
 
   return (
@@ -124,7 +144,7 @@ const App = () => {
           title="Replaced the old sensor for a new sensor."
           color="#f194ff"
           onPress={() =>
-            actionFunction("Replaced the old sensor for a new sensor.")
+            confirmation("Replaced the old sensor for a new sensor.")
           }
         ></Button>
       </View>
@@ -135,39 +155,42 @@ const App = () => {
           title="Refilled the old reservoir with insulin"
           color="#f0f"
           onPress={() =>
-            actionFunction("Refilled the old reservoir with insulin")
+            confirmation("Refilled the old reservoir with insulin")
           }
         ></Button>
         <Separator />
         <Button
           title="Change only my tubing"
           color="#f0f"
-          onPress={() => actionFunction("Change only my tubing")}
+          onPress={() => confirmation("Change only my tubing")}
         ></Button>
         <Separator />
         <Button
           title="Changed an old reservoir for a new reservoir"
           color="#f0f"
           onPress={() =>
-            actionFunction("Changed an old reservoir for a new reservoir")
+            confirmation("Changed an old reservoir for a new reservoir")
           }
         ></Button>
       </View>
 
       <Separator />
-      <Toggle name="Edit Entries" />
-      <Separator />
+      <Toggle
+        name="Edit Entries"
+        handleEvent={() => deleteLastEvent(lastEvent[0])}
+      />
+
+      {/* NOTE: not using right now. */}
+      {/* <Separator />
       <Button
         title="Delete event"
-        onPress={() => deleteEvent(lastEvent)}
-      ></Button>
-      {/* <View>
-        <Toggle name="Toggle to page of all entries" />
-      </View> */}
+        onPress={() => deleteLastEvent(lastEvent)}
+      ></Button> */}
+
       <Separator />
       <Button
         title="Check Last Event"
-        onPress={() => console.log("lastEvent", lastEvent)}
+        onPress={() => checkLastEvent()}
       ></Button>
 
       {/* <ListAllComponent /> */}

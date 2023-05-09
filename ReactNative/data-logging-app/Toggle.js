@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Switch, StyleSheet, Text, Button } from "react-native";
+import { StyleSheet, Button, View, Text, Switch, Alert } from "react-native";
 
 const Toggle = (props) => {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -10,19 +10,35 @@ const Toggle = (props) => {
       <View>
         <Button
           title="Edit last entry"
-          onPress={() =>
+          onPress={() => {
             console.log(
               "Would you like to delete the last entry? Or would you like to edit the last entry?",
-            )
-          }
+            );
+            // // NOTE: commented out for web development.
+            // Alert.alert(
+            //   "Notice",
+            //   "Right now this button does not do anything.",
+            // );
+          }}
         />
+
+        <Button
+          title="Temporary delete last entry"
+          onPress={props.handleEvent}
+        />
+
         <Button
           title="Edit previous entries"
-          onPress={() =>
+          onPress={() => {
             console.log(
-              "Would you like to delete the previous entries? Or would you like to edit the previous entries?",
-            )
-          }
+              "Would you like to delete a previous entries? Or would you like to edit a previous entries?",
+            );
+            // // NOTE: commented out for web development.
+            // Alert.alert(
+            //   "Notice",
+            //   "Right now this button does not do anything.",
+            // );
+          }}
         />
       </View>
     );
