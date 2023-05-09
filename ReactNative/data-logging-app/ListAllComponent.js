@@ -33,13 +33,14 @@ const ListComponent = () => {
         }
 
         const eventsFromAPI = await response.json();
-        // console.log(eventsFromAPI);
+        console.log(eventsFromAPI);
 
         const events = eventsFromAPI.records.map((todo) => {
           const newEvent = {
             id: todo.id,
             title: todo.fields.Type,
             createdTime: todo.createdTime,
+            primaryField: todo.fields["Primary Field"],
           };
 
           return newEvent;
@@ -57,7 +58,30 @@ const ListComponent = () => {
     loadTable();
   }, []);
 
-  // console.log(newEvents);
+  console.log(newEvents);
+
+  const deleteFunction = (param) => {
+    fetch(
+      `https://api.airtable.com/v0/${AIRTABLE_BASE_ID_DATA_LOGGING_BASE}/${TABLE_ID}/${param}`,
+      {
+        method: "DELETE",
+        headers: {
+          // Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
+          Authorization: `Bearer ${AIRTABLE_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+      },
+    )
+      .then((response) => response.json())
+      .then((res) => {
+        console.log(res);
+
+        // const newTodoList = todoList.filter((todo) => id !== todo.id);
+        // setTodoList(newTodoList);
+      });
+
+    console.log(param, " was deleted.");
+  };
 
   return (
     <View style={styles.container}>
@@ -73,8 +97,12 @@ const ListComponent = () => {
                   <Text>Title: {event.title}</Text>
                   <ul>
                     <li>ID: {event.id}</li>
-                    {/* <li>{event.title}</li> */}
+                    <li>Primary Field: {event.primaryField}</li>
                     <li>TimeStamp: {event.createdTime}</li>
+                    <Button
+                      title="Delete this event"
+                      onPress={() => deleteFunction(event.id)}
+                    ></Button>
                   </ul>
                 </View>
               );
