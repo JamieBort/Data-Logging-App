@@ -140,6 +140,12 @@ const App = () => {
       <Separator />
       <View>
         <Text style={styles.h2}>Sensor</Text>
+        {/* Changed sensor */}
+        {/* which body part? leg? arm? */}
+        {/* which body location? front? back? left side? right side? */}
+        {/* which side of the body? left or right? */}
+        {/* Lot number */}
+        {/* Code */}
         <Button
           title="Replaced the old sensor for a new sensor."
           color="#f194ff"
