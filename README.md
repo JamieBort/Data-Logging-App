@@ -102,15 +102,7 @@ main - The live/production branch.
         |   |
         |   + - React_Native - For exploring React Native.
         |   |   |
-        |   |   + - React_Native_api -  For making api calls.
-                                        Ultimately pushing data to the database.
-                                        DELETED.
-        |   |       |
-        |   |       + - React_Native_api_airtable - For making api calls to Airtable.
-                                                    NEVER CREATED.
-        |   |       |
-        |   |       + - React_Native_api_google_sheets -  For making api calls to Google Drive.
-                                                          NEVER CREATED.
+        |   |   + - React_Native_feature_list -  For listing the features I'd like to implement.
         |   |
         |   + - Svelte_Native - For exploring Svelte Native.
         |   |

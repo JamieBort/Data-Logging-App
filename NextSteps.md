@@ -4,20 +4,4 @@ The next things that need to be accomplished, in order, based on the list found 
 
 ## Next Steps
 
-- Create a React Native app.
-
-* Based on `1.` from the `ToDo.md` file, for Svelte decide on
-
-  - JavaScript,
-
-  - Typescript,
-
-  - or SvelteKit
-
-  Question that may help:
-
-  - What is SvelteKit?
-
-  - What is the difference between Typescript and SvelteKit?
-
-- Consider my library options. Choose one.
+1. List the features I want to have. Organized by type: (insulin/pump/cartridge/etc., dexcom/sensor/transmitter/etc., exercise, etc. ). Then by description of what needs to be recorded, then by questions that need to be asked when recording this information.

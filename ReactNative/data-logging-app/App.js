@@ -17,6 +17,7 @@ import {
 } from "@env";
 import React, { useState } from "react";
 import Toggle from "./Toggle";
+import WishList from "./WishList";
 // import ListAllComponent from "./ListAllComponent";
 // import PostEventComponent from "./PostEventComponent";
 
@@ -200,6 +201,10 @@ const App = () => {
       ></Button>
 
       {/* <ListAllComponent /> */}
+
+      <Separator />
+      <WishList />
+      {/* <Separator /> */}
     </View>
   );
 };
