@@ -57,13 +57,13 @@ Replace Airtable with a more secure database.
 
 - .expo - See the `.expo/README.md` file.
 
-- angular-tour-of-heroes - Created when in the `Angular_Tour_Of_Heros` branch and for exploring "regular" Angular.
+- angular-tour-of-heroes - Created when in the `Angular_Tour_Of_Heros` branch and for exploring "regular" Angular. REMOVED FROM GIT CACHE - not visible anymore.
 
 - ReactNative/ - Created for React Native projects.
 
-- Svelte - Created for Svelte Native projects.
+- Svelte - Created for Svelte Native projects. REMOVED FROM GIT CACHE - not visible anymore.
 
-- Vue - Created for Vue projects.
+- Vue - Created for Vue projects. REMOVED FROM GIT CACHE - not visible anymore.
 
 ### Files
 
@@ -104,10 +104,13 @@ main - The live/production branch.
         |   |   |
         |   |   + - React_Native_api -  For making api calls.
                                         Ultimately pushing data to the database.
+                                        DELETED.
         |   |       |
         |   |       + - React_Native_api_airtable - For making api calls to Airtable.
+                                                    NEVER CREATED.
         |   |       |
-        |   |       + - React_Native_api_google_sheets - For making api calls to Google Drive.
+        |   |       + - React_Native_api_google_sheets -  For making api calls to Google Drive.
+                                                          NEVER CREATED.
         |   |
         |   + - Svelte_Native - For exploring Svelte Native.
         |   |
