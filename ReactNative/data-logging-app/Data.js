@@ -1,11 +1,13 @@
 // Data.js
+// NOTE: NOT USING THIS.
+// TODO: delete this file.
 
 // My data object that lists all the features I want to implement.
 // import { Variables } from "./Variables";
 
 export const Data_Object = {
   cgm: [
-    "Variables.ONE",
+    "Variables.CGM",
     {
       title: "When I replace the old sensor for a new sensor.",
       data: ["TimeStamp", "Lot Number", "Code"],
@@ -26,7 +28,7 @@ export const Data_Object = {
   ],
 
   physicalActivity: [
-    "Variables.TWO",
+    "Variables.PHYSICAL_ACTIVITY",
     {
       title: "When I start/stop exercising",
       data: [
@@ -54,7 +56,7 @@ export const Data_Object = {
   ],
 
   pump: [
-    "Variables.THREE",
+    "Variables.PUMP",
     {
       title: "When I change only my tubing (this almost never happens)",
       data: ["TimeStamp"],

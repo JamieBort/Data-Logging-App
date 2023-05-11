@@ -30,7 +30,7 @@ Started this:
 
 > List the features I want to have. Organized by type: (insulin/pump/cartridge/etc., dexcom/sensor/transmitter/etc., exercise, etc. ). Then by description of what needs to be recorded, then by questions that need to be asked when recording this information.
 
-Done with this:
+Done with this. However did not (yet) add helpful comments:
 
 > Clean up each file.
 

@@ -1,12 +1,4 @@
-// API call resources:
-// https://www.freecodecamp.org/news/react-native-networking-api-requests-using-fetchapi/
-
-// TODO:
-// - Determine whether I should use <View> when it apparently is not needed - when I am not getting any warnings to use one.
-// - Determine whether I want to move the api calls to other file(s).
-// - Implement deleting other entries.
-// - While in the "React_Native" branch git rm all the other directories.
-// - Add more data points to use.
+// ./App.js
 
 import { StyleSheet, Button, View, Text, Alert } from "react-native";
 import {
@@ -21,7 +13,6 @@ import FeatureList from "./FeatureList";
 import ToggleButton from "./ToggleButton";
 import { Variables } from "./Variables";
 // import ListAllComponent from "./ListAllComponent";
-// import PostEventComponent from "./PostEventComponent";
 
 const Separator = () => <View style={styles.separator} />;
 
@@ -95,9 +86,6 @@ const App = () => {
 
         // NOTE: COMMENT OUT for web development.
         Alert.alert("Event was deleted:", res.id);
-
-        // const newTodoList = todoList.filter((todo) => id !== todo.id);
-        // setTodoList(newTodoList);
       });
 
     console.log(param, " was deleted.");
@@ -122,7 +110,6 @@ const App = () => {
         text: "Accept",
         onPress: () => {
           postAnEvent(param);
-          // PostEventComponent.postAnEvent(param);
           console.log("Accept Pressed");
         },
       },
@@ -142,13 +129,7 @@ const App = () => {
       <Text style={styles.h1}>Data Logger</Text>
       <Separator />
       <View>
-        <Text style={styles.h2}>{Variables.ONE}</Text>
-        {/* Changed sensor */}
-        {/* which body part? leg? arm? */}
-        {/* which body location? front? back? left side? right side? */}
-        {/* which side of the body? left or right? */}
-        {/* Lot number */}
-        {/* Code */}
+        <Text style={styles.h2}>{Variables.CGM}</Text>
         <Button
           title="Replaced the old sensor for a new sensor."
           color="#f194ff"
@@ -159,7 +140,7 @@ const App = () => {
       </View>
       <Separator />
       <View>
-        <Text style={styles.h2}>{Variables.THREE}</Text>
+        <Text style={styles.h2}>{Variables.PUMP}</Text>
         <Button
           title="Refilled the old reservoir with insulin"
           color="#f0f"
@@ -189,13 +170,6 @@ const App = () => {
         handleEvent={() => deleteLastEvent(lastEvent[0])}
       />
 
-      {/* NOTE: not using right now. */}
-      {/* <Separator />
-      <Button
-        title="Delete event"
-        onPress={() => deleteLastEvent(lastEvent)}
-      ></Button> */}
-
       <Separator />
       <Button
         title="Check Last Event"
@@ -216,7 +190,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    // TODO: What does this do?
+    // TODO: What does this do? Clean up all of the styling.
     marginHorizontal: 16,
   },
   h1: { fontSize: 33, textAlign: "center", fontWeight: "bold" },

@@ -1,4 +1,6 @@
 // FeatureList.js
+// NOTE: NOT USING THIS.
+// TODO: delete this file.
 
 // https://reactnative.dev/docs/0.67/sectionlist
 

@@ -1,6 +1,10 @@
-// ListComponent.js
+// ./ListAllComponent.js
+
 // For listing all records in the database.
+
 // NOTE: If this is going to be used I need to implement something to keep all the records from loading at one time. I am receiving a warning for this on the phone. Additionally, the UI gets messed up.
+
+// IMPORTANT: Keep this file for now.
 
 import React, { useEffect, useState } from "react";
 import { View, StyleSheet, Text, Button, Alert } from "react-native";

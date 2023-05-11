@@ -1,24 +1,24 @@
-// FeatureList.js
+// ./FeatureList.js
+// Created this component to list the data I'd like to record.
 
-// https://reactnative.dev/docs/0.67/sectionlist
-
-// Created this component to list the data I'd like to implement.
+// TODO: Clean up this file.
+// Specifically,
+//   * remove the superfluous lines of code,
+//   * comments,
+//   * etc.
+//   * add helpful comments.
+//  Also, rename the variables so that
+//   * they're more human readable
+//   * and appropriate.
+// Lastly, make sure the `index` in each map is used correctly for React's need (regarding the `key` prop).
 
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  SectionList,
-  StatusBar,
-} from "react-native";
-import { Data } from "./Data";
+import { View } from "react-native";
 import { Variables } from "./Variables";
 
 const DATA_OBJECT = {
   cgm: [
-    Variables.ONE,
+    Variables.CGM,
     {
       title: "When I replace the old sensor for a new sensor.",
       data: [
@@ -28,14 +28,16 @@ const DATA_OBJECT = {
         "Location On Body",
 
         // (LocationOnBody = [
-        //   ["left side", "right side"],
+        //   ["left side of body", "right side of body"],
         //   (bodyPart = ["thigh"]),
+        // [front of body part, back of body part, right side of body part, left side of body part,]
         // ]),
 
         // {
         //   "Location on Body": [
         //     ["left side", "right side"],
         //     (bodyPart = ["thigh"]),
+        // [front of body part, back of body part, right side of body part, left side of body part,]
         //   ],
         // },
       ],
@@ -68,7 +70,7 @@ const DATA_OBJECT = {
   ],
 
   physicalActivity: [
-    Variables.TWO,
+    Variables.PHYSICAL_ACTIVITY,
     {
       title: "When I start/stop exercising",
       data: [
@@ -96,7 +98,7 @@ const DATA_OBJECT = {
   ],
 
   pump: [
-    Variables.THREE,
+    Variables.PUMP,
     {
       title: "When I change only my tubing (this almost never happens)",
       data: ["TimeStamp"],
@@ -120,12 +122,14 @@ const DATA_OBJECT = {
         // (LocationOnBody = [
         //   ["left side", "right side"],
         //   (bodyPart = ["thigh"]),
+        // [front of body part, back of body part, right side of body part, left side of body part,]
         // ]),
 
         // {
         //   "Location on Body": [
         //     ["left side", "right side"],
         //     (bodyPart = ["thigh"]),
+        // [front of body part, back of body part, right side of body part, left side of body part,]
         //   ],
         // },
       ],
@@ -150,7 +154,7 @@ const DATA_OBJECT = {
   ],
 
   food: [
-    Variables.FOUR,
+    Variables.FOOD,
     {
       title: "When I take sugar correction - for example at 2 am.",
       data: ["TimeStamp", "Quantity - integer", "Circumstances - note field?"],
@@ -195,7 +199,6 @@ const DATA_OBJECT = {
 };
 
 const list = Object.entries(DATA_OBJECT).map(([key, value]) => {
-  // const list = Object.entries(DATA_OBJECT).map(([key, value]) => {
   // {console.log("key:", key, "value:", value);
   // console.log(value[0]);}
 

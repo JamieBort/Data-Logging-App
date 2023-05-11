@@ -1,5 +1,10 @@
-// PostEventComponent.js
-// Not yet implemented
+// ./PostEventComponent.js
+
+// NOTE: Not yet implemented
+
+// NOTE: NOT USING THIS.
+
+// TODO: delete this file.
 
 import {
   AIRTABLE_BASE_ID_DATA_LOGGING_BASE,
