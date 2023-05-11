@@ -30,6 +30,16 @@ Started this:
 
 > List the features I want to have. Organized by type: (insulin/pump/cartridge/etc., dexcom/sensor/transmitter/etc., exercise, etc. ). Then by description of what needs to be recorded, then by questions that need to be asked when recording this information.
 
+Done with this:
+
+> Clean up each file.
+
+> Remove superfluous lines of code, comments, etc.
+
+> Remove commented out code, superfluous console.log()'s, and the like. Add helpful comments.
+
+> Use `React_Native_cleanup` as a branch name.
+
 ##### React_Native_attempt03
 
 STATUS
