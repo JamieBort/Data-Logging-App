@@ -4,16 +4,4 @@ The next things that need to be accomplished, in order, based on the list found 
 
 ## Next Steps
 
-- Based on `1.` from the `ToDo.md` file, for Svelte decide on
-
-  - JavaScript,
-
-  - Typescript,
-
-  - or SvelteKit
-
-  Question that may help:
-
-  - What is SvelteKit?
-
-  - What is the difference between Typescript and SvelteKit?
+See `1.` from the [ToDo](https://github.com/JamieBort/Data-Logging-App/blob/React_Native_feature_list/ToDo.md#to-do) file.
