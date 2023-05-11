@@ -16,8 +16,9 @@ import {
   wrong_TOKEN,
 } from "@env";
 import React, { useState } from "react";
-import Toggle from "./Toggle";
+import ToggleSwitch from "./ToggleSwitch";
 import FeatureList from "./FeatureList";
+import ToggleButton from "./ToggleButton";
 // import ListAllComponent from "./ListAllComponent";
 // import PostEventComponent from "./PostEventComponent";
 
@@ -182,7 +183,7 @@ const App = () => {
       </View>
 
       <Separator />
-      <Toggle
+      <ToggleSwitch
         name="Edit Entries"
         handleEvent={() => deleteLastEvent(lastEvent[0])}
       />
@@ -203,9 +204,8 @@ const App = () => {
       {/* <ListAllComponent /> */}
 
       <Separator />
+      <ToggleButton title="Toggle Feature List" component={<FeatureList />} />
 
-      <Text style={styles.h2}>Display Feature List</Text>
-      <FeatureList />
       {/* <Separator /> */}
     </View>
   );

@@ -1,7 +1,9 @@
+// A Toggle Switch
+
 import React, { useState } from "react";
 import { StyleSheet, Button, View, Text, Switch, Alert } from "react-native";
 
-const Toggle = (props) => {
+const ToggleSwitch = (props) => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   let feature;
@@ -67,4 +69,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Toggle;
+export default ToggleSwitch;

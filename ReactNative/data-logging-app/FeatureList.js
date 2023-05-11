@@ -2,7 +2,7 @@
 
 // https://reactnative.dev/docs/0.67/sectionlist
 
-// Created this component to list the features I'd like to implement.
+// Created this component to list the data I'd like to implement.
 
 import React from "react";
 import {
@@ -19,65 +19,77 @@ const DATA_OBJECT = {
     "Dexcom G6 Transmitters, Dexcom G6 Sensors, Etc.",
     {
       title: "When I replace the old sensor for a new sensor.",
-      features: ["Feature 1", "Feature 2", "Feature 3"],
+      data: ["TimeStamp", "Lot Number", "Code"],
     },
     {
       title: "When I replace the old transmitter for a new transmitter.",
-      features: ["Feature 4", "Feature 5"],
+      data: ["TimeStamp", "Lot Number", "Code"],
     },
     {
       title:
         "When I remove the old transmitter and then replace the same old transmitter",
-      features: ["Feature A", "Feature B", "Feature C"],
+      data: ["TimeStamp", "Lot Number (?)", "Code (?)"],
     },
     {
       title: "When my pump/mobile loses the CGM signal.",
-      features: ["Feature 6", "Feature 7", "Feature 8", "Feature 9"],
+      data: ["TimeStamp", "Circumstances"],
     },
   ],
   physicalActivity: [
     "Running, Having Sex, Sleeping, Etc.",
     {
       title: "When I start/stop exercising",
-      features: [],
+      data: [
+        "Start time: TimeStamp",
+        "Stop Time: TimeStamp",
+        { "Exertion Level": ["low", "medium", "high"] },
+      ],
     },
     {
       title: "When I start/stop sleeping",
-      features: [],
+      data: [
+        "Start time: TimeStamp",
+        "Stop Time: TimeStamp",
+        { "Exertion Level": ["low", "medium", "high"] },
+      ],
     },
     {
-      title: "Possibly to log my sleep start/end.",
-      features: [],
+      title: "My sleep start/end.",
+      data: [
+        "Start time: TimeStamp",
+        "Stop Time: TimeStamp",
+        { "Exertion Level": ["low", "medium", "high"] },
+      ],
     },
   ],
   pump: [
     "Pump, Insulin, Tubing, Etc.",
     {
       title: "When I change only my tubing (this almost never happens)",
-      features: [],
+      data: ["TimeStamp"],
     },
     {
       title:
         "When I change an old reservoir for a new reservoir (and refill it with insulin and replace the old tubing for new tubing - this always happens together)",
-      features: [],
+      data: ["TimeStamp"],
     },
     {
       title:
         "When I refill an old reservoir with insulin ( and replace the old tubing for new tubing - this always happens together)",
-      features: [],
+      data: ["TimeStamp"],
     },
     {
       title: "When my pump/mobile loses the CGM signal.",
-      features: [],
+      data: ["TimeStamp", "Circumstances"],
     },
   ],
 
   other: [
-    "Other",
+    "Other - See below",
     {
       title:
-        "For the rest of the data points that are to be collect, see the `${<h3>}`Data points to collect`${</h3>}` section of the Personal Dashboard Business Requirements Google Drive doc.",
-      features: [],
+        "For the rest of the data points that are to be collect, see the Data points to collect section of the Personal Dashboard Business Requirements Google Drive doc.",
+      data: [],
     },
   ],
 };
@@ -93,23 +105,47 @@ const list = Object.entries(DATA_OBJECT).map(([key, value]) => {
     // {
     //   console.log("item:", item);
     //   console.log("index:", index);
-    //   console.log("item:", item.features);
+    //   console.log("item:", item.data);
     // }
 
-    const itemFeatures = item.features.map((itemFeature, index) => {
-      // {console.log("itemFeature:", itemFeature);
-      // itemFeature["ID"] = index;
-      // console.log("index:", index);}
-      return <li key={index}>{itemFeature}</li>;
+    const itemFeatures = item.data.map((itemFeature, index) => {
+      // console.log("itemFeature:", itemFeature);
+      // console.log("index:", index);
+      // console.log(typeof itemFeature === "object");
+      if (typeof itemFeature === "object") {
+        // map over array
+        // console.log("itemFeature:", itemFeature);
+        // return itemFeature.map((itemSubFeature, index) => {
+        //   <ul key={index}>{itemSubFeature}</ul>;
+        // });
+
+        const itemSubFeatures = itemFeature["Exertion Level"].map(
+          (itemSubFeature, index) => {
+            // itemSubFeature["ID"] = index;
+            // console.log("itemSubFeature:", itemSubFeature);
+            return <li key={index}>{itemSubFeature}</li>;
+          },
+        );
+        // console.log("itemSubFeatures:", itemSubFeatures);
+        return (
+          <ul key={index}>
+            My Sub Features
+            {itemSubFeatures}
+          </ul>
+        );
+      } else if (typeof itemFeature === "string") {
+        return <li key={index}>{itemFeature}</li>;
+      }
     });
 
     return (
       <View key={item.ID}>
-        <li>{item.title}</li>
+        <li>
+          {item.ID + 1}: {item.title}
+        </li>
         {itemFeatures[0] ? (
           <ul>
-            List of Features:
-            {/* <p>List of Features:</p> */}
+            Questions to ask/data to collect:
             {itemFeatures}
           </ul>
         ) : null}
@@ -119,7 +155,7 @@ const list = Object.entries(DATA_OBJECT).map(([key, value]) => {
 
   return (
     <View key={key}>
-      <h2>{value[0]}</h2>
+      <h2 style={{ textAlign: "center" }}>{value[0]}</h2>
       <ul>{subListWithIds}</ul>
     </View>
   );
@@ -128,7 +164,7 @@ const list = Object.entries(DATA_OBJECT).map(([key, value]) => {
 const FeatureList = () => {
   return (
     <View>
-      <h1>Feature List</h1>
+      <h1 style={{ textAlign: "center" }}>Feature List</h1>
       {list}
     </View>
   );
