@@ -13,13 +13,32 @@ import {
   SectionList,
   StatusBar,
 } from "react-native";
+import { Data } from "./Data";
+import { Variables } from "./Variables";
 
 const DATA_OBJECT = {
   cgm: [
-    "Dexcom G6 Transmitters, Dexcom G6 Sensors, Etc.",
+    Variables.ONE,
     {
       title: "When I replace the old sensor for a new sensor.",
-      data: ["TimeStamp", "Lot Number", "Code"],
+      data: [
+        "TimeStamp",
+        "Lot Number",
+        "Code",
+        "Location On Body",
+
+        // (LocationOnBody = [
+        //   ["left side", "right side"],
+        //   (bodyPart = ["thigh"]),
+        // ]),
+
+        // {
+        //   "Location on Body": [
+        //     ["left side", "right side"],
+        //     (bodyPart = ["thigh"]),
+        //   ],
+        // },
+      ],
     },
     {
       title: "When I replace the old transmitter for a new transmitter.",
@@ -31,12 +50,25 @@ const DATA_OBJECT = {
       data: ["TimeStamp", "Lot Number (?)", "Code (?)"],
     },
     {
-      title: "When my pump/mobile loses the CGM signal.",
-      data: ["TimeStamp", "Circumstances"],
+      title: "When my mobile loses the CGM signal.",
+      data: [
+        "TimeStamp",
+        "Circumstances - note field?",
+        "Did the pump lose signal too?",
+      ],
+    },
+    {
+      title: "When my pump loses the CGM signal.",
+      data: [
+        "TimeStamp",
+        "Circumstances - note field?",
+        "Did the CGM lose signal too?",
+      ],
     },
   ],
+
   physicalActivity: [
-    "Running, Having Sex, Sleeping, Etc.",
+    Variables.TWO,
     {
       title: "When I start/stop exercising",
       data: [
@@ -62,8 +94,9 @@ const DATA_OBJECT = {
       ],
     },
   ],
+
   pump: [
-    "Pump, Insulin, Tubing, Etc.",
+    Variables.THREE,
     {
       title: "When I change only my tubing (this almost never happens)",
       data: ["TimeStamp"],
@@ -75,17 +108,84 @@ const DATA_OBJECT = {
     },
     {
       title:
-        "When I refill an old reservoir with insulin ( and replace the old tubing for new tubing - this always happens together)",
+        "When I refill an old reservoir with insulin (and replace the old tubing for new tubing - this always happens together)",
       data: ["TimeStamp"],
     },
     {
+      title: "Change Infusion Set",
+      data: [
+        "TimeStamp",
+        "Location On Body",
+
+        // (LocationOnBody = [
+        //   ["left side", "right side"],
+        //   (bodyPart = ["thigh"]),
+        // ]),
+
+        // {
+        //   "Location on Body": [
+        //     ["left side", "right side"],
+        //     (bodyPart = ["thigh"]),
+        //   ],
+        // },
+      ],
+    },
+    {
       title: "When my pump/mobile loses the CGM signal.",
-      data: ["TimeStamp", "Circumstances"],
+      data: ["TimeStamp", "Circumstances - note field?"],
+    },
+    {
+      title: "When my pump/mobile loses the CGM signal.",
+      data: ["TimeStamp", "Circumstances - note field?"],
+    },
+    {
+      title:
+        "Personal Profiles: When I activate a particular personal profile.",
+      data: [
+        "TimeStamp",
+        { "Personal Profile": ["Primary2023/DEFAULT", "HALF", "ZERO"] },
+        //  ["Primary2023/DEFAULT", "HALF", "ZERO"]
+      ],
     },
   ],
 
+  // food: [
+  //   Variables.FOUR,
+  //   {
+  //     title: "When I eat - for example at 2 am. This one might not be needed.",
+  //     data: ["TimeStamp", "Circumstances - note field?"],
+  //   },
+  // ],
+
   other: [
-    "Other - See below",
+    "Other - Misc. And complete list. See below",
+    {
+      title: "When I eat - for example at 2 am. This one might not be needed.",
+      data: ["TimeStamp", "Circumstances - note field?"],
+    },
+    {
+      title: "Stayed up all night.",
+      data: ["TimeStamp", "Circumstances - note field?"],
+    },
+    {
+      title: "Something the doctor will wan to know.",
+      data: ["TimeStamp", "Circumstances - note field?"],
+    },
+    {
+      title: "Other/Misc.",
+      data: [
+        "TimeStamp",
+        "Circumstances - note field?",
+        {
+          "Dropdown or Radio buttons or check boxes": [
+            "option one",
+            "option two",
+            "option three",
+            "option four opens a short field to enter a brief description",
+          ],
+        },
+      ],
+    },
     {
       title:
         "For the rest of the data points that are to be collect, see the Data points to collect section of the Personal Dashboard Business Requirements Google Drive doc.",
@@ -95,6 +195,7 @@ const DATA_OBJECT = {
 };
 
 const list = Object.entries(DATA_OBJECT).map(([key, value]) => {
+  // const list = Object.entries(DATA_OBJECT).map(([key, value]) => {
   // {console.log("key:", key, "value:", value);
   // console.log(value[0]);}
 
@@ -103,7 +204,7 @@ const list = Object.entries(DATA_OBJECT).map(([key, value]) => {
   const subListWithIds = cleanedArray.map((item, index) => {
     item["ID"] = index;
     // {
-    //   console.log("item:", item);
+    // console.log("item:", item);
     //   console.log("index:", index);
     //   console.log("item:", item.data);
     // }
@@ -112,6 +213,7 @@ const list = Object.entries(DATA_OBJECT).map(([key, value]) => {
       // console.log("itemFeature:", itemFeature);
       // console.log("index:", index);
       // console.log(typeof itemFeature === "object");
+      // console.log(typeof itemFeature);
       if (typeof itemFeature === "object") {
         // map over array
         // console.log("itemFeature:", itemFeature);
@@ -119,7 +221,7 @@ const list = Object.entries(DATA_OBJECT).map(([key, value]) => {
         //   <ul key={index}>{itemSubFeature}</ul>;
         // });
 
-        const itemSubFeatures = itemFeature["Exertion Level"].map(
+        const itemSubFeatures = itemFeature[Object.keys(itemFeature)[0]].map(
           (itemSubFeature, index) => {
             // itemSubFeature["ID"] = index;
             // console.log("itemSubFeature:", itemSubFeature);
@@ -129,7 +231,7 @@ const list = Object.entries(DATA_OBJECT).map(([key, value]) => {
         // console.log("itemSubFeatures:", itemSubFeatures);
         return (
           <ul key={index}>
-            My Sub Features
+            {Object.keys(itemFeature)[0]}
             {itemSubFeatures}
           </ul>
         );

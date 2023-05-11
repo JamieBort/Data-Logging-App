@@ -19,6 +19,7 @@ import React, { useState } from "react";
 import ToggleSwitch from "./ToggleSwitch";
 import FeatureList from "./FeatureList";
 import ToggleButton from "./ToggleButton";
+import { Variables } from "./Variables";
 // import ListAllComponent from "./ListAllComponent";
 // import PostEventComponent from "./PostEventComponent";
 
@@ -141,7 +142,7 @@ const App = () => {
       <Text style={styles.h1}>Data Logger</Text>
       <Separator />
       <View>
-        <Text style={styles.h2}>Sensor</Text>
+        <Text style={styles.h2}>{Variables.ONE}</Text>
         {/* Changed sensor */}
         {/* which body part? leg? arm? */}
         {/* which body location? front? back? left side? right side? */}
@@ -158,7 +159,7 @@ const App = () => {
       </View>
       <Separator />
       <View>
-        <Text style={styles.h2}>Insulin</Text>
+        <Text style={styles.h2}>{Variables.THREE}</Text>
         <Button
           title="Refilled the old reservoir with insulin"
           color="#f0f"
