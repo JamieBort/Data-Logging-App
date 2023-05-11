@@ -179,7 +179,9 @@ const App = () => {
       {/* <ListAllComponent /> */}
 
       <Separator />
-      <ToggleButton title="Toggle Feature List" component={<FeatureList />} />
+      {/* NOTE: commented out because it's causing problems. */}
+      {/* TODO: fix this error. "Text strings must be rendered within a <Text>" */}
+      {/* <ToggleButton title="Toggle Feature List" component={<FeatureList />} /> */}
 
       {/* <Separator /> */}
     </View>
