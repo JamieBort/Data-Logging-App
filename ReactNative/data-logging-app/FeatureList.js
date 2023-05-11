@@ -149,13 +149,13 @@ const DATA_OBJECT = {
     },
   ],
 
-  // food: [
-  //   Variables.FOUR,
-  //   {
-  //     title: "When I eat - for example at 2 am. This one might not be needed.",
-  //     data: ["TimeStamp", "Circumstances - note field?"],
-  //   },
-  // ],
+  food: [
+    Variables.FOUR,
+    {
+      title: "When I take sugar correction - for example at 2 am.",
+      data: ["TimeStamp", "Quantity - integer", "Circumstances - note field?"],
+    },
+  ],
 
   other: [
     "Other - Misc. And complete list. See below",
