@@ -8,7 +8,7 @@ The intent is to collect data that will then be analyzed to improve my quality o
 
 ## Data points to collect
 
-Examples of what will be collected is
+Examples of what will be collected are:
 
 - When I change the sensor for my continuous glucose monitor, and any additional notes I want or need to leave.
 
