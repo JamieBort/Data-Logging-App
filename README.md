@@ -47,13 +47,13 @@ Replace Airtable with a more secure database.
 
 - .expo - See the `.expo/README.md` file.
 
-- angular-tour-of-heroes - Created when in the `Angular_Tour_Of_Heros` branch and for exploring "regular" Angular. REMOVED FROM GIT CACHE - not visible anymore.
+- angular-tour-of-heroes - Created when in the `Angular_Tour_Of_Heros` branch and for exploring "regular" Angular.
 
-- ReactNative/ - Created for React Native projects.
+- ReactNative/ - Created for React Native projects. NOT YET ADDED TO THIS BRANCH.
 
-- Svelte - Created for Svelte Native projects. REMOVED FROM GIT CACHE - not visible anymore.
+- Svelte - Created for Svelte Native projects.
 
-- Vue - Created for Vue projects. REMOVED FROM GIT CACHE - not visible anymore.
+- Vue - Created for Vue projects.
 
 ### Files
 
