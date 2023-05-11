@@ -1,36 +1,26 @@
 # Data-Logging-App
 
-An app to log data points from my phone.
+An app to log data points from my phone to be saved into a database.
 
-The web version might be in my [Personal Dashboard](https://github.com/JamieBort/PersonalDashboard); in which case it will be behind authentication.
+The web version might be incorporated into my [Personal Dashboard](https://github.com/JamieBort/PersonalDashboard); in which case it will be behind authentication.
 
-The intent is to collect data to be analyzed to improve my quality of life. This will be done via my [Personal Dashboard](https://github.com/JamieBort/PersonalDashboard).
+The intent is to collect data that will then be analyzed to improve my quality of life. This will be done via my [Personal Dashboard](https://github.com/JamieBort/PersonalDashboard).
 
 ## Data points to collect
 
-The timestamp for the following:
+Examples of what will be collected is
 
-- when I change only my tubing (this almost never happens)
+- When I change the sensor for my continuous glucose monitor, and any additional notes I want or need to leave.
 
-- when I change an old reservoir for a new reservoir (and refill it with insulin and replace the old tubing for new tubing - this always happens together)
+- when I start exercising, when I stop, and how intensely I worked out (easy, medium, or hard), and any additional notes I want or need to leave.
 
-- when I refill an old reservoir with insulin ( and replace the old tubing for new tubing - this always happens together)
+- When I change my insulin pump infusion set and where on my body I placed it, and any additional notes I want or need to leave.
 
-- when I replace the old sensor for a new sensor.
+- When I treat a low blood sugar episode with food, the amount of grams I consume, and any additional notes I want or need to leave.
 
-- when I replace the old transmitter for a new transmitter
+The rest of the data points that are to be collect, see the [Data points to collect](https://docs.google.com/document/d/1KQw0Kq4O_SCzxrQZaZg0MucxXqoEE0kOTe9mDmxpD2M/edit#heading=h.yevh3z6ycq85) section of the [Personal Dashboard Business Requirements](https://docs.google.com/document/d/1KQw0Kq4O_SCzxrQZaZg0MucxXqoEE0kOTe9mDmxpD2M/) Google Drive doc.
 
-- when I remove the old transmitter and then replace the same old transmitter
-
-- when I start/stop exercising
-
-- when my pump/mobile loses the CGM signal.
-
-- Possibly to log my sleep start/end.
-
-* For the rest of the data points that are to be collect, see the [Data points to collect](https://docs.google.com/document/d/1KQw0Kq4O_SCzxrQZaZg0MucxXqoEE0kOTe9mDmxpD2M/edit#heading=h.yevh3z6ycq85) section of the [Personal Dashboard Business Requirements](https://docs.google.com/document/d/1KQw0Kq4O_SCzxrQZaZg0MucxXqoEE0kOTe9mDmxpD2M/) Google Drive doc.
-
-At a later date I may start to record other data points such as lot numbers for these items, temperature, time of day, etc.
+At a later date I may start to record other data points. Such as lot numbers for some of these items, temperature, time of day, etc.
 
 ## Logistics and Features
 
@@ -42,7 +32,7 @@ At a later date I may start to record other data points such as lot numbers for 
 
 - a further option to edit older data.
 
-**desktop** (and/or web based) features and logistics
+**Desktop** (web-based)
 
 - I hadn't thought about this yet.
   But I think it is important to have the ability to add and change info without my phone/via a browser.

@@ -4,19 +4,13 @@
 
 STATUS
 
-NEXT STEPS
-
 ### library
 
 STATUS
 
-NEXT STEPS
-
 #### Angular
 
 STATUS
-
-NEXT STEPS
 
 ##### Angular_Tour_Of_Heros
 
@@ -32,11 +26,9 @@ Got dotenv working using: https://www.npmjs.com/package/react-native-dotenv
 
 Did not get https://www.npmjs.com/package/react-native-config working. Also used https://medium.com/armenotech/configure-environment-variables-with-react-native-config-for-ios-and-android-7079c0842d8b
 
-NEXT STEPS
+Started this:
 
-Look into using react-native-config instead.
-
-Also look at https://12factor.net/config
+> List the features I want to have. Organized by type: (insulin/pump/cartridge/etc., dexcom/sensor/transmitter/etc., exercise, etc. ). Then by description of what needs to be recorded, then by questions that need to be asked when recording this information.
 
 ##### React_Native_attempt03
 
@@ -46,20 +38,14 @@ Got it working. See the `./Data-Logging-App/ReactNative/README.md` file.
 
 Modified the code a bit.
 
-NEXT STEPS
+Connected it to Airtable ~~and/or a Google Drive spreadsheet~~.
 
-Connect it to Airtable and/or a Google Drive spreadsheet.
-
-Then start updating one or both of those from the app.
+Started updating one or both of those from the app.
 
 #### Svelte_Native
 
 STATUS
 
-NEXT STEPS
-
 #### Vue
 
 STATUS
-
-NEXT STEPS
