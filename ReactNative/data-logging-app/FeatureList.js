@@ -14,90 +14,124 @@ import {
   StatusBar,
 } from "react-native";
 
-const DATA = [
-  {
-    title: "When I change only my tubing (this almost never happens)",
-    data: ["Pizza", "Burger", "Risotto"],
-  },
-  {
-    title:
-      "When I change an old reservoir for a new reservoir (and refill it with insulin and replace the old tubing for new tubing - this always happens together)",
-    data: ["French Fries", "Onion Rings", "Fried Shrimps"],
-  },
-  {
-    title:
-      "When I refill an old reservoir with insulin ( and replace the old tubing for new tubing - this always happens together)",
-    data: ["Water", "Coke", "Beer"],
-  },
-  {
-    title: "When I replace the old sensor for a new sensor.",
-    data: ["Cheese Cake", "Ice Cream"],
-  },
-  {
-    title: "When I replace the old transmitter for a new transmitter",
-    data: ["Water", "Coke", "Beer"],
-  },
-  {
-    title:
-      "When I remove the old transmitter and then replace the same old transmitter",
-    data: ["Cheese Cake", "Ice Cream"],
-  },
-  {
-    title: "When I start/stop exercising",
-    data: ["Water", "Coke", "Beer"],
-  },
-  {
-    title: "When my pump/mobile loses the CGM signal.",
-    data: ["Cheese Cake", "Ice Cream"],
-  },
-  {
-    title: "Possibly to log my sleep start/end.",
-    data: ["Water", "Coke", "Beer"],
-  },
-  {
-    title:
-      "For the rest of the data points that are to be collect, see the `${<h3>}`Data points to collect`${</h3>}` section of the Personal Dashboard Business Requirements Google Drive doc.",
-    data: ["Cheese Cake", "Ice Cream"],
-  },
-];
+const DATA_OBJECT = {
+  cgm: [
+    "Dexcom G6 Transmitters, Dexcom G6 Sensors, Etc.",
+    {
+      title: "When I replace the old sensor for a new sensor.",
+      features: ["Feature 1", "Feature 2", "Feature 3"],
+    },
+    {
+      title: "When I replace the old transmitter for a new transmitter.",
+      features: ["Feature 4", "Feature 5"],
+    },
+    {
+      title:
+        "When I remove the old transmitter and then replace the same old transmitter",
+      features: ["Feature A", "Feature B", "Feature C"],
+    },
+    {
+      title: "When my pump/mobile loses the CGM signal.",
+      features: ["Feature 6", "Feature 7", "Feature 8", "Feature 9"],
+    },
+  ],
+  physicalActivity: [
+    "Running, Having Sex, Sleeping, Etc.",
+    {
+      title: "When I start/stop exercising",
+      features: [],
+    },
+    {
+      title: "When I start/stop sleeping",
+      features: [],
+    },
+    {
+      title: "Possibly to log my sleep start/end.",
+      features: [],
+    },
+  ],
+  pump: [
+    "Pump, Insulin, Tubing, Etc.",
+    {
+      title: "When I change only my tubing (this almost never happens)",
+      features: [],
+    },
+    {
+      title:
+        "When I change an old reservoir for a new reservoir (and refill it with insulin and replace the old tubing for new tubing - this always happens together)",
+      features: [],
+    },
+    {
+      title:
+        "When I refill an old reservoir with insulin ( and replace the old tubing for new tubing - this always happens together)",
+      features: [],
+    },
+    {
+      title: "When my pump/mobile loses the CGM signal.",
+      features: [],
+    },
+  ],
 
-const Item = ({ title }) => (
-  <View style={styles.item}>
-    <Text style={styles.title}>{title}</Text>
-  </View>
-);
+  other: [
+    "Other",
+    {
+      title:
+        "For the rest of the data points that are to be collect, see the `${<h3>}`Data points to collect`${</h3>}` section of the Personal Dashboard Business Requirements Google Drive doc.",
+      features: [],
+    },
+  ],
+};
 
-const FeatureList = () => (
-  <SafeAreaView style={styles.container}>
-    <SectionList
-      sections={DATA}
-      keyExtractor={(item, index) => item + index}
-      renderItem={({ item }) => <Item title={item} />}
-      renderSectionHeader={({ section: { title } }) => (
-        <Text style={styles.header}>{title}</Text>
-      )}
-    />
-  </SafeAreaView>
-);
+const list = Object.entries(DATA_OBJECT).map(([key, value]) => {
+  // {console.log("key:", key, "value:", value);
+  // console.log(value[0]);}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: StatusBar.currentHeight,
-    marginHorizontal: 16,
-  },
-  item: {
-    backgroundColor: "#f9c2ff",
-    padding: 20,
-    marginVertical: 8,
-  },
-  header: {
-    fontSize: 32,
-    backgroundColor: "#fff",
-  },
-  title: {
-    fontSize: 24,
-  },
+  const cleanedArray = value.slice(1);
+
+  const subListWithIds = cleanedArray.map((item, index) => {
+    item["ID"] = index;
+    // {
+    //   console.log("item:", item);
+    //   console.log("index:", index);
+    //   console.log("item:", item.features);
+    // }
+
+    const itemFeatures = item.features.map((itemFeature, index) => {
+      // {console.log("itemFeature:", itemFeature);
+      // itemFeature["ID"] = index;
+      // console.log("index:", index);}
+      return <li key={index}>{itemFeature}</li>;
+    });
+
+    return (
+      <View key={item.ID}>
+        <li>{item.title}</li>
+        {itemFeatures[0] ? (
+          <ul>
+            List of Features:
+            {/* <p>List of Features:</p> */}
+            {itemFeatures}
+          </ul>
+        ) : null}
+      </View>
+    );
+  });
+
+  return (
+    <View key={key}>
+      <h2>{value[0]}</h2>
+      <ul>{subListWithIds}</ul>
+    </View>
+  );
 });
+
+const FeatureList = () => {
+  return (
+    <View>
+      <h1>Feature List</h1>
+      {list}
+    </View>
+  );
+};
 
 export default FeatureList;

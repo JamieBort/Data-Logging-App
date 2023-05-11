@@ -17,7 +17,7 @@ import {
 } from "@env";
 import React, { useState } from "react";
 import Toggle from "./Toggle";
-import WishList from "./WishList";
+import FeatureList from "./FeatureList";
 // import ListAllComponent from "./ListAllComponent";
 // import PostEventComponent from "./PostEventComponent";
 
@@ -203,7 +203,9 @@ const App = () => {
       {/* <ListAllComponent /> */}
 
       <Separator />
-      <WishList />
+
+      <Text style={styles.h2}>Display Feature List</Text>
+      <FeatureList />
       {/* <Separator /> */}
     </View>
   );
