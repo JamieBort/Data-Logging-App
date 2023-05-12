@@ -54,6 +54,18 @@ Done with this.
 
 > And then into the `main` branch.
 
+Done with this.
+
+> Delete
+
+> - the `React_Native_cleanup_backup` branch,
+
+> - the `./copy_FeatureList.js` file,
+
+> - the `./Data.js` file,
+
+> - and the `./PostEventComponent.js` file.
+
 ##### React_Native_attempt03
 
 STATUS
