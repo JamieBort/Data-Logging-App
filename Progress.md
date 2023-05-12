@@ -40,6 +40,20 @@ Done with this. However did not (yet) add helpful comments:
 
 > Use `React_Native_cleanup` as a branch name.
 
+Done with this.
+
+> Determine which branch has the following files the most up-to-date,
+
+> the `NextSteps.md`, `Progress.md`, `README.md`, and `ToDo.md` files.
+
+> The `React_Native_feature_list` branch or the `React_Native_cleanup` branch.
+
+> Then merge those files into the `React_Native` branch.
+
+> And then into the `dev` branch.
+
+> And then into the `main` branch.
+
 ##### React_Native_attempt03
 
 STATUS

@@ -4,19 +4,17 @@ A comprehensive list of what still needs to addressed.
 
 ## To Do
 
-1. Determine which branch has the following files the most up-to-date,
+1. Delete
 
-   the `NextSteps.md`, `Progress.md`, `README.md`, and `ToDo.md` files.
+   - the `React_Native_cleanup_backup` branch,
 
-   The `React_Native_feature_list` branch or the `React_Native_cleanup` branch.
+   - the `./FeatureList.js` file,
 
-   Then merge those files into the `React_Native` branch.
+   - the `./Data.js` file,
 
-   And then into the `dev` branch.
+   - and the `./PostEventComponent.js` file.
 
-   And then into the `main` branch.
-
-2. Determine whether I should use <View> and when it is/is not needed - when I am not getting any warnings to use one.
+2. Determine whether I should use `<View>` and when it is/is not needed - when I am not getting any warnings to use one.
 
 3. List the features I want to have.
 
@@ -32,7 +30,11 @@ A comprehensive list of what still needs to addressed.
 
    Come back to the `React_Native_feature_list` branch for this.
 
-5. Address the `The git repository at has too many active changes, only a subset of Git features will be enabled.` issue VS Code is giving me with this repo. See https://stackoverflow.com/questions/60160453/vs-code-the-git-repository-has-too-many-active-changes-only-a-subset-of-git-f
+5. Address the `The git repository at has too many active changes, only a subset of Git features will be enabled.` issue VS Code is giving me with this repo.
+
+   See https://stackoverflow.com/questions/60160453/vs-code-the-git-repository-has-too-many-active-changes-only-a-subset-of-git-f
+
+   The easiest "solution" might be to just re-clone the repo.
 
 6. Look into restructuring the app:
 
@@ -43,6 +45,8 @@ A comprehensive list of what still needs to addressed.
    Come back to the `React_Native_cleanup` branch for this.
 
 7. Get rid of the `<Separator />` component and group the buttons on the dashboard by `pump`, `cgm`, `physical activity`, `other`, etc.
+
+   See the `./ReactNative/data-logging-app/Variables.js` file for these names.
 
 8. Create a component for each type of data that needs to be entered into the database.
 

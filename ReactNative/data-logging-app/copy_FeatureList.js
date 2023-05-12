@@ -1,4 +1,4 @@
-// FeatureList.js
+// ./FeatureList.js
 // NOTE: NOT USING THIS.
 // TODO: delete this file.
 
