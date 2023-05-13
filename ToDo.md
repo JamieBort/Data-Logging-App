@@ -24,11 +24,15 @@ A comprehensive list of what still needs to addressed.
 
    Determine whether I want to move the api calls to other file(s). A API call resource: https://www.freecodecamp.org/news/react-native-networking-api-requests-using-fetchapi/
 
-   Come back to the `React_Native_cleanup` branch for this.
+   ~~Come back to the `React_Native_cleanup` branch for this.~~
 
-4. Get rid of the `<Separator />` component and group the buttons on the dashboard by `pump`, `cgm`, `physical activity`, `other`, etc.
+   Use the `React_Native_restructure` branch for this. Create it if it does not already exist. Come back to it if it does.
 
-   See the `./ReactNative/data-logging-app/Variables.js` file for these names.
+4. ~~Get rid of the `<Separator />` component and group the buttons on the dashboard by `pump`, `cgm`, `physical activity`, `other`, etc.
+
+   See the `./ReactNative/data-logging-app/Variables.js` file for these names.~~
+
+   I am using this now.
 
 5. Create a component for each type of data that needs to be entered into the database.
 
@@ -96,7 +100,7 @@ A comprehensive list of what still needs to addressed.
 
    Can I use Google sheets too? Do I want to use both? Do I want to use Google Sheets instead of Airtable?
 
-9. Look into using react-native-config instead.
+9. Look into using react-native-config instead of `.env`/`react-native-dotenv`.
 
    Also look at https://12factor.net/config
 

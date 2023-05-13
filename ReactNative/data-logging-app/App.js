@@ -1,6 +1,13 @@
 // ./App.js
 
-import { StyleSheet, Button, View, Text, Alert } from "react-native";
+import {
+  StyleSheet,
+  Button,
+  View,
+  Text,
+  Alert,
+  ScrollView,
+} from "react-native";
 import {
   AIRTABLE_BASE_ID_DATA_LOGGING_BASE,
   TABLE_ID,
@@ -17,7 +24,7 @@ import { Variables } from "./Variables";
 const Separator = () => <View style={styles.separator} />;
 
 const App = () => {
-  const [lastEvent, setLastEvent] = useState([]);
+  const [lastEvent, setLastEvent] = useState(["There is no entry."]);
   // POST event in Data Logging Base base in Airtable.
   const postAnEvent = async (param) => {
     try {
@@ -126,161 +133,165 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.h1}>Data Logger</Text>
+      <ScrollView>
+        <View style={styles.group}>
+          <Text style={styles.h1}>Data Logger</Text>
+        </View>
 
-      <View style={styles.group}>
-        <Text>Top 3-5 buttons pressed.</Text>
-        <Text>To be calculated using the spreadsheet.</Text>
-        <Text>Not sure how to display them - yet to be seen.</Text>
-        <Text>Display all Buttons Toggle Button</Text>
-      </View>
+        <View style={styles.group}>
+          <Text>Top 3-5 buttons pressed.</Text>
+          <Text>To be calculated using the spreadsheet.</Text>
+          <Text>Not sure how to display them - yet to be seen.</Text>
+          <Text>Display all Buttons Toggle Button</Text>
+        </View>
 
-      <View style={styles.group}>
-        <Text style={styles.h2}>{Variables.CGM}</Text>
+        <View style={styles.group}>
+          <Text style={styles.h2}>{Variables.CGM}</Text>
 
-        <Text>Display all Buttons in this view Toggle Title</Text>
+          <Text>Display all Buttons in this view Toggle Title</Text>
 
-        <Button
-          title="Replace old sensor for new sensor."
-          color="#f194ff"
-          onPress={() =>
-            confirmation("Replaced the old sensor for a new sensor.")
-          }
-        ></Button>
+          <Button
+            title="Replace old sensor for new sensor."
+            color="#f194ff"
+            onPress={() =>
+              confirmation("Replaced the old sensor for a new sensor.")
+            }
+          ></Button>
 
-        <Separator />
+          <Separator />
 
-        <Button title="Replace old transmitter for new transmitter"></Button>
+          <Button title="Replace old transmitter for new transmitter"></Button>
 
-        <Separator />
+          <Separator />
 
-        <Button title="Remove old transmitter and then replace the same old transmitter"></Button>
+          <Button title="Remove old transmitter and then replace the same old transmitter"></Button>
 
-        <Separator />
+          <Separator />
 
-        <Button title="Mobile loses CGM signal"></Button>
+          <Button title="Mobile loses CGM signal"></Button>
 
-        <Separator />
+          <Separator />
 
-        <Button title="Pump loses CGM signal"></Button>
-      </View>
+          <Button title="Pump loses CGM signal"></Button>
+        </View>
 
-      <View style={styles.group}>
-        <Text style={styles.h2}>{Variables.PHYSICAL_ACTIVITY}</Text>
-        <Text>Display all Buttons in this view Toggle Title</Text>
+        <View style={styles.group}>
+          <Text style={styles.h2}>{Variables.PHYSICAL_ACTIVITY}</Text>
+          <Text>Display all Buttons in this view Toggle Title</Text>
 
-        <Button title="When I start/stop exercising"></Button>
+          <Button title="When I start/stop exercising"></Button>
 
-        <Separator />
+          <Separator />
 
-        <Button title="When I start/stop sleeping"></Button>
+          <Button title="When I start/stop sleeping"></Button>
 
-        <Separator />
+          <Separator />
 
-        <Button title="Other Physical Activity"></Button>
-      </View>
+          <Button title="Other Physical Activity"></Button>
+        </View>
 
-      <View style={styles.group}>
-        <Text style={styles.h2}>{Variables.PUMP}</Text>
-        <Text>Display all Buttons in this view Toggle Title</Text>
+        <View style={styles.group}>
+          <Text style={styles.h2}>{Variables.PUMP}</Text>
+          <Text>Display all Buttons in this view Toggle Title</Text>
 
-        <Button
-          title="Change only tubing"
-          color="#f0f"
-          onPress={() => confirmation("Change only my tubing")}
-        ></Button>
+          <Button
+            title="Change only tubing"
+            color="#f0f"
+            onPress={() => confirmation("Change only my tubing")}
+          ></Button>
 
-        <Separator />
+          <Separator />
 
-        <Button
-          title="Changed an old reservoir for a new reservoir"
-          color="#f0f"
-          onPress={() =>
-            confirmation("Changed an old reservoir for a new reservoir")
-          }
-        ></Button>
+          <Button
+            title="Changed an old reservoir for a new reservoir"
+            color="#f0f"
+            onPress={() =>
+              confirmation("Changed an old reservoir for a new reservoir")
+            }
+          ></Button>
 
-        <Separator />
+          <Separator />
 
-        <Button
-          title="Refilled same old reservoir with insulin"
-          color="#f0f"
-          onPress={() =>
-            confirmation("Refilled the old reservoir with insulin")
-          }
-        ></Button>
+          <Button
+            title="Refilled same old reservoir with insulin"
+            color="#f0f"
+            onPress={() =>
+              confirmation("Refilled the old reservoir with insulin")
+            }
+          ></Button>
 
-        <Separator />
+          <Separator />
 
-        <Button title="Change Complete Infusion Set"></Button>
+          <Button title="Change Complete Infusion Set"></Button>
 
-        <Separator />
+          <Separator />
 
-        <Button title="Personal Profiles: When I activate a particular personal profile"></Button>
+          <Button title="Personal Profiles: When I activate a particular personal profile"></Button>
 
-        <Separator />
+          <Separator />
 
-        {/* <Button title="Other Physical Activity"></Button>
+          {/* <Button title="Other Physical Activity"></Button>
 
         <Separator />
 
         <Button title="Other Physical Activity"></Button> */}
-      </View>
+        </View>
 
-      <View style={styles.group}>
-        <Text style={styles.h2}>{Variables.FOOD}</Text>
+        <View style={styles.group}>
+          <Text style={styles.h2}>{Variables.FOOD}</Text>
 
-        <Text>Display all Buttons in this view Toggle Title</Text>
+          <Text>Display all Buttons in this view Toggle Title</Text>
 
-        <Button title="When I take sugar correction - for example at 2 am"></Button>
+          <Button title="When I take sugar correction - for example at 2 am"></Button>
 
-        <Separator />
+          <Separator />
 
-        <Button title="Delayed taking insulin"></Button>
-      </View>
+          <Button title="Delayed taking insulin"></Button>
+        </View>
 
-      <View style={styles.group}>
-        <Text style={styles.h2}>{Variables.OTHER} Content</Text>
-        <Text>Display all Buttons in this view Toggle Title</Text>
+        <View style={styles.group}>
+          <Text style={styles.h2}>{Variables.OTHER} Content</Text>
+          <Text>Display all Buttons in this view Toggle Title</Text>
 
-        <Button title="When I eat - for example at 2 am. This one might not be needed"></Button>
+          <Button title="When I eat - for example at 2 am. This one might not be needed"></Button>
 
-        <Separator />
+          <Separator />
 
-        <Button title="Stayed up all night"></Button>
+          <Button title="Stayed up all night"></Button>
 
-        <Separator />
+          <Separator />
 
-        <Button title="Something the doctor will wan to know"></Button>
+          <Button title="Something the doctor will wan to know"></Button>
 
-        <Separator />
+          <Separator />
 
-        <Button title="Other/Misc"></Button>
-      </View>
+          <Button title="Other/Misc"></Button>
+        </View>
 
-      <View style={styles.group}>
-        <ToggleSwitch
-          name="Edit Entries"
-          handleEvent={() => deleteLastEvent(lastEvent[0])}
-        />
+        <View style={styles.group}>
+          <ToggleSwitch
+            name="Edit Entries"
+            handleEvent={() => deleteLastEvent(lastEvent[0])}
+          />
 
-        <Separator />
+          <Separator />
 
-        {/* </View>
+          {/* </View>
 
       <View style={styles.group}> */}
-        <Button
-          title="Check Last Event"
-          onPress={() => checkLastEvent()}
-        ></Button>
+          <Button
+            title="Check Last Event"
+            onPress={() => checkLastEvent()}
+          ></Button>
 
-        {/* <Separator />
+          {/* <Separator />
         <ListAllComponent /> */}
 
-        {/* NOTE: commented out because it's causing problems. */}
-        {/* TODO: fix this error. "Text strings must be rendered within a <Text>" */}
-        {/* <ToggleButton title="Toggle Feature List" component={<FeatureList />} /> */}
-      </View>
+          {/* NOTE: commented out because it's causing problems. */}
+          {/* TODO: fix this error. "Text strings must be rendered within a <Text>" */}
+          {/* <ToggleButton title="Toggle Feature List" component={<FeatureList />} /> */}
+        </View>
+      </ScrollView>
     </View>
   );
 };
