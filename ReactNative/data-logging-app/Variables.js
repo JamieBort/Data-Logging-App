@@ -7,4 +7,5 @@ export const Variables = {
   PHYSICAL_ACTIVITY: "Running, Having Sex, Sleeping, Etc.",
   PUMP: "Pump, Insulin, Tubing, Etc.",
   FOOD: "Food",
+  OTHER: "Other",
 };

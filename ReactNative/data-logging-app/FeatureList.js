@@ -88,7 +88,7 @@ const DATA_OBJECT = {
       ],
     },
     {
-      title: "My sleep start/end.",
+      title: "Other Physical Activity",
       data: [
         "Start time: TimeStamp",
         "Stop Time: TimeStamp",
@@ -135,10 +135,12 @@ const DATA_OBJECT = {
       ],
     },
     {
+      // this doesn't belong here.
       title: "When my pump/mobile loses the CGM signal.",
       data: ["TimeStamp", "Circumstances - note field?"],
     },
     {
+      // this doesn't belong here.
       title: "When my pump/mobile loses the CGM signal.",
       data: ["TimeStamp", "Circumstances - note field?"],
     },
@@ -158,6 +160,15 @@ const DATA_OBJECT = {
     {
       title: "When I take sugar correction - for example at 2 am.",
       data: ["TimeStamp", "Quantity - integer", "Circumstances - note field?"],
+    },
+    {
+      title: "Delayed taking insulin",
+      data: [
+        "TimeStamp",
+        "Time I should have taken insulin (use this to calculate - offer both)",
+        "amount of time elapsed since I should have taken insulin (or use this to calculate - offer both)",
+        "Circumstances - note field?",
+      ],
     },
   ],
 

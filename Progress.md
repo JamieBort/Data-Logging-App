@@ -66,6 +66,16 @@ Done with this.
 
 > - and the `./PostEventComponent.js` file.
 
+Done with this.
+
+> Address the `The git repository at has too many active changes, only a subset of Git features will be enabled.` issue VS Code is giving me with this repo.
+
+> See https://stackoverflow.com/questions/60160453/vs-code-the-git-repository-has-too-many-active-changes-only-a-subset-of-git-f
+
+> The easiest "solution" might be to just re-clone the repo.
+
+> Re-cloning the repo will address this issue.
+
 ##### React_Native_attempt03
 
 STATUS

@@ -4,19 +4,11 @@ A comprehensive list of what still needs to addressed.
 
 ## To Do
 
-1. Address the `The git repository at has too many active changes, only a subset of Git features will be enabled.` issue VS Code is giving me with this repo.
-
-   See https://stackoverflow.com/questions/60160453/vs-code-the-git-repository-has-too-many-active-changes-only-a-subset-of-git-f
-
-   The easiest "solution" might be to just re-clone the repo.
-
-   Re-cloning the repo will address this issue.
-
-2. Finish adding all my wanted features to the `DATA_OBJECT` object in the `./ReactNative/data-logging-app/FeatureList.js` file.
+1. Finish adding all my wanted features to the `DATA_OBJECT` object in the `./ReactNative/data-logging-app/FeatureList.js` file.
 
    Come back to the `React_Native_feature_list` branch for this.
 
-3. List the features I want to have.
+2. List the features I want to have.
 
    Organized by type: (insulin/pump/cartridge/etc., dexcom/sensor/transmitter/etc., exercise, etc. ).
 
@@ -26,7 +18,7 @@ A comprehensive list of what still needs to addressed.
 
    Come back to the `React_Native_feature_list` branch for this.
 
-4. Look into restructuring the app:
+3. Look into restructuring the app:
 
    Moving all the components into a components directory.
 
@@ -34,11 +26,11 @@ A comprehensive list of what still needs to addressed.
 
    Come back to the `React_Native_cleanup` branch for this.
 
-5. Get rid of the `<Separator />` component and group the buttons on the dashboard by `pump`, `cgm`, `physical activity`, `other`, etc.
+4. Get rid of the `<Separator />` component and group the buttons on the dashboard by `pump`, `cgm`, `physical activity`, `other`, etc.
 
    See the `./ReactNative/data-logging-app/Variables.js` file for these names.
 
-6. Create a component for each type of data that needs to be entered into the database.
+5. Create a component for each type of data that needs to be entered into the database.
 
    For example:
 
@@ -86,9 +78,9 @@ A comprehensive list of what still needs to addressed.
 
    Come back to the `React_Native_feature_list` branch for this.
 
-7. Get the `<ToggleButton/>` component working in the `./App.js` file.
+6. Get the `<ToggleButton/>` component working in the `./App.js` file.
 
-8. Add to the dashboard/landing page/home page a button to _edit older data_.
+7. Add to the dashboard/landing page/home page a button to _edit older data_.
 
    Specifically
 
@@ -96,7 +88,7 @@ A comprehensive list of what still needs to addressed.
 
    - and bulk deleting older entries
 
-9. Look into how stable/reliable Airtable is.
+8. Look into how stable/reliable Airtable is.
 
    Can I back it up for example? Suppose I delete all the data manually, can I get it back? Suppose I delete all the data with an api call.
 
@@ -104,18 +96,18 @@ A comprehensive list of what still needs to addressed.
 
    Can I use Google sheets too? Do I want to use both? Do I want to use Google Sheets instead of Airtable?
 
-10. Look into using react-native-config instead.
+9. Look into using react-native-config instead.
 
-    Also look at https://12factor.net/config
+   Also look at https://12factor.net/config
 
-11. Update the steps in the `./Data-Logging-App/ReactNative/README.md` file.
+10. Update the steps in the `./Data-Logging-App/ReactNative/README.md` file.
 
     Make sure to include a reference to `expo start --tunnel`.
 
     And https://trello.com/c/bRzPaKks/1366-expo-catchall-for-learning-directory
 
-12. If I ever use the `Angular`, `Svelte_Native`, or `Vue` Git branches, make sure to remove the following directories that do not correspond: `angular-tour-of-heroes/`, `ReactNative/`, `Svelte/`, and/or `Vue/`.
+11. If I ever use the `Angular`, `Svelte_Native`, or `Vue` Git branches, make sure to remove the following directories that do not correspond: `angular-tour-of-heroes/`, `ReactNative/`, `Svelte/`, and/or `Vue/`.
 
-13. When the `React_Native` branch is ready to be merged into the `dev` branch, move the `./Data-Logging-App/ReactNative/data-logging-app` directory into the `./Data-Logging-App/` directory. (or the `./` directory.)
+12. When the `React_Native` branch is ready to be merged into the `dev` branch, move the `./Data-Logging-App/ReactNative/data-logging-app` directory into the `./Data-Logging-App/` directory. (or the `./` directory.)
 
-14. Determine whether I should use `<View>` and when it is/is not needed - when I am not getting any warnings to use one.
+13. Determine whether I should use `<View>` and when it is/is not needed - when I am not getting any warnings to use one.
