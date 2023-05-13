@@ -18,10 +18,15 @@ import React, { useState } from "react";
 import ToggleSwitch from "./ToggleSwitch";
 import FeatureList from "./FeatureList";
 import ToggleButton from "./ToggleButton";
-import { Variables } from "./Variables";
+import { Variables, CONSTANTS } from "./Variables";
 // import ListAllComponent from "./ListAllComponent";
+import Group from "./Group";
+import Separator from "./ui/Separator";
 
-const Separator = () => <View style={styles.separator} />;
+// const groupData = {
+//   list: CONSTANTS.CGM.list,
+//   color: CONSTANTS.CGM.color,
+// };
 
 const App = () => {
   const [lastEvent, setLastEvent] = useState(["There is no entry."]);
@@ -145,6 +150,11 @@ const App = () => {
           <Text>Display all Buttons Toggle Button</Text>
         </View>
 
+        <Group groupData={CONSTANTS.CGM}></Group>
+
+        <Group groupData={CONSTANTS.FOOD}></Group>
+
+        {/* TODO: Retain button functionality BEFORE deleting this <View> */}
         <View style={styles.group}>
           <Text style={styles.h2}>{Variables.CGM}</Text>
 
@@ -305,11 +315,6 @@ const styles = StyleSheet.create({
   },
   h1: { fontSize: 33, textAlign: "center", fontWeight: "bold" },
   h2: { fontSize: 20, textAlign: "center" },
-  separator: {
-    marginVertical: 8,
-    borderBottomColor: "#737373",
-    borderBottomWidth: StyleSheet.hairlineWidth,
-  },
   group: { borderWidth: 2, padding: 10, margin: 10 },
 });
 

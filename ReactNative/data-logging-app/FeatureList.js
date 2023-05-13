@@ -14,11 +14,14 @@
 
 import React from "react";
 import { View } from "react-native";
-import { Variables } from "./Variables";
+import { Variables, CONSTANTS } from "./Variables";
+
+// console.log(CONSTANTS);
 
 const DATA_OBJECT = {
   cgm: [
-    Variables.CGM,
+    // Variables.CGM,
+    CONSTANTS.CGM.title,
     {
       title: "When I replace the old sensor for a new sensor.",
       data: [
@@ -70,7 +73,8 @@ const DATA_OBJECT = {
   ],
 
   physicalActivity: [
-    Variables.PHYSICAL_ACTIVITY,
+    // Variables.PHYSICAL_ACTIVITY,
+    CONSTANTS.PHYSICAL_ACTIVITY.title,
     {
       title: "When I start/stop exercising",
       data: [
@@ -98,7 +102,8 @@ const DATA_OBJECT = {
   ],
 
   pump: [
-    Variables.PUMP,
+    // Variables.PUMP,
+    CONSTANTS.PUMP.title,
     {
       title: "When I change only my tubing (this almost never happens)",
       data: ["TimeStamp"],
@@ -156,7 +161,8 @@ const DATA_OBJECT = {
   ],
 
   food: [
-    Variables.FOOD,
+    // Variables.FOOD,
+    CONSTANTS.FOOD.title,
     {
       title: "When I take sugar correction - for example at 2 am.",
       data: ["TimeStamp", "Quantity - integer", "Circumstances - note field?"],
@@ -173,7 +179,8 @@ const DATA_OBJECT = {
   ],
 
   other: [
-    "Other - Misc. And complete list. See below",
+    // "Other - Misc. And complete list. See below",
+    CONSTANTS.OTHER.title,
     {
       title: "When I eat - for example at 2 am. This one might not be needed.",
       data: ["TimeStamp", "Circumstances - note field?"],
