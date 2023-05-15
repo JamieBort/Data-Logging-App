@@ -1,4 +1,4 @@
-// ./ToggleButton.js
+// ./ui/ToggleButton.js
 // A toggle button for displaying/hiding components.
 
 import React, { useState } from "react";

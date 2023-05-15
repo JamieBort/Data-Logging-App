@@ -1,7 +1,8 @@
-// ./ToggleSwitch.js
+// ./ui/ToggleSwitch.js
 // A Toggle Switch
 
 import React, { useState } from "react";
+// TODO: replace Button with Pressable.
 import { StyleSheet, Button, View, Text, Switch, Alert } from "react-native";
 
 const ToggleSwitch = (props) => {

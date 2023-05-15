@@ -1,4 +1,7 @@
+// ./components/AlertComponent.js
+
 import React from "react";
+// TODO: replace Button with Pressable.
 import { View, StyleSheet, Button, Alert } from "react-native";
 
 const AlertComponent = () => {

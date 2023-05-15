@@ -1,3 +1,5 @@
+// ./ui/Separator.js
+
 import { StyleSheet, View } from "react-native";
 
 const Separator = () => <View style={styles.separator} />;

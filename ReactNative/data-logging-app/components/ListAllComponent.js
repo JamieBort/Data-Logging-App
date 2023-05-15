@@ -1,4 +1,4 @@
-// ./ListAllComponent.js
+// ./components/ListAllComponent.js
 
 // For listing all records in the database.
 
@@ -7,6 +7,7 @@
 // IMPORTANT: Keep this file for now.
 
 import React, { useEffect, useState } from "react";
+// TODO: replace Button with Pressable.
 import { View, StyleSheet, Text, Button, Alert } from "react-native";
 import {
   AIRTABLE_BASE_ID_DATA_LOGGING_BASE,

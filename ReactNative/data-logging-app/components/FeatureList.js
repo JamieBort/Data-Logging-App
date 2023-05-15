@@ -1,4 +1,4 @@
-// ./FeatureList.js
+// ./components/FeatureList
 // Created this component to list the data I'd like to record.
 
 // TODO: Clean up this file.
@@ -14,7 +14,7 @@
 
 import React from "react";
 import { View } from "react-native";
-import { Variables, CONSTANTS } from "./Variables";
+import { Variables, CONSTANTS } from "./../constants/Constants";
 
 // console.log(CONSTANTS);
 
@@ -190,7 +190,7 @@ const DATA_OBJECT = {
       data: ["TimeStamp", "Circumstances - note field?"],
     },
     {
-      title: "Something the doctor will wan to know.",
+      title: "Something the doctor will want to know.",
       data: ["TimeStamp", "Circumstances - note field?"],
     },
     {

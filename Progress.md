@@ -76,6 +76,22 @@ Done with this.
 
 > Re-cloning the repo will address this issue.
 
+Done with this.
+
+> Look into restructuring the app:
+
+> Moving all the components into a components directory.
+
+> Determine whether I want to move the api calls to other file(s). A API call resource: https://www.freecodecamp.org/news/react-native-networking-api-requests-using-fetchapi/
+
+> And https://www.waldo.com/blog/react-native-project-structure
+
+> ~~Come back to the `React_Native_cleanup` branch for this.~~
+
+> Use the `React_Native_restructure` branch for this. Create it if it does not already exist. Come back to it if it does.
+
+> Check to make sure everything is in order. Then merge the `React_Native_restructure` branch into the `React_Native` branch.
+
 ##### React_Native_attempt03
 
 STATUS
