@@ -71,6 +71,7 @@ export const CONSTANTS = {
   },
 };
 
+// TODO: Replace `CONSTANTS` with `CONSTANTS_new`. Then rename as `CONSTANTS`.
 // TODO: make sure the strings in the dataToCollect array are uniform.
 export const CONSTANTS_new = {
   CGM: {
@@ -127,6 +128,14 @@ export const CONSTANTS_new = {
           "Circumstances - note field?",
           "Did the CGM lose signal too?",
         ],
+      },
+      {
+        title: "CGM battery 30 day warning",
+        dataToCollect: ["TimeStamp"],
+      },
+      {
+        title: "CGM battery 10 day warning",
+        dataToCollect: ["TimeStamp"],
       },
     ],
     color: "#008b8b",
@@ -359,4 +368,114 @@ export const CONSTANTS_new = {
     ],
     color: "#8a2be2",
   },
+};
+
+// TODO: Replace `CONSTANTS_new` with `CONSTANTS_brainstorm`. Then rename as `CONSTANTS`.
+
+export const CONSTANTS_brainstorm = {
+  CGM: {
+    name: "CGM",
+    title: "Dexcom G6 Transmitters, Dexcom G6 Sensors, Etc.",
+    descriptionShort: "Issues that are caused by the cgm.",
+    descriptionLong: "",
+    list: {
+      battery: {
+        name: "",
+        title: "",
+        descriptionShort: "",
+        descriptionLong: "",
+        issues: [
+          { issue: "low battery", dataToCollect: [] },
+          { issue: "dead battery", dataToCollect: [] },
+        ],
+      },
+      signal: {
+        name: "",
+        title: "",
+        descriptionShort: "",
+        descriptionLong: "",
+        issues: [
+          { issue: "cell phone lost signal", dataToCollect: [] },
+          { issue: "pump lost signal", dataToCollect: [] },
+        ],
+      },
+      sensor: {
+        name: "",
+        title: "",
+        descriptionShort: "",
+        descriptionLong: "",
+        issues: [
+          { issue: "Replace old sensor for new sensor", dataToCollect: [] },
+          { issue: "", dataToCollect: [] },
+        ],
+      },
+      transmitter: {
+        name: "",
+        title: "",
+        descriptionShort: "",
+        descriptionLong: "",
+        issues: [
+          {
+            issue: "Replace old transmitter for new transmitter",
+            dataToCollect: [],
+          },
+          { issue: "", dataToCollect: [] },
+        ],
+      },
+    },
+  },
+};
+
+// NOTE:
+// Potential data to collect.
+// And their schema/data type.
+export const typesOFDataToCollect = {
+  timestamp: int,
+  "lot number": [int, this["comment field required"]],
+  code: [String, this["comment field required"]],
+  "location On body": [
+    [],
+    // OR {},
+    this["comment field required"],
+  ],
+  "personal profile": [
+    ["Primary2023/DEFAULT", "HALF", "ZERO"],
+    this["comment field required"],
+  ],
+  chooseOne: [
+    [
+      "Arrived - comment field optional",
+      "Started - comment field optional",
+      "Issue/problem - comment field required",
+      "Used - comment field optional",
+    ],
+    this["comment field required"],
+  ],
+  "comment field": String,
+  "identifying mark": "To be determined", // for my insulin viols and the pump cartridges
+  "Exertion Level": [[String, "or", int], this["comment field required"]],
+  "misc./other": [
+    this["comment field"],
+    [
+      "To be determined. Possibly:",
+      this["pre-populated dropdown list"],
+      this["radio buttons"],
+    ],
+  ], // catchall for misc. issues
+  "comment field required": Boolean,
+  "radio buttons": [
+    "option one",
+    "option two",
+    "option three",
+    "option four opens a short field to enter a brief description",
+  ],
+  "pre-populated dropdown list": [
+    "option one",
+    "option two",
+    "option three",
+    "option four opens a short field to enter a brief description",
+  ],
+  quantity: int,
+
+  "Did the ____ lose signal too?": Boolean,
 };
