@@ -23,7 +23,7 @@ import {
 import React, { useState } from "react";
 import ToggleSwitch from "./ui/ToggleSwitch";
 import FeatureList from "./components/FeatureList";
-import ToggleButton from "./ToggleButton";
+import ToggleButton from "./ui/ToggleButton";
 import { Variables, CONSTANTS, CONSTANTS_new } from "./constants/Constants";
 // import ListAllComponent from "./ListAllComponent";
 import Group from "./components/Group";
