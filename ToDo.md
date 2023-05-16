@@ -80,7 +80,9 @@ A comprehensive list of what still needs to addressed.
 
    This will include an _edit_ button to edit (including delete) the last entry. And **possibly** a _more_ button to add more info.
 
-   Come back to the `React_Native_feature_list` branch for this.
+   ~~Come back to the `React_Native_feature_list` branch for this.~~
+
+   Create a `React_Native_feature_component` branch for this.
 
 10. Get the `<ToggleButton/>` component working in the `./App.js` file.
 
