@@ -18,6 +18,12 @@ const Group = (props) => {
   const [lastEvent, setLastEvent] = useState(["There is no entry."]);
   const [shouldShow, setShouldShow] = useState(false);
 
+  console.log("props:", props);
+  // console.log("props.groupData:", props.groupData);
+  // console.log("props.groupData.list:", props.groupData.list);
+  // console.log("props.groupData.title:", props.groupData.title);
+  // console.log("props.color:", props.color);
+
   // POST event in Data Logging Base base in Airtable.
   const postAnEvent = async (param) => {
     try {
@@ -56,42 +62,42 @@ const Group = (props) => {
       // } catch (error) {
       //   console.log(error.message);
 
-      // NOTE: COMMENT OUT for web development.
-      Alert.alert(
-        "Event Created. Delete this event? Or accept/keep it:",
+      // // NOTE: COMMENT OUT for web development.
+      // Alert.alert(
+      //   "Event Created. Delete this event? Or accept/keep it:",
 
-        dataResponse.fields.Type,
-        [
-          {
-            // TODO: make sure 'style: "cancel",' is what I want here.
-            text: "Delete",
-            onPress: () => {
-              // console.log(
-              //   "Last event:",
-              //   lastEvent,
-              //   "Delete was pressed - implement delete functionality.",
-              // );
-              checkLastEvent();
-              deleteLastEvent(lastEvent[0]);
-            },
-            style: "cancel",
-          },
-          {
-            // TODO: make sure I don't want to add 'style: "???????",' here.
-            text: "Accept",
-            onPress: () => {
-              // postAnEvent(param);
-              checkLastEvent();
-              // console.log("Last event:", lastEvent, "Accept Pressed");
-            },
-          },
-        ],
-      );
+      //   dataResponse.fields.Type,
+      //   [
+      //     {
+      //       // TODO: make sure 'style: "cancel",' is what I want here.
+      //       text: "Delete",
+      //       onPress: () => {
+      //         // console.log(
+      //         //   "Last event:",
+      //         //   lastEvent,
+      //         //   "Delete was pressed - implement delete functionality.",
+      //         // );
+      //         checkLastEvent();
+      //         deleteLastEvent(lastEvent[0]);
+      //       },
+      //       style: "cancel",
+      //     },
+      //     {
+      //       // TODO: make sure I don't want to add 'style: "???????",' here.
+      //       text: "Accept",
+      //       onPress: () => {
+      //         // postAnEvent(param);
+      //         checkLastEvent();
+      //         // console.log("Last event:", lastEvent, "Accept Pressed");
+      //       },
+      //     },
+      //   ],
+      // );
     } catch (error) {
       console.log(error.message);
 
-      // NOTE: COMMENT OUT for web development.
-      Alert.alert("Event NOT Created:", error.message);
+      // // NOTE: COMMENT OUT for web development.
+      // Alert.alert("Event NOT Created:", error.message);
 
       // TODO: Determine whether to keep or remove this "return null". And why.
       return null;
@@ -102,24 +108,24 @@ const Group = (props) => {
   const confirmation = (param) => {
     console.log("Event sent:", param);
 
-    // // NOTE: COMMENT OUT for mobile development.
-    // postAnEvent(param);
+    // NOTE: COMMENT OUT for mobile development.
+    postAnEvent(param);
 
-    // NOTE: COMMENT OUT for web development.
-    Alert.alert("Send this event?", param, [
-      {
-        text: "Cancel",
-        onPress: () => console.log("Cancel Pressed - don't send yet."),
-        style: "cancel",
-      },
-      {
-        text: "Accept",
-        onPress: () => {
-          postAnEvent(param);
-          console.log("Accept Pressed");
-        },
-      },
-    ]);
+    // // NOTE: COMMENT OUT for web development.
+    // Alert.alert("Send this event?", param, [
+    //   {
+    //     text: "Cancel",
+    //     onPress: () => console.log("Cancel Pressed - don't send yet."),
+    //     style: "cancel",
+    //   },
+    //   {
+    //     text: "Accept",
+    //     onPress: () => {
+    //       postAnEvent(param);
+    //       console.log("Accept Pressed");
+    //     },
+    //   },
+    // ]);
   };
 
   // Delete last event.
@@ -144,8 +150,8 @@ const Group = (props) => {
         // console.log('"', lastEvent[1], '"was deleted.');
         // console.log("lastEvent:", lastEvent);
 
-        // NOTE: COMMENT OUT for web development.
-        Alert.alert("Event was deleted:", res.id);
+        // // NOTE: COMMENT OUT for web development.
+        // Alert.alert("Event was deleted:", res.id);
       });
 
     console.log(param, " was deleted.");
@@ -155,47 +161,24 @@ const Group = (props) => {
   const checkLastEvent = () => {
     console.log("lastEvent", lastEvent);
 
-    // NOTE: COMMENT OUT for web development.
-    Alert.alert("lastEvent ID:", lastEvent[0]);
-    Alert.alert("lastEvent Name:", lastEvent[1]);
+    // // NOTE: COMMENT OUT for web development.
+    // Alert.alert("lastEvent ID:", lastEvent[0]);
+    // Alert.alert("lastEvent Name:", lastEvent[1]);
   };
 
-  // console.log("props:", props);
-  // console.log("props.groupData:", props.groupData);
-  // console.log("props.groupData.list:", props.groupData.list);
-  // console.log("props.groupData.title:", props.groupData.title);
-  // console.log("props.color:", props.color);
-
-  // // NOTE: for `CONSTANTS_new` in the App.js file.
-  // // TODO: change the name of myButtons to something else.
-  // const myButtons = props.groupData.list.map((param, index) => {
-  //   // console.log("param:", param);
-  //   // console.log("param.title:", param.title);
-  //   return (
-  //     <View key={index}>
-  //       {/* TODO: style this so that the separator file can be removed. */}
-  //       <Separator />
-
-  //       {/* TODO: implement the modal here. */}
-  //       <Button
-  //         title={param.title}
-  //         color={props.groupData.color}
-  //         onPress={() => confirmation(param)}
-  //         // onPress={() => setShouldShow(!shouldShow)}
-  //       ></Button>
-  //       <View>{shouldShow ? <Text>shown</Text> : null}</View>
-  //     </View>
-  //   );
-  // });
-
-  // NOTE: for `CONSTANTS` in the App.js file.
-  const myButtons_Old = props.groupData.list.map((param, index) => {
-    // console.log(param);
+  // NOTE: for `CONSTANTS_new` in the App.js file.
+  // TODO: change the name of myButtons to something else.
+  const myButtons = props.groupData.list.map((param, index) => {
+    // console.log("param:", param);
+    // console.log("param.title:", param.title);
     return (
       <View key={index}>
+        {/* TODO: style this so that the separator file can be removed. */}
         <Separator />
+
+        {/* TODO: implement the modal here. */}
         <Button
-          title={param}
+          title={param.title}
           color={props.groupData.color}
           onPress={() => confirmation(param)}
           // onPress={() => setShouldShow(!shouldShow)}
@@ -205,10 +188,28 @@ const Group = (props) => {
     );
   });
 
+  // TODO: Delete this variable.
+  // // NOTE: for `CONSTANTS` in the App.js file.
+  // const myButtons_Old = props.groupData.list.map((param, index) => {
+  //   // console.log(param);
+  //   return (
+  //     <View key={index}>
+  //       <Separator />
+  //       <Button
+  //         title={param}
+  //         color={props.groupData.color}
+  //         onPress={() => confirmation(param)}
+  //         // onPress={() => setShouldShow(!shouldShow)}
+  //       ></Button>
+  //       <View>{shouldShow ? <Text>shown</Text> : null}</View>
+  //     </View>
+  //   );
+  // });
+
   return (
     <View style={styles.container}>
       <Text style={styles.h2}>{props.groupData.title}</Text>
-      <Text>{props.groupData.description}</Text>
+      <Text>{props.groupData.descriptionShort}</Text>
       {/* <ToggleSwitch
         name="Edit Entries"
         // handleEvent={() => deleteLastEvent(lastEvent[0])}
@@ -228,10 +229,11 @@ const Group = (props) => {
         This button (above) will close other group(s) if they're open.
       </Text>
       {/* NOTE: for `CONSTANTS` in the App.js file. */}
-      {myButtons_Old}
+      {/* TODO: Delete this variable. */}
+      {/* {myButtons_Old} */}
 
       {/* NOTE: for `CONSTANTS_new` in the App.js file. */}
-      {/* {myButtons} */}
+      {myButtons}
       {/* TODO: style this so that the separator file can be removed. */}
       <Separator />
       <Button

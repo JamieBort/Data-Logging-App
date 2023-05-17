@@ -1,4 +1,4 @@
-// ./components/FeatureList
+// ./components/FeatureList.js
 // Created this component to list the data I'd like to record.
 
 // TODO: Clean up this file.
@@ -14,14 +14,14 @@
 
 import React from "react";
 import { View } from "react-native";
-import { Variables, CONSTANTS } from "./../constants/Constants";
+import { Variables, CONSTANTS_old } from "./../constants/Constants";
 
-// console.log(CONSTANTS);
+// console.log(CONSTANTS_old);
 
 const DATA_OBJECT = {
   cgm: [
     // Variables.CGM,
-    CONSTANTS.CGM.title,
+    CONSTANTS_old.CGM.title,
     {
       title: "When I replace the old sensor for a new sensor.",
       data: [
@@ -74,7 +74,7 @@ const DATA_OBJECT = {
 
   physicalActivity: [
     // Variables.PHYSICAL_ACTIVITY,
-    CONSTANTS.PHYSICAL_ACTIVITY.title,
+    CONSTANTS_old.PHYSICAL_ACTIVITY.title,
     {
       title: "When I start/stop exercising",
       data: [
@@ -103,7 +103,7 @@ const DATA_OBJECT = {
 
   pump: [
     // Variables.PUMP,
-    CONSTANTS.PUMP.title,
+    CONSTANTS_old.PUMP.title,
     {
       title: "When I change only my tubing (this almost never happens)",
       data: ["TimeStamp"],
@@ -162,7 +162,7 @@ const DATA_OBJECT = {
 
   food: [
     // Variables.FOOD,
-    CONSTANTS.FOOD.title,
+    CONSTANTS_old.FOOD.title,
     {
       title: "When I take sugar correction - for example at 2 am.",
       data: ["TimeStamp", "Quantity - integer", "Circumstances - note field?"],
@@ -180,7 +180,7 @@ const DATA_OBJECT = {
 
   other: [
     // "Other - Misc. And complete list. See below",
-    CONSTANTS.OTHER.title,
+    CONSTANTS_old.OTHER.title,
     {
       title: "When I eat - for example at 2 am. This one might not be needed.",
       data: ["TimeStamp", "Circumstances - note field?"],
