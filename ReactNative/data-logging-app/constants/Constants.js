@@ -1,7 +1,5 @@
 // ./Constants.js
 
-// TODO: Rename this file from  ./Variables.js to ./Constants.js
-
 // Constants that are used throughout this application.
 
 // TODO: delete the "Variables" variable.
@@ -101,17 +99,28 @@ export const CONSTANTS_new = {
             // [front of body part, back of body part, right side of body part, left side of body part,]
             //   ],
             // },
+            "Record a related event?",
           ],
         ],
       },
       {
         title: "Replace old transmitter for new transmitter",
-        dataToCollect: ["TimeStamp", "Lot Number", "Code"],
+        dataToCollect: [
+          "TimeStamp",
+          "Lot Number",
+          "Code",
+          "Record a related event?",
+        ],
       },
       {
         title:
           "Remove old transmitter and then replace the same old transmitter",
-        dataToCollect: ["TimeStamp", "Lot Number (?)", "Code (?)"],
+        dataToCollect: [
+          "TimeStamp",
+          "Lot Number (?)",
+          "Code (?)",
+          "Record a related event?",
+        ],
       },
       {
         title: "Mobile loses CGM signal",
@@ -119,6 +128,7 @@ export const CONSTANTS_new = {
           "TimeStamp",
           "Circumstances - note field?",
           "Did the pump lose signal too?",
+          "Record a related event?",
         ],
       },
       {
@@ -127,18 +137,50 @@ export const CONSTANTS_new = {
           "TimeStamp",
           "Circumstances - note field?",
           "Did the CGM lose signal too?",
+          "Record a related event?",
         ],
       },
       {
         title: "CGM battery 30 day warning",
-        dataToCollect: ["TimeStamp"],
+        dataToCollect: ["TimeStamp", "Record a related event?"],
       },
       {
         title: "CGM battery 10 day warning",
-        dataToCollect: ["TimeStamp"],
+        dataToCollect: ["TimeStamp", "Record a related event?"],
+      },
+      {
+        title: "Graph is jumpy - data lost - sporadic readings - etc.",
+        dataToCollect: ["TimeStamp", "Record a related event?"],
+      },
+      {
+        title: "Sensor or Transmitter is pulled off of me.",
+        dataToCollect: [
+          "TimeStamp",
+          { chooseOne: ["duration/elapsed time", "current time -> TimeStamp"] },
+          "Record a related event?",
+        ],
       },
     ],
     color: "#008b8b",
+  },
+  CORPORAL_INFORMATION: {
+    name: "Corporal Information",
+    title: "My weight, my disposition - example stress due to driving, Etc.",
+    description: "",
+    list: [
+      {
+        title: "Stress level",
+        dataToCollect: ["TimeStamp", "Record a related event?"],
+      },
+      {
+        title: "Disposition",
+        dataToCollect: ["TimeStamp", "Record a related event?"],
+      },
+      {
+        title: "Weight",
+        dataToCollect: ["TimeStamp", "Record a related event?"],
+      },
+    ],
   },
   FOOD_INSULIN: {
     name: "Food & Insulin",
@@ -150,17 +192,23 @@ export const CONSTANTS_new = {
         title: "When I take sugar correction - for example at 2 am",
         dataToCollect: [
           "TimeStamp",
+          { chooseOne: ["duration/elapsed time", "current time -> TimeStamp"] },
           "Quantity - integer",
+          "steps taken to correct (see 'steps taken to correct' in the 'typesOFDataToCollect' variable below.)",
           "Circumstances - note field?",
+          "Record a related event?",
         ],
       },
       {
         title: "Delayed taking insulin",
         dataToCollect: [
           "TimeStamp",
+          { chooseOne: ["duration/elapsed time", "current time -> TimeStamp"] },
           "Time I should have taken insulin (use this to calculate - offer both)",
+          "steps taken to correct (see 'steps taken to correct' in the 'typesOFDataToCollect' variable below.)",
           "amount of time elapsed since I should have taken insulin (or use this to calculate - offer both)",
           "Circumstances - note field?",
+          "Record a related event?",
         ],
       },
       {
@@ -169,17 +217,11 @@ export const CONSTANTS_new = {
           "TimeStamp",
           "Carbohydrates Quantity - integer",
           "Insulin Quantity - integer",
+          "steps taken to correct (see 'steps taken to correct' in the 'typesOFDataToCollect' variable below.)",
           "Circumstances - note field?",
+          "Record a related event?",
         ],
       },
-      // {
-      //   title: "",
-      //   dataToCollect: [],
-      // },
-      // {
-      //   title: "",
-      //   dataToCollect: [],
-      // },
     ],
     color: "#5f9ea0",
   },
@@ -199,15 +241,35 @@ export const CONSTANTS_new = {
           "When I eat - for example at 2 am. This one might not be needed",
         issueDescription:
           "Long description for another column in case others need to read this database or I share the info with them.",
-        dataToCollect: ["TimeStamp", "Circumstances - note field?"],
+        dataToCollect: [
+          "TimeStamp",
+          "Circumstances - note field?",
+          "Record a related event?",
+        ],
       },
       {
         title: "Stayed up all night",
-        dataToCollect: ["TimeStamp", "Circumstances - note field?"],
+        dataToCollect: [
+          "TimeStamp",
+          "Circumstances - note field?",
+          "Record a related event?",
+        ],
       },
       {
         title: "Something the doctor will want to know",
-        dataToCollect: ["TimeStamp", "Circumstances - note field?"],
+        dataToCollect: [
+          "TimeStamp",
+          "Circumstances - note field?",
+          "Record a related event?",
+        ],
+      },
+      {
+        title: "Went running hard and hadn't drunk water for days....",
+        dataToCollect: [
+          "TimeStamp",
+          "Circumstances - note field?",
+          "Record a related event?",
+        ],
       },
       {
         title: "Other/Misc",
@@ -222,12 +284,13 @@ export const CONSTANTS_new = {
               "option four opens a short field to enter a brief description",
             ],
           },
+          "Record a related event?",
         ],
       },
       {
         title:
           "For the rest of the data points that are to be collect, see the Data points to collect section of the Personal Dashboard Business Requirements Google Drive doc.",
-        dataToCollect: [],
+        dataToCollect: ["TimeStamp", "Record a related event?"],
       },
     ],
     color: "#d2691e",
@@ -243,6 +306,7 @@ export const CONSTANTS_new = {
           "Start time: TimeStamp",
           "Stop Time: TimeStamp",
           { "Exertion Level": ["low", "medium", "high"] },
+          "Record a related event?",
         ],
       },
       {
@@ -251,6 +315,7 @@ export const CONSTANTS_new = {
           "Start time: TimeStamp",
           "Stop Time: TimeStamp",
           { "Exertion Level": ["low", "medium", "high"] },
+          "Record a related event?",
         ],
       },
       {
@@ -259,16 +324,25 @@ export const CONSTANTS_new = {
           "Start time: TimeStamp",
           "Stop Time: TimeStamp",
           { "Exertion Level": ["low", "medium", "high"] },
+          "Record a related event?",
         ],
       },
-      // {
-      //   title: "",
-      //   dataToCollect: [],
-      // },
-      // {
-      //   title: "",
-      //   dataToCollect: [],
-      // },
+      {
+        title: "In (hot) bathtub or jacuzy.",
+        dataToCollect: [
+          "TimeStamp",
+          { chooseOne: ["duration/elapsed time", "current time -> TimeStamp"] },
+          "Record a related event?",
+        ],
+      },
+      {
+        title: "Disconnected from pump.",
+        dataToCollect: [
+          "TimeStamp",
+          { chooseOne: ["duration/elapsed time", "current time -> TimeStamp"] },
+          "Record a related event?",
+        ],
+      },
     ],
     color: "#0000ff",
   },
@@ -280,15 +354,15 @@ export const CONSTANTS_new = {
     list: [
       {
         title: "Change only tubing",
-        dataToCollect: ["TimeStamp"],
+        dataToCollect: ["TimeStamp", "Record a related event?"],
       },
       {
         title: "Changed an old reservoir for a new reservoir",
-        dataToCollect: ["TimeStamp"],
+        dataToCollect: ["TimeStamp", "Record a related event?"],
       },
       {
         title: "Refilled same old reservoir with insulin",
-        dataToCollect: ["TimeStamp"],
+        dataToCollect: ["TimeStamp", "Record a related event?"],
       },
       {
         title: "Change Complete Infusion Set",
@@ -309,16 +383,22 @@ export const CONSTANTS_new = {
           // [front of body part, back of body part, right side of body part, left side of body part,]
           //   ],
           // },
+          "Record a related event?",
         ],
       },
       {
         title:
-          "Personal Profiles: When I activate a particular personal profile",
+          "Personal Profiles: When I activate a particular personal profile", // Pump status - this is missing the "off" status when I have literally turned my pump off. or when the tubing has been primed but I failed to "resume the insulin"
         dataToCollect: [
           "TimeStamp",
           { "Personal Profile": ["Primary2023/DEFAULT", "HALF", "ZERO"] },
           //  ["Primary2023/DEFAULT", "HALF", "ZERO"]
+          "Record a related event?",
         ],
+      },
+      {
+        title: "Tender came off my body without me knowing it.",
+        dataToCollect: ["TimeStamp", "Record a related event?"],
       },
       {
         title: "Viols of Insulin",
@@ -363,6 +443,7 @@ export const CONSTANTS_new = {
           //   arrival: "timestamp",
           //   lastUsed: "timestamp",
           // },
+          "Record a related event?",
         ],
       },
     ],
@@ -463,6 +544,7 @@ export const typesOFDataToCollect = {
     ],
   ], // catchall for misc. issues
   "comment field required": Boolean,
+  "Record a related event?": Boolean, // If true, add another event.
   "radio buttons": [
     "option one",
     "option two",
@@ -476,6 +558,6 @@ export const typesOFDataToCollect = {
     "option four opens a short field to enter a brief description",
   ],
   quantity: int,
-
   "Did the ____ lose signal too?": Boolean,
+  "steps taken to correct": "To be determined", // To be used when I need to take a correction bolus, or other step to lower my sugar.
 };

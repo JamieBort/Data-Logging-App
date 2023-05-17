@@ -92,6 +92,12 @@ Done with this.
 
 > Check to make sure everything is in order. Then merge the `React_Native_restructure` branch into the `React_Native` branch.
 
+Done with this.
+
+> Finish adding all my wanted features to the `DATA_OBJECT` object in the `./ReactNative/data-logging-app/FeatureList.js` file.
+
+> Come back to the `React_Native_feature_list` branch for this.
+
 ##### React_Native_attempt03
 
 STATUS
