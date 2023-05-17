@@ -98,6 +98,18 @@ Done with this.
 
 > Come back to the `React_Native_feature_list` branch for this.
 
+Done with this.
+
+> List the features I want to have.
+
+> Organized by type: (insulin/pump/cartridge/etc., dexcom/sensor/transmitter/etc., exercise, etc. ).
+
+> Then by description of what needs to be recorded.
+
+> Then by questions that need to be asked when recording this information.
+
+> Come back to the `React_Native_feature_list` branch for this.
+
 ##### React_Native_attempt03
 
 STATUS

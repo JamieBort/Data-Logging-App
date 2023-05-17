@@ -24,13 +24,15 @@ import React, { useState } from "react";
 import ToggleSwitch from "./ui/ToggleSwitch";
 import FeatureList from "./components/FeatureList";
 import ToggleButton from "./ui/ToggleButton";
-import { CONSTANTS_old, CONSTANTS } from "./constants/Constants";
+import { CONSTANTS_old, CONSTANTS, CONSTANTS_new } from "./constants/Constants";
 // import ListAllComponent from "./ListAllComponent";
 import Group from "./components/Group";
 import Separator from "./ui/Separator";
 
-// console.log("CONSTANTS:", CONSTANTS);
-console.log("CONSTANTS.CGM:", CONSTANTS.CGM);
+// // console.log("CONSTANTS:", CONSTANTS);
+// console.log("CONSTANTS.CGM:", CONSTANTS.CGM);
+// // console.log("CONSTANTS_new:", CONSTANTS_new);
+// console.log("CONSTANTS_new.CGM:", CONSTANTS_new.CGM);
 
 const App = () => {
   const [lastEvent, setLastEvent] = useState(["There is no entry."]);
@@ -159,16 +161,29 @@ const App = () => {
           <Text>Display all Buttons Toggle Button</Text>
         </View>
 
-        <Group groupData={CONSTANTS.CGM}></Group>
+        <Group groupData={CONSTANTS_new.CGM}></Group>
 
-        <Group groupData={CONSTANTS.FOOD_INSULIN}></Group>
+        <Group groupData={CONSTANTS_new.FOOD_INSULIN}></Group>
+
+        {/* <Group groupData={CONSTANTS_new.OTHER}></Group>
+
+        and CORPORAL_INFORMATION */}
+
+        <Group groupData={CONSTANTS_new.PHYSICAL_ACTIVITY}></Group>
+
+        <Group groupData={CONSTANTS_new.PUMP}></Group>
+
+        {/* <Group groupData={CONSTANTS.CGM}></Group> */}
+
+        {/* <Group groupData={CONSTANTS.FOOD_INSULIN}></Group>
 
         <Group groupData={CONSTANTS.OTHER}></Group>
 
         <Group groupData={CONSTANTS.PHYSICAL_ACTIVITY}></Group>
 
-        <Group groupData={CONSTANTS.PUMP}></Group>
+        <Group groupData={CONSTANTS.PUMP}></Group> */}
 
+        {/* TODO: Delete these <Group> components. */}
         {/* <Group groupData={CONSTANTS_old.CGM}></Group>
 
         <Group groupData={CONSTANTS_old.FOOD}></Group>

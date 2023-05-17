@@ -18,11 +18,12 @@ const Group = (props) => {
   const [lastEvent, setLastEvent] = useState(["There is no entry."]);
   const [shouldShow, setShouldShow] = useState(false);
 
-  console.log("props:", props);
+  // // // console.log("props:", props);
   // console.log("props.groupData:", props.groupData);
-  // console.log("props.groupData.list:", props.groupData.list);
-  // console.log("props.groupData.title:", props.groupData.title);
-  // console.log("props.color:", props.color);
+  // // if (props.groupData.list)
+  // //   console.log("props.groupData.list:", props.groupData.list);
+  // // // console.log("props.groupData.title:", props.groupData.title);
+  // // // console.log("props.color:", props.color);
 
   // POST event in Data Logging Base base in Airtable.
   const postAnEvent = async (param) => {
@@ -165,46 +166,29 @@ const Group = (props) => {
     // Alert.alert("lastEvent ID:", lastEvent[0]);
     // Alert.alert("lastEvent Name:", lastEvent[1]);
   };
+  const { items } = props.groupData;
+  // console.log("items:", items);
+  const entries = Object.entries(items);
+  // console.log("entries:", entries);
 
-  // NOTE: for `CONSTANTS_new` in the App.js file.
-  // TODO: change the name of myButtons to something else.
-  const myButtons = props.groupData.list.map((param, index) => {
-    // console.log("param:", param);
-    // console.log("param.title:", param.title);
+  const item = entries.map((props1, index) => {
+    // console.log("index:", index);
+    // console.log("props1:", props1);
+    const issues = props1[1].issues;
+    // console.log("props1[1].issues:", issues);
+    const xyz = issues.map((props2, index) => {
+      // console.log("props2:", props2);
+      console.log("props2.issue:", props2.issue);
+      return <Button key={index} title={props2.issue} />;
+    });
     return (
-      <View key={index}>
-        {/* TODO: style this so that the separator file can be removed. */}
-        <Separator />
-
-        {/* TODO: implement the modal here. */}
-        <Button
-          title={param.title}
-          color={props.groupData.color}
-          onPress={() => confirmation(param)}
-          // onPress={() => setShouldShow(!shouldShow)}
-        ></Button>
-        <View>{shouldShow ? <Text>shown</Text> : null}</View>
-      </View>
+      <NewComponent key={index} title={props1[0]}>
+        {xyz}
+        {/* <Button title="first button" />
+          <Button title="second button" /> */}
+      </NewComponent>
     );
   });
-
-  // TODO: Delete this variable.
-  // // NOTE: for `CONSTANTS` in the App.js file.
-  // const myButtons_Old = props.groupData.list.map((param, index) => {
-  //   // console.log(param);
-  //   return (
-  //     <View key={index}>
-  //       <Separator />
-  //       <Button
-  //         title={param}
-  //         color={props.groupData.color}
-  //         onPress={() => confirmation(param)}
-  //         // onPress={() => setShouldShow(!shouldShow)}
-  //       ></Button>
-  //       <View>{shouldShow ? <Text>shown</Text> : null}</View>
-  //     </View>
-  //   );
-  // });
 
   return (
     <View style={styles.container}>
@@ -228,12 +212,9 @@ const Group = (props) => {
       <Text>
         This button (above) will close other group(s) if they're open.
       </Text>
-      {/* NOTE: for `CONSTANTS` in the App.js file. */}
-      {/* TODO: Delete this variable. */}
-      {/* {myButtons_Old} */}
 
-      {/* NOTE: for `CONSTANTS_new` in the App.js file. */}
-      {myButtons}
+      {item}
+
       {/* TODO: style this so that the separator file can be removed. */}
       <Separator />
       <Button
@@ -248,7 +229,6 @@ const Group = (props) => {
         color="green"
         onPress={() => checkLastEvent()}
       ></Button>
-      <NewComponent />
     </View>
   );
 };

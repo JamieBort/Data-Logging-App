@@ -465,430 +465,430 @@ export const CONSTANTS = {
   },
 };
 
-// // TODO: Replace `CONSTANTS` with `CONSTANTS_brainstorm`. Then rename as `CONSTANTS`.
-// export const CONSTANTS_brainstorm = {
-//   CGM: {
-//     name: "CGM",
-//     title: "Dexcom G6 Transmitters, Dexcom G6 Sensors, Etc.",
-//     descriptionShort: "Issues that are caused by the cgm.",
-//     descriptionLong: "A description that is as long as it needs to be.",
-//     items: {
-//       battery: {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           { issue: "CGM battery XX day warning", dataToCollect: [] },
-//           { issue: "CGM battery X day warning", dataToCollect: [] },
-//           { issue: "Battery died", dataToCollect: [] },
-//           {
-//             issue: "Sensor or Transmitter is pulled off of me.",
-//             dataToCollect: [],
-//           },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//       signal: {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           { issue: "Mobile lost CGM signal", dataToCollect: [] },
-//           { issue: "Mobile gains CGM signal", dataToCollect: [] },
-//           { issue: "Pump lost CGM signal", dataToCollect: [] },
-//           { issue: "Pump gains CGM signal", dataToCollect: [] },
-//           {
-//             issue: "Graph is jumpy - data lost - sporadic readings - etc.",
-//             dataToCollect: [],
-//           },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//       sensor: {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           { issue: "Replace old sensor for new sensor", dataToCollect: [] },
-//           { issue: "Replace old sensor for new sensor", dataToCollect: [] },
-//         ],
-//       },
-//       transmitter: {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           {
-//             issue: "Replace old transmitter for new transmitter",
-//             dataToCollect: [],
-//           },
-//           {
-//             issue:
-//               "Remove old transmitter and then replace the same old transmitter",
-//             dataToCollect: [],
-//           },
-//           {
-//             issue: "",
-//             dataToCollect: [],
-//           },
-//           {
-//             issue: "",
-//             dataToCollect: [],
-//           },
-//           {
-//             issue: "",
-//             dataToCollect: [],
-//           },
-//         ],
-//       },
-//     },
-//     color: "#008b8b",
-//   },
-//   CORPORAL_INFORMATION: {
-//     name: "Corporal Information",
-//     title: "My weight, my disposition - example stress due to driving, Etc.",
-//     descriptionShort: "A short description.",
-//     descriptionLong: "A description that is as long as it needs to be.",
-//     items: {
-//       list: [
-//         {
-//           title: "Stress level",
-//           dataToCollect: ["TimeStamp", "Record a related event?"],
-//         },
-//         {
-//           title: "Disposition",
-//           dataToCollect: ["TimeStamp", "Record a related event?"],
-//         },
-//         {
-//           title: "Weight",
-//           dataToCollect: ["TimeStamp", "Record a related event?"],
-//         },
-//       ],
-//     },
-//     color: "#008b8b",
-//   },
-//   FOOD_INSULIN: {
-//     name: "Food & Insulin",
-//     title: "Food - Insulin Issue",
-//     descriptionShort:
-//       "Issues cause by the food or insulin. Nothing caused by the insulin pump nor cgm.",
-//     descriptionLong: "A description that is as long as it needs to be.",
-//     items: {
-//       food: {
-//         name: "",
-//         title: "",
-//         descriptionShort: "Too much food. Too little food. Caused by food.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           {
-//             issue: "I ate something that made my blood sugar spike",
-//             dataToCollect: [],
-//           },
-//           { issue: "Delayed taking insulin", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//       insulin: {
-//         name: "",
-//         title: "",
-//         descriptionShort:
-//           "Too much insulin. Too little insulin. Caused by insulin.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//       correction: {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           {
-//             issue: "When I take sugar correction - for example at 2 am",
-//             dataToCollect: [],
-//           },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//       04: {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//     },
-//     color: "#5f9ea0",
-//   },
-//   PHYSICAL_ACTIVITY: {
-//     name: "Physical Activity",
-//     title: "Running, Having Sex, Sleeping, Etc.",
-//     descriptionShort: "Issues that are caused by a physical activity.",
-//     descriptionLong: "A description that is as long as it needs to be.",
-//     items: {
-//       exercise: {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           { issue: "Start exercising", dataToCollect: [] },
-//           { issue: "Stop exercising", dataToCollect: [] },
-//           { issue: "Start sleeping", dataToCollect: [] },
-//           { issue: "Stop sleeping", dataToCollect: [] },
-//           { issue: "In (hot) bathtub or jacuzy.", dataToCollect: [] },
-//           { issue: "Get out of (hot) bathtub or jacuzy.", dataToCollect: [] },
-//           { issue: "Disconnected pump from tender", dataToCollect: [] },
-//           { issue: "Reattached pump to tender", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//       02: {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//       03: {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//       04: {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//     },
-//     color: "#0000ff",
-//   },
-//   PUMP: {
-//     name: "Pump",
-//     title: "Pump, Insulin, Tubing, Etc.",
-//     descriptionShort:
-//       "Issues that are caused by something related to the insulin pump.",
-//     descriptionLong: "A description that is as long as it needs to be.",
-//     items: {
-//       reservoir: {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           {
-//             issue: "Refilled same old reservoir with insulin",
-//             dataToCollect: [],
-//           },
-//           {
-//             issue: "Replaced an old reservoir for a new reservoir",
-//             dataToCollect: [],
-//           },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//       tubing: {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           { issue: "Change only tubing", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//       tender: {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           {
-//             issue: "Tender came off my body without me knowing it",
-//             dataToCollect: [],
-//           },
-//           {
-//             issue: "Change Complete Infusion Set - tube and tender",
-//             dataToCollect: [],
-//           },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//       "insulin viols": {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           { issue: "Receive this insulin viol", dataToCollect: [] },
-//           { issue: "Open/start using this insulin viol", dataToCollect: [] },
-//           { issue: "Empty/finish using this insulin viol", dataToCollect: [] },
-//           {
-//             issue:
-//               "Report incident with this insulin viol - frozen for example",
-//             dataToCollect: [],
-//           },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//       "pump status": {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           {
-//             issue: "Activated the ___ profile",
-//             dataToCollect: [
-//               "TimeStamp",
-//               {
-//                 chooseOne: [
-//                   "duration/elapsed time",
-//                   "current time -> TimeStamp",
-//                 ],
-//               },
-//               "choose between default, half, and zero",
-//               "Record a related event?",
-//             ],
-//           },
-//           {
-//             issue:
-//               "Failed to 'resume the insulin' after priming the tubing or priming the tender",
-//             dataToCollect: [
-//               "TimeStamp",
-//               {
-//                 chooseOne: [
-//                   "duration/elapsed time",
-//                   "current time -> TimeStamp",
-//                 ],
-//               },
-//               "Choose between priming the tubing and priming the tender",
-//               "Record a related event?",
-//             ],
-//           },
-//           { issue: "Literally turned pump off", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//       06: {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//       07: {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//     },
-//     color: "#8a2be2",
-//   },
+// TODO: Replace `CONSTANTS` with `CONSTANTS_new`. Then rename as `CONSTANTS`.
+export const CONSTANTS_new = {
+  CGM: {
+    name: "CGM",
+    title: "Dexcom G6 Transmitters, Dexcom G6 Sensors, Etc.",
+    descriptionShort: "Issues that are caused by the cgm.",
+    descriptionLong: "A description that is as long as it needs to be.",
+    items: {
+      battery: {
+        name: "",
+        title: "",
+        descriptionShort: "A brief description.",
+        descriptionLong: "A description that is as long as it needs to be.",
+        issues: [
+          { issue: "CGM battery XX day warning", dataToCollect: [] },
+          { issue: "CGM battery X day warning", dataToCollect: [] },
+          { issue: "Battery died", dataToCollect: [] },
+          {
+            issue: "Sensor or Transmitter is pulled off of me.",
+            dataToCollect: [],
+          },
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+        ],
+      },
+      signal: {
+        name: "",
+        title: "",
+        descriptionShort: "A brief description.",
+        descriptionLong: "A description that is as long as it needs to be.",
+        issues: [
+          { issue: "Mobile lost CGM signal", dataToCollect: [] },
+          { issue: "Mobile gains CGM signal", dataToCollect: [] },
+          { issue: "Pump lost CGM signal", dataToCollect: [] },
+          { issue: "Pump gains CGM signal", dataToCollect: [] },
+          {
+            issue: "Graph is jumpy - data lost - sporadic readings - etc.",
+            dataToCollect: [],
+          },
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+        ],
+      },
+      sensor: {
+        name: "",
+        title: "",
+        descriptionShort: "A brief description.",
+        descriptionLong: "A description that is as long as it needs to be.",
+        issues: [
+          { issue: "Replace old sensor for new sensor", dataToCollect: [] },
+          { issue: "something else", dataToCollect: [] },
+        ],
+      },
+      transmitter: {
+        name: "",
+        title: "",
+        descriptionShort: "A brief description.",
+        descriptionLong: "A description that is as long as it needs to be.",
+        issues: [
+          {
+            issue: "Replace old transmitter for new transmitter",
+            dataToCollect: [],
+          },
+          {
+            issue:
+              "Remove old transmitter and then replace the same old transmitter",
+            dataToCollect: [],
+          },
+          // {
+          //   issue: "",
+          //   dataToCollect: [],
+          // },
+          // {
+          //   issue: "",
+          //   dataToCollect: [],
+          // },
+          // {
+          //   issue: "",
+          //   dataToCollect: [],
+          // },
+        ],
+      },
+    },
+    color: "#008b8b",
+  },
+  CORPORAL_INFORMATION: {
+    name: "Corporal Information",
+    title: "My weight, my disposition - example stress due to driving, Etc.",
+    descriptionShort: "A short description.",
+    descriptionLong: "A description that is as long as it needs to be.",
+    items: {
+      list: [
+        {
+          title: "Stress level",
+          dataToCollect: ["TimeStamp", "Record a related event?"],
+        },
+        {
+          title: "Disposition",
+          dataToCollect: ["TimeStamp", "Record a related event?"],
+        },
+        {
+          title: "Weight",
+          dataToCollect: ["TimeStamp", "Record a related event?"],
+        },
+      ],
+    },
+    color: "#008b8b",
+  },
+  FOOD_INSULIN: {
+    name: "Food & Insulin",
+    title: "Food - Insulin Issue",
+    descriptionShort:
+      "Issues cause by the food or insulin. Nothing caused by the insulin pump nor cgm.",
+    descriptionLong: "A description that is as long as it needs to be.",
+    items: {
+      food: {
+        name: "",
+        title: "",
+        descriptionShort: "Too much food. Too little food. Caused by food.",
+        descriptionLong: "A description that is as long as it needs to be.",
+        issues: [
+          {
+            issue: "I ate something that made my blood sugar spike",
+            dataToCollect: [],
+          },
+          { issue: "Delayed taking insulin", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+        ],
+      },
+      insulin: {
+        name: "",
+        title: "",
+        descriptionShort:
+          "Too much insulin. Too little insulin. Caused by insulin.",
+        descriptionLong: "A description that is as long as it needs to be.",
+        issues: [
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+        ],
+      },
+      correction: {
+        name: "",
+        title: "",
+        descriptionShort: "A brief description.",
+        descriptionLong: "A description that is as long as it needs to be.",
+        issues: [
+          {
+            issue: "When I take sugar correction - for example at 2 am",
+            dataToCollect: [],
+          },
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+        ],
+      },
+      // "04": {
+      //   name: "",
+      //   title: "",
+      //   descriptionShort: "A brief description.",
+      //   descriptionLong: "A description that is as long as it needs to be.",
+      //   issues: [
+      //     // { issue: "", dataToCollect: [] },
+      //     // { issue: "", dataToCollect: [] },
+      //     // { issue: "", dataToCollect: [] },
+      //   ],
+      // },
+    },
+    color: "#5f9ea0",
+  },
+  PHYSICAL_ACTIVITY: {
+    name: "Physical Activity",
+    title: "Running, Having Sex, Sleeping, Etc.",
+    descriptionShort: "Issues that are caused by a physical activity.",
+    descriptionLong: "A description that is as long as it needs to be.",
+    items: {
+      exercise: {
+        name: "",
+        title: "",
+        descriptionShort: "A brief description.",
+        descriptionLong: "A description that is as long as it needs to be.",
+        issues: [
+          { issue: "Start exercising", dataToCollect: [] },
+          { issue: "Stop exercising", dataToCollect: [] },
+          { issue: "Start sleeping", dataToCollect: [] },
+          { issue: "Stop sleeping", dataToCollect: [] },
+          { issue: "In (hot) bathtub or jacuzy.", dataToCollect: [] },
+          { issue: "Get out of (hot) bathtub or jacuzy.", dataToCollect: [] },
+          { issue: "Disconnected pump from tender", dataToCollect: [] },
+          { issue: "Reattached pump to tender", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+        ],
+      },
+      // "02": {
+      //   name: "",
+      //   title: "",
+      //   descriptionShort: "A brief description.",
+      //   descriptionLong: "A description that is as long as it needs to be.",
+      //   issues: [
+      //     // { issue: "", dataToCollect: [] },
+      //     // { issue: "", dataToCollect: [] },
+      //     // { issue: "", dataToCollect: [] },
+      //   ],
+      // },
+      // "03": {
+      //   name: "",
+      //   title: "",
+      //   descriptionShort: "A brief description.",
+      //   descriptionLong: "A description that is as long as it needs to be.",
+      //   issues: [
+      //     // { issue: "", dataToCollect: [] },
+      //     // { issue: "", dataToCollect: [] },
+      //     // { issue: "", dataToCollect: [] },
+      //   ],
+      // },
+      // "04": {
+      //   name: "",
+      //   title: "",
+      //   descriptionShort: "A brief description.",
+      //   descriptionLong: "A description that is as long as it needs to be.",
+      //   issues: [
+      //     // { issue: "", dataToCollect: [] },
+      //     // { issue: "", dataToCollect: [] },
+      //     // { issue: "", dataToCollect: [] },
+      //   ],
+      // },
+    },
+    color: "#0000ff",
+  },
+  PUMP: {
+    name: "Pump",
+    title: "Pump, Insulin, Tubing, Etc.",
+    descriptionShort:
+      "Issues that are caused by something related to the insulin pump.",
+    descriptionLong: "A description that is as long as it needs to be.",
+    items: {
+      reservoir: {
+        name: "",
+        title: "",
+        descriptionShort: "A brief description.",
+        descriptionLong: "A description that is as long as it needs to be.",
+        issues: [
+          {
+            issue: "Refilled same old reservoir with insulin",
+            dataToCollect: [],
+          },
+          {
+            issue: "Replaced an old reservoir for a new reservoir",
+            dataToCollect: [],
+          },
+          // { issue: "", dataToCollect: [] },
+        ],
+      },
+      tubing: {
+        name: "",
+        title: "",
+        descriptionShort: "A brief description.",
+        descriptionLong: "A description that is as long as it needs to be.",
+        issues: [
+          { issue: "Change only tubing", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+        ],
+      },
+      tender: {
+        name: "",
+        title: "",
+        descriptionShort: "A brief description.",
+        descriptionLong: "A description that is as long as it needs to be.",
+        issues: [
+          {
+            issue: "Tender came off my body without me knowing it",
+            dataToCollect: [],
+          },
+          {
+            issue: "Change Complete Infusion Set - tube and tender",
+            dataToCollect: [],
+          },
+          // { issue: "", dataToCollect: [] },
+        ],
+      },
+      "insulin viols": {
+        name: "",
+        title: "",
+        descriptionShort: "A brief description.",
+        descriptionLong: "A description that is as long as it needs to be.",
+        issues: [
+          { issue: "Receive this insulin viol", dataToCollect: [] },
+          { issue: "Open/start using this insulin viol", dataToCollect: [] },
+          { issue: "Empty/finish using this insulin viol", dataToCollect: [] },
+          {
+            issue:
+              "Report incident with this insulin viol - frozen for example",
+            dataToCollect: [],
+          },
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+        ],
+      },
+      "pump status": {
+        name: "",
+        title: "",
+        descriptionShort: "A brief description.",
+        descriptionLong: "A description that is as long as it needs to be.",
+        issues: [
+          {
+            issue: "Activated the ___ profile",
+            dataToCollect: [
+              "TimeStamp",
+              {
+                chooseOne: [
+                  "duration/elapsed time",
+                  "current time -> TimeStamp",
+                ],
+              },
+              "choose between default, half, and zero",
+              "Record a related event?",
+            ],
+          },
+          {
+            issue:
+              "Failed to 'resume the insulin' after priming the tubing or priming the tender",
+            dataToCollect: [
+              "TimeStamp",
+              {
+                chooseOne: [
+                  "duration/elapsed time",
+                  "current time -> TimeStamp",
+                ],
+              },
+              "Choose between priming the tubing and priming the tender",
+              "Record a related event?",
+            ],
+          },
+          { issue: "Literally turned pump off", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+        ],
+      },
+      // "06": {
+      //   name: "",
+      //   title: "",
+      //   descriptionShort: "A brief description.",
+      //   descriptionLong: "A description that is as long as it needs to be.",
+      //   issues: [
+      //     // { issue: "", dataToCollect: [] },
+      //     // { issue: "", dataToCollect: [] },
+      //     // { issue: "", dataToCollect: [] },
+      //   ],
+      // },
+      // "07": {
+      //   name: "",
+      //   title: "",
+      //   descriptionShort: "A brief description.",
+      //   descriptionLong: "A description that is as long as it needs to be.",
+      //   issues: [
+      //     // { issue: "", dataToCollect: [] },
+      //     // { issue: "", dataToCollect: [] },
+      //     // { issue: "", dataToCollect: [] },
+      //   ],
+      // },
+    },
+    color: "#8a2be2",
+  },
 
-//   next_one: {
-//     name: "",
-//     title: "",
-//     descriptionShort: "A short description.",
-//     descriptionLong: "A description that is as long as it needs to be.",
-//     items: {
-//       01: {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//       02: {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//       03: {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//       04: {
-//         name: "",
-//         title: "",
-//         descriptionShort: "A brief description.",
-//         descriptionLong: "A description that is as long as it needs to be.",
-//         issues: [
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//           { issue: "", dataToCollect: [] },
-//         ],
-//       },
-//     },
-//     color: "",
-//   },
-// };
+  next_one: {
+    name: "",
+    title: "",
+    descriptionShort: "A short description.",
+    descriptionLong: "A description that is as long as it needs to be.",
+    items: {
+      "01": {
+        name: "",
+        title: "",
+        descriptionShort: "A brief description.",
+        descriptionLong: "A description that is as long as it needs to be.",
+        issues: [
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+        ],
+      },
+      "02": {
+        name: "",
+        title: "",
+        descriptionShort: "A brief description.",
+        descriptionLong: "A description that is as long as it needs to be.",
+        issues: [
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+        ],
+      },
+      "03": {
+        name: "",
+        title: "",
+        descriptionShort: "A brief description.",
+        descriptionLong: "A description that is as long as it needs to be.",
+        issues: [
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+        ],
+      },
+      "04": {
+        name: "",
+        title: "",
+        descriptionShort: "A brief description.",
+        descriptionLong: "A description that is as long as it needs to be.",
+        issues: [
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+          // { issue: "", dataToCollect: [] },
+        ],
+      },
+    },
+    color: "",
+  },
+};
 
 // // NOTE:
 // // Potential data to collect.

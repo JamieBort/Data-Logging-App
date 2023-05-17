@@ -17,7 +17,7 @@ import {
   View,
 } from "react-native";
 
-const NewComponent = () => {
+const NewComponent = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <View style={styles.centeredView}>
@@ -31,16 +31,17 @@ const NewComponent = () => {
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Hello World!</Text>
+            <Text style={styles.modalText}>{props.title}</Text>
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible(!modalVisible)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </Pressable>
-            <Button title="Which Date?" />
-            <Button title="Leave a Note:" />
-            <Button title="Other features" />
+            <Button
+              title={props.children}
+              onPress={() => console.log("button pressed")}
+            />
           </View>
         </View>
       </Modal>
@@ -48,7 +49,7 @@ const NewComponent = () => {
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={styles.textStyle}>{props.title}</Text>
       </Pressable>
     </View>
   );
