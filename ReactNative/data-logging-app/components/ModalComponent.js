@@ -1,8 +1,6 @@
-// ./components/NewComponent.js
+// ./components/ModalComponent.js
 
-// TODO: Rename this file from  ./NewComponent.js to something else.
-
-// The modal
+// NOTE: Copied this file from the ./components/NewComponent.js file.
 
 import React, { useState } from "react";
 import {
@@ -17,7 +15,7 @@ import {
   View,
 } from "react-native";
 
-const NewComponent = (props) => {
+const ModalComponent = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <View style={styles.centeredView}>
@@ -99,4 +97,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NewComponent;
+export default ModalComponent;
