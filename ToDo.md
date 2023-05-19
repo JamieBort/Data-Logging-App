@@ -4,7 +4,7 @@ A comprehensive list of what still needs to addressed.
 
 ## To Do
 
-1. Create a new user flow starting from the `./App.js` file. See the two notes regarding the user flow in the `./App.js` file.
+1. Replace all `<Button>` components with `<Pressable>` components.
 
 2. Clean up the `./components/Group.js` file.
 
@@ -12,11 +12,13 @@ A comprehensive list of what still needs to addressed.
 
    Delete comments, console.logs, etc.
 
-   Do this in the `React_Native_feature_list` branch.
+   ~~Do this in the `React_Native_feature_list` branch.~~
+
+   Come back to the `React_Native_cleanup` branch for this.
 
 3. Rename the `./components/NewComponent.js` file.
 
-4. Replace all `<Button>` components with `<Pressable>` components.
+4. Create a new user flow starting from the `./App.js` file. See the two notes regarding the user flow in the `./App.js` file.
 
 5. Possibly replace Alert with a modal.
 

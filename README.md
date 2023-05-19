@@ -92,13 +92,7 @@ main - The live/production branch.
         |   |
         |   + - React_Native - For exploring React Native.
         |   |   |
-        |   |   + - React_Native_feature_list -  For listing the features I'd like to implement. And for creating the associated components.
-        |   |   |
         |   |   + - React_Native_cleanup -  For cleaning up each file. Remove superfluous lines of code, comments, etc. And for restructuring the file structure; for possibly creating and using a `components` directory.
-        |   |   |
-        |   |   + - React_Native_restructure -  For restructuring the folder structure of this project/app.
-        |   |   |
-        |   |   + - React_Native_variables - For updating the `./constants/Constants.js` file.
         |   |   |
         |   |   + - React_Native_top_buttons_pressed - For implementing the `Top xx buttons pressed` component in the `./App.js` file.
         |   |   |
