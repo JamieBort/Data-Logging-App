@@ -24,15 +24,15 @@ import React, { useState } from "react";
 import ToggleSwitch from "./ui/ToggleSwitch";
 import FeatureList from "./components/FeatureList";
 import ToggleButton from "./ui/ToggleButton";
-import { CONSTANTS_old, CONSTANTS, CONSTANTS_new } from "./constants/Constants";
+import { CONSTANTS, CONSTANTS_old } from "./constants/Constants";
 // import ListAllComponent from "./ListAllComponent";
 import Group from "./components/Group";
 import Separator from "./ui/Separator";
 
+// // console.log("CONSTANTS_old:", CONSTANTS_old);
+// console.log("CONSTANTS_old.CGM:", CONSTANTS_old.CGM);
 // // console.log("CONSTANTS:", CONSTANTS);
 // console.log("CONSTANTS.CGM:", CONSTANTS.CGM);
-// // console.log("CONSTANTS_new:", CONSTANTS_new);
-// console.log("CONSTANTS_new.CGM:", CONSTANTS_new.CGM);
 
 const App = () => {
   const [lastEvent, setLastEvent] = useState(["There is no entry."]);
@@ -150,7 +150,18 @@ const App = () => {
         <Text style={styles.h1}>Data Logger</Text>
       </View>
       <ScrollView>
-        <View style={styles.group}>
+        <View>
+          {/* NOTE: New user flow. */}
+          <Button title="CGM"></Button>
+          <Button title="FOOD"></Button>
+          <Button title="CORPORAL INFORMATION"></Button>
+          <Button title="PHYSICAL ACTIVITY"></Button>
+          <Button title="PUMP"></Button>
+          <Button title="OTHER"></Button>
+        </View>
+
+        {/* NOTE: commented out while I redesign the user flow. */}
+        {/* <View style={styles.group}>
           <Text>Top xx buttons pressed.</Text>
           <Text>
             Select between 2 and 10 top issues to display here - using a
@@ -160,38 +171,20 @@ const App = () => {
           <Text>Not sure how to display them - yet to be seen.</Text>
           <Text>Display all Buttons Toggle Button</Text>
         </View>
+        <View>
+          <Group groupData={CONSTANTS.CGM}></Group>
+          <Group groupData={CONSTANTS.FOOD_INSULIN}></Group>
+          <Group groupData={CONSTANTS.OTHER}></Group>
+          <Group groupData={CONSTANTS.CORPORAL_INFORMATION}></Group>
+          <Group groupData={CONSTANTS.PHYSICAL_ACTIVITY}></Group>
+          <Group groupData={CONSTANTS.PUMP}></Group>
+        </View> */}
 
-        <Group groupData={CONSTANTS_new.CGM}></Group>
-
-        <Group groupData={CONSTANTS_new.FOOD_INSULIN}></Group>
-
-        {/* <Group groupData={CONSTANTS_new.OTHER}></Group>
-
-        and CORPORAL_INFORMATION */}
-
-        <Group groupData={CONSTANTS_new.PHYSICAL_ACTIVITY}></Group>
-
-        <Group groupData={CONSTANTS_new.PUMP}></Group>
-
-        {/* <Group groupData={CONSTANTS.CGM}></Group> */}
-
-        {/* <Group groupData={CONSTANTS.FOOD_INSULIN}></Group>
-
-        <Group groupData={CONSTANTS.OTHER}></Group>
-
-        <Group groupData={CONSTANTS.PHYSICAL_ACTIVITY}></Group>
-
-        <Group groupData={CONSTANTS.PUMP}></Group> */}
-
-        {/* TODO: Delete these <Group> components. */}
+        {/* TODO: delete the following components that contain the "CONSTANTS_old" variable. */}
         {/* <Group groupData={CONSTANTS_old.CGM}></Group>
-
-        <Group groupData={CONSTANTS_old.FOOD}></Group>
-
+        <Group groupData={CONSTANTS_old.FOOD_INSULIN}></Group>
         <Group groupData={CONSTANTS_old.OTHER}></Group>
-
         <Group groupData={CONSTANTS_old.PHYSICAL_ACTIVITY}></Group>
-
         <Group groupData={CONSTANTS_old.PUMP}></Group> */}
       </ScrollView>
 

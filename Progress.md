@@ -110,6 +110,10 @@ Done with this.
 
 > Come back to the `React_Native_feature_list` branch for this.
 
+Done with this.
+
+> Remove the `CONSTANTS_old` and the `Variables` variables from the `./constants/Constants.js` file.
+
 ##### React_Native_attempt03
 
 STATUS

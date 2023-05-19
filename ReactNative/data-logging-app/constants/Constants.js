@@ -2,76 +2,8 @@
 
 // Constants that are used throughout this application.
 
-// // TODO: delete the "Variables" variable. MAYBE used in the `./components/FeatureList.js` file. But not anywhere else.
-// export const Variables = {
-//   CGM: "Dexcom G6 Transmitters, Dexcom G6 Sensors, Etc.",
-//   PHYSICAL_ACTIVITY: "Running, Having Sex, Sleeping, Etc.",
-//   PUMP: "Pump, Insulin, Tubing, Etc.",
-//   FOOD: "Food",
-//   // OTHER: "Other",
-//   OTHER: "Other - Misc. And complete list. See below",
-// };
-
-// // TODO: delete the "CONSTANTS_old" variable.
+// TODO: delete the "CONSTANTS_old" variable.
 export const CONSTANTS_old = {
-  CGM: {
-    name: "cgm",
-    title: "Dexcom G6 Transmitters, Dexcom G6 Sensors, Etc.",
-    list: [
-      "Replace old sensor for new sensor",
-      "Replace old transmitter for new transmitter",
-      "Remove old transmitter and then replace the same old transmitter",
-      "Mobile loses CGM signal",
-      "Pump loses CGM signal",
-    ],
-    color: "#008b8b",
-  },
-  FOOD: {
-    name: "food",
-    title: "Food",
-    list: [
-      "When I take sugar correction - for example at 2 am",
-      "Delayed taking insulin",
-    ],
-    color: "#5f9ea0",
-  },
-  OTHER: {
-    name: "other",
-    title: "Other - Misc. And complete list. See below",
-    list: [
-      "When I eat - for example at 2 am. This one might not be needed",
-      "Stayed up all night",
-      "Something the doctor will wan to know",
-      "Other/Misc",
-    ],
-    color: "#d2691e",
-  },
-  PHYSICAL_ACTIVITY: {
-    name: "physical_activity",
-    title: "Running, Having Sex, Sleeping, Etc.",
-    list: [
-      "When I start/stop exercising",
-      "When I start/stop sleeping",
-      "Other Physical Activity",
-    ],
-    color: "#0000ff",
-  },
-  PUMP: {
-    name: "pump",
-    title: "Pump, Insulin, Tubing, Etc.",
-    list: [
-      "Change only tubing",
-      "Changed an old reservoir for a new reservoir",
-      "Refilled same old reservoir with insulin",
-      "Change Complete Infusion Set",
-      "Personal Profiles: When I activate a particular personal profile",
-    ],
-    color: "#8a2be2",
-  },
-};
-
-// TODO: make sure the strings in the dataToCollect array are uniform.
-export const CONSTANTS = {
   CGM: {
     name: "CGM",
     title: "Dexcom G6 Transmitters, Dexcom G6 Sensors, Etc.",
@@ -248,17 +180,17 @@ export const CONSTANTS = {
       "Issues that is not already covered by the other group options.",
     descriptionLong: "A description that is as long as it needs to be.",
     title: "Other - Misc. And complete list. See below",
-    groupName: "Other",
-    groupTitle: "Other - Misc. And complete list. See below",
-    groupDescription:
-      "Issues that is not already covered by the other group options.",
+    // groupName: "Other",
+    // groupTitle: "Other - Misc. And complete list. See below",
+    // groupDescription:
+    //   "Issues that is not already covered by the other group options.",
     list: [
       {
         title: "When I eat - for example at 2 am. This one might not be needed",
-        issueTitle:
-          "When I eat - for example at 2 am. This one might not be needed",
-        issueDescription:
-          "Long description for another column in case others need to read this database or I share the info with them.",
+        // issueTitle:
+        //   "When I eat - for example at 2 am. This one might not be needed",
+        // issueDescription:
+        //   "Long description for another column in case others need to read this database or I share the info with them.",
         dataToCollect: [
           "TimeStamp",
           "Circumstances - note field?",
@@ -482,8 +414,8 @@ export const CONSTANTS = {
   },
 };
 
-// TODO: Replace `CONSTANTS` with `CONSTANTS_new`. Then rename as `CONSTANTS`.
-export const CONSTANTS_new = {
+// TODO: make sure the strings in the dataToCollect array are uniform.
+export const CONSTANTS = {
   CGM: {
     name: "CGM",
     title: "Dexcom G6 Transmitters, Dexcom G6 Sensors, Etc.",
@@ -761,20 +693,26 @@ export const CONSTANTS_new = {
     descriptionShort: "A short description.",
     descriptionLong: "A description that is as long as it needs to be.",
     items: {
-      list: [
-        {
-          title: "Stress level",
-          dataToCollect: ["TimeStamp", "Record a related event?"],
-        },
-        {
-          title: "Disposition",
-          dataToCollect: ["TimeStamp", "Record a related event?"],
-        },
-        {
-          title: "Weight",
-          dataToCollect: ["TimeStamp", "Record a related event?"],
-        },
-      ],
+      renameMeToo: {
+        name: "",
+        title: "",
+        descriptionShort: "Too much food. Too little food. Caused by food.",
+        descriptionLong: "A description that is as long as it needs to be.",
+        issues: [
+          {
+            title: "Stress level",
+            dataToCollect: ["TimeStamp", "Record a related event?"],
+          },
+          {
+            title: "Disposition",
+            dataToCollect: ["TimeStamp", "Record a related event?"],
+          },
+          {
+            title: "Weight",
+            dataToCollect: ["TimeStamp", "Record a related event?"],
+          },
+        ],
+      },
     },
     color: "#008b8b",
   },
@@ -887,65 +825,74 @@ export const CONSTANTS_new = {
     groupTitle: "Other - Misc. And complete list. See below",
     groupDescription:
       "Issues that is not already covered by the other group options.",
-    list: [
-      {
-        title: "When I eat - for example at 2 am. This one might not be needed",
-        issueTitle:
-          "When I eat - for example at 2 am. This one might not be needed",
-        issueDescription:
-          "Long description for another column in case others need to read this database or I share the info with them.",
-        dataToCollect: [
-          "TimeStamp",
-          "Circumstances - note field?",
-          "Record a related event?",
-        ],
-      },
-      {
-        title: "Stayed up all night",
-        dataToCollect: [
-          "TimeStamp",
-          "Circumstances - note field?",
-          "Record a related event?",
-        ],
-      },
-      {
-        title: "Something the doctor will want to know",
-        dataToCollect: [
-          "TimeStamp",
-          "Circumstances - note field?",
-          "Record a related event?",
-        ],
-      },
-      {
-        title: "Went running hard and hadn't drunk water for days....",
-        dataToCollect: [
-          "TimeStamp",
-          "Circumstances - note field?",
-          "Record a related event?",
-        ],
-      },
-      {
-        title: "Other/Misc issue or 'add feature' comment",
-        dataToCollect: [
-          "TimeStamp",
-          "Circumstances - note field?",
+    items: {
+      renameMe: {
+        name: "",
+        title: "",
+        descriptionShort: "???????????",
+        descriptionLong: "A description that is as long as it needs to be.",
+        issues: [
           {
-            "Dropdown or Radio buttons or check boxes": [
-              "option one",
-              "option two",
-              "option three",
-              "option four opens a short field to enter a brief description",
+            title:
+              "When I eat - for example at 2 am. This one might not be needed",
+            // issueTitle:
+            //   "When I eat - for example at 2 am. This one might not be needed",
+            // issueDescription:
+            //   "Long description for another column in case others need to read this database or I share the info with them.",
+            dataToCollect: [
+              "TimeStamp",
+              "Circumstances - note field?",
+              "Record a related event?",
             ],
           },
-          "Record a related event?",
+          {
+            title: "Stayed up all night",
+            dataToCollect: [
+              "TimeStamp",
+              "Circumstances - note field?",
+              "Record a related event?",
+            ],
+          },
+          {
+            title: "Something the doctor will want to know",
+            dataToCollect: [
+              "TimeStamp",
+              "Circumstances - note field?",
+              "Record a related event?",
+            ],
+          },
+          {
+            title: "Went running hard and hadn't drunk water for days....",
+            dataToCollect: [
+              "TimeStamp",
+              "Circumstances - note field?",
+              "Record a related event?",
+            ],
+          },
+          {
+            title: "Other/Misc issue or 'add feature' comment",
+            dataToCollect: [
+              "TimeStamp",
+              "Circumstances - note field?",
+              {
+                "Dropdown or Radio buttons or check boxes": [
+                  "option one",
+                  "option two",
+                  "option three",
+                  "option four opens a short field to enter a brief description",
+                ],
+              },
+              "Record a related event?",
+            ],
+          },
+          {
+            title:
+              "For the rest of the data points that are to be collect, see the Data points to collect section of the Personal Dashboard Business Requirements Google Drive doc.",
+            dataToCollect: ["TimeStamp", "Record a related event?"],
+          },
         ],
       },
-      {
-        title:
-          "For the rest of the data points that are to be collect, see the Data points to collect section of the Personal Dashboard Business Requirements Google Drive doc.",
-        dataToCollect: ["TimeStamp", "Record a related event?"],
-      },
-    ],
+    },
     color: "#d2691e",
   },
   PHYSICAL_ACTIVITY: {
@@ -1300,70 +1247,70 @@ export const CONSTANTS_new = {
 // // NOTE:
 // // Potential data to collect.
 // // And their schema/data type.
-export const typesOFDataToCollect = {
-  timestamp: int,
-  //   "lot number": [int, this["comment field required"]],
-  //   code: [String, this["comment field required"]],
-  //   "location On body": [
-  //     [],
-  //     // OR {},
-  //     this["comment field required"],
-  //   ],
-  //   "personal profile": [
-  //     ["Primary2023/DEFAULT", "HALF", "ZERO"],
-  //     this["comment field required"],
-  //   ],
-  chooseAtLeastOne: [],
-  chooseOne: [
-    [
-      "Arrived - comment field optional",
-      "Started - comment field optional",
-      "Issue/problem - comment field required",
-      "Used - comment field optional",
-    ],
-    this["comment field required"],
-  ],
-  "comment field": String,
-  //   "identifying mark": "To be determined", // for my insulin viols and the pump cartridges
-  //   "Exertion Level": [[String, "or", int], this["comment field required"]],
-  //   "misc./other": [
-  //     this["comment field"],
-  //     [
-  //       "To be determined. Possibly:",
-  //       this["pre-populated dropdown list"],
-  //       this["radio buttons"],
-  //     ],
-  //   ], // catchall for misc. issues
-  "comment field required": Boolean,
-  //   "Record a related event?": Boolean, // If true, add another event.
-  //   "radio buttons": [
-  //     "option one",
-  //     "option two",
-  //     "option three",
-  //     "option four opens a short field to enter a brief description",
-  //   ],
-  //   "pre-populated dropdown list": [
-  //     "option one",
-  //     "option two",
-  //     "option three",
-  //     "option four opens a short field to enter a brief description",
-  //   ],
-  //   quantity: int,
-  //   "Did the ____ lose signal too?": Boolean,
-  //   "steps taken to correct": "To be determined", // To be used when I need to take a correction bolus, or other step to lower my sugar.
-  dexcomClarityAppErrorOrWarningCode: {
-    "0001": "",
-    warning: "",
-    error: "",
-    "Signal Loss":
-      "This alert tells you when you’re not getting Dexcom G6 readings. Your display device may be too far from your transmitter or there may be something, such as a wall or water, between your transmitter and your display device. ",
-    "Sensor Error":
-      "...it means the sensor is temporarily unable to measure the glucose OR your components are not communicating. (from https://www.dexcom.com/en-us/faqs/what-does-sensor-error-alert-mean). And 'During a sensor error, your transmitter is communicating with your display device but is unable to detect the correct glucose value.' (from https://www.dexcom.com/en-ca/faqs/what-is-the-difference-between-signal-loss-sensor-error-no-readings)",
-    "No Readings":
-      "'The No Readings alert means the sensor is temporarily unable to measure glucose due to something blocking the sensor’s Bluetooth connection. ' (from https://www.dexcom.com/en-ca/faqs/what-is-the-difference-between-signal-loss-sensor-error-no-readings). And see https://www.dexcom.com/en-us/faqs/what-does-no-readings-alert-mean",
-    "Urgent Low": "",
-    "Urgent Low Soon": "",
-    "Low Glucose Alert": "",
-    "High Glucose Alert": "",
-  }, // populate this as I learn them.
-};
+// export const typesOFDataToCollect = {
+//   timestamp: int,
+//   //   "lot number": [int, this["comment field required"]],
+//   //   code: [String, this["comment field required"]],
+//   //   "location On body": [
+//   //     [],
+//   //     // OR {},
+//   //     this["comment field required"],
+//   //   ],
+//   //   "personal profile": [
+//   //     ["Primary2023/DEFAULT", "HALF", "ZERO"],
+//   //     this["comment field required"],
+//   //   ],
+//   chooseAtLeastOne: [],
+//   chooseOne: [
+//     [
+//       "Arrived - comment field optional",
+//       "Started - comment field optional",
+//       "Issue/problem - comment field required",
+//       "Used - comment field optional",
+//     ],
+//     this["comment field required"],
+//   ],
+//   "comment field": String,
+//   //   "identifying mark": "To be determined", // for my insulin viols and the pump cartridges
+//   //   "Exertion Level": [[String, "or", int], this["comment field required"]],
+//   //   "misc./other": [
+//   //     this["comment field"],
+//   //     [
+//   //       "To be determined. Possibly:",
+//   //       this["pre-populated dropdown list"],
+//   //       this["radio buttons"],
+//   //     ],
+//   //   ], // catchall for misc. issues
+//   "comment field required": Boolean,
+//   //   "Record a related event?": Boolean, // If true, add another event.
+//   //   "radio buttons": [
+//   //     "option one",
+//   //     "option two",
+//   //     "option three",
+//   //     "option four opens a short field to enter a brief description",
+//   //   ],
+//   //   "pre-populated dropdown list": [
+//   //     "option one",
+//   //     "option two",
+//   //     "option three",
+//   //     "option four opens a short field to enter a brief description",
+//   //   ],
+//   //   quantity: int,
+//   //   "Did the ____ lose signal too?": Boolean,
+//   //   "steps taken to correct": "To be determined", // To be used when I need to take a correction bolus, or other step to lower my sugar.
+//   dexcomClarityAppErrorOrWarningCode: {
+//     "0001": "",
+//     warning: "",
+//     error: "",
+//     "Signal Loss":
+//       "This alert tells you when you’re not getting Dexcom G6 readings. Your display device may be too far from your transmitter or there may be something, such as a wall or water, between your transmitter and your display device. ",
+//     "Sensor Error":
+//       "...it means the sensor is temporarily unable to measure the glucose OR your components are not communicating. (from https://www.dexcom.com/en-us/faqs/what-does-sensor-error-alert-mean). And 'During a sensor error, your transmitter is communicating with your display device but is unable to detect the correct glucose value.' (from https://www.dexcom.com/en-ca/faqs/what-is-the-difference-between-signal-loss-sensor-error-no-readings)",
+//     "No Readings":
+//       "'The No Readings alert means the sensor is temporarily unable to measure glucose due to something blocking the sensor’s Bluetooth connection. ' (from https://www.dexcom.com/en-ca/faqs/what-is-the-difference-between-signal-loss-sensor-error-no-readings). And see https://www.dexcom.com/en-us/faqs/what-does-no-readings-alert-mean",
+//     "Urgent Low": "",
+//     "Urgent Low Soon": "",
+//     "Low Glucose Alert": "",
+//     "High Glucose Alert": "",
+//   }, // populate this as I learn them.
+// };

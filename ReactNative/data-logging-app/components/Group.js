@@ -169,7 +169,7 @@ const Group = (props) => {
   const { items } = props.groupData;
   // console.log("items:", items);
   const entries = Object.entries(items);
-  // console.log("entries:", entries);
+  console.log("entries:", entries);
 
   const item = entries.map((props1, index) => {
     // console.log("index:", index);
@@ -178,7 +178,7 @@ const Group = (props) => {
     // console.log("props1[1].issues:", issues);
     const xyz = issues.map((props2, index) => {
       // console.log("props2:", props2);
-      console.log("props2.issue:", props2.issue);
+      // console.log("props2.issue:", props2.issue);
       return <Button key={index} title={props2.issue} />;
     });
     return (

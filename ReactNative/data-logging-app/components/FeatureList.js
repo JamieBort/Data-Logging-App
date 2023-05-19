@@ -162,7 +162,7 @@ const DATA_OBJECT = {
 
   food: [
     // Variables.FOOD,
-    CONSTANTS_old.FOOD.title,
+    CONSTANTS_old.FOOD_INSULIN.title,
     {
       title: "When I take sugar correction - for example at 2 am.",
       data: ["TimeStamp", "Quantity - integer", "Circumstances - note field?"],
