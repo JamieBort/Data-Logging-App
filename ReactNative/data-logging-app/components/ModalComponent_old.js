@@ -1,11 +1,13 @@
 // ./components/ModalComponent.js
 
-// NOTE: Copied this file from the ./components/NewComponent.js file.
+// NOTE: Copied this file from the ./components/ModalComponent.js file.
 
 import React, { useState } from "react";
 import {
   // TODO: replace Alert with a modal.
   Alert,
+  // TODO: replace Button with Pressable.
+  Button,
   Modal,
   StyleSheet,
   Text,
@@ -14,37 +16,7 @@ import {
 } from "react-native";
 
 const ModalComponent = (props) => {
-  // console.log("props:", props);
-  // console.log("props.constants:", props.constants);
-  // console.log("props.constants.name:", props.constants.name);
-  console.log("props.constants.items:", props.constants.items);
-  // console.log(
-  //   "props.constants.styles.color:",
-  //   props.constants.styles.color,
-  //   props.constants.name,
-  // );
   const [modalVisible, setModalVisible] = useState(false);
-
-  const entries = Object.entries(props.constants.items);
-  // console.log("entries:", entries);
-
-  const item = entries.map((props1, index) => {
-    // console.log("index:", index);
-    // console.log("props1:", props1);
-    const issues = props1[1].issues;
-    // console.log("props1[1].issues:", issues);
-    const xyz = issues.map((props2, index) => {
-      // console.log("props2:", props2);
-      // console.log("props2.issue:", props2.issue);
-      return (
-        <Pressable key={index} style={styles.pressableList}>
-          <Text>{props2.issue}</Text>
-        </Pressable>
-      );
-    });
-    return <View key={index}>{xyz}</View>;
-  });
-
   return (
     <View style={styles.centeredView}>
       <Modal
@@ -57,26 +29,25 @@ const ModalComponent = (props) => {
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>{props.constants.title}</Text>
+            <Text style={styles.modalText}>{props.title}</Text>
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible(!modalVisible)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </Pressable>
-            {item}
+            <Button
+              title={props.children}
+              onPress={() => console.log("button pressed")}
+            />
           </View>
         </View>
       </Modal>
       <Pressable
-        style={[
-          styles.button,
-          // styles.buttonOpen, // NOTE: Keep this for reference. See below.
-          { backgroundColor: props.constants.styles.color },
-        ]}
+        style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible(true)}
       >
-        <Text style={styles.textStyle}>{props.constants.name}</Text>
+        <Text style={styles.textStyle}>{props.title}</Text>
       </Pressable>
     </View>
   );
@@ -110,8 +81,7 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   buttonOpen: {
-    // backgroundColor: "#F194FF", // NOTE: Keep this for reference. See above.
-    backgroundColor: "#008b8b",
+    backgroundColor: "#F194FF",
   },
   buttonClose: {
     backgroundColor: "#2196F3",
@@ -124,14 +94,6 @@ const styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: "center",
-  },
-  pressableList: {
-    backgroundColor: "orange",
-    // borderColor: "orange",
-    padding: 5,
-    margin: 5,
-    borderRadius: 8,
-    padding: 6,
   },
 });
 

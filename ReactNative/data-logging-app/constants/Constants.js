@@ -685,7 +685,7 @@ export const CONSTANTS = {
         ],
       },
     },
-    color: "#008b8b",
+    styles: { color: "#008b8b" },
   },
   CORPORAL_INFORMATION: {
     name: "Corporal Information",
@@ -714,7 +714,8 @@ export const CONSTANTS = {
         ],
       },
     },
-    color: "#008b8b",
+    // color: "#008b8b",
+    styles: { color: "#F194FF" },
   },
   FOOD_INSULIN: {
     name: "Food & Insulin",
@@ -811,7 +812,8 @@ export const CONSTANTS = {
       //   ],
       // },
     },
-    color: "#5f9ea0",
+    // color: "#5f9ea0",
+    styles: { color: "#5f9ea0" },
   },
   OTHER: {
     name: "Other",
@@ -893,7 +895,8 @@ export const CONSTANTS = {
         ],
       },
     },
-    color: "#d2691e",
+    // color: "#d2691e",
+    styles: { color: "#d2691e" },
   },
   PHYSICAL_ACTIVITY: {
     name: "Physical Activity",
@@ -1010,7 +1013,8 @@ export const CONSTANTS = {
         ],
       },
     },
-    color: "#0000ff",
+    // color: "#0000ff",
+    styles: { color: "#0000ff" },
   },
   PUMP: {
     name: "Pump",
@@ -1186,7 +1190,8 @@ export const CONSTANTS = {
         ],
       },
     },
-    color: "#8a2be2",
+    // color: "#8a2be2",
+    styles: { color: "#8a2be2" },
   },
 
   next_one: {
@@ -1240,7 +1245,8 @@ export const CONSTANTS = {
         ],
       },
     },
-    color: "",
+    // color: "",
+    styles: { color: "" },
   },
 };
 

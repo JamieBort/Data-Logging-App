@@ -3,14 +3,15 @@
 // TODO: Look into the use cases for <SafeAreaView> and consider using it.
 
 import {
-  StyleSheet,
-  // TODO: replace Button with Pressable.
-  Button,
-  View,
-  Text,
   //  TODO: replace Alert with a modal.
   Alert,
+  // TODO: replace Button with Pressable.
+  Button,
+  Pressable,
   ScrollView,
+  StyleSheet,
+  Text,
+  View,
 } from "react-native";
 
 import {
@@ -28,11 +29,14 @@ import { CONSTANTS, CONSTANTS_old } from "./constants/Constants";
 // import ListAllComponent from "./ListAllComponent";
 import Group from "./components/Group";
 import Separator from "./ui/Separator";
+// import PressableComponent from "./ui/PressableComponent";
+import ModalComponent from "./components/ModalComponent";
 
 // // console.log("CONSTANTS_old:", CONSTANTS_old);
 // console.log("CONSTANTS_old.CGM:", CONSTANTS_old.CGM);
 // // console.log("CONSTANTS:", CONSTANTS);
 // console.log("CONSTANTS.CGM:", CONSTANTS.CGM);
+// console.log("CONSTANTS.CGM.color:", CONSTANTS.CGM.color);
 
 const App = () => {
   const [lastEvent, setLastEvent] = useState(["There is no entry."]);
@@ -150,17 +154,22 @@ const App = () => {
         <Text style={styles.h1}>Data Logger</Text>
       </View>
       <ScrollView>
-        <View>
-          {/* NOTE: New user flow. */}
-          <Button title="CGM"></Button>
-          <Button title="FOOD"></Button>
-          <Button title="CORPORAL INFORMATION"></Button>
-          <Button title="PHYSICAL ACTIVITY"></Button>
-          <Button title="PUMP"></Button>
-          <Button title="OTHER"></Button>
+        {/* NOTE: New user flow. */}
+        <View style={styles.group}>
+          <ModalComponent constants={CONSTANTS.CGM}></ModalComponent>
+          <ModalComponent constants={CONSTANTS.FOOD_INSULIN}></ModalComponent>
+          <ModalComponent constants={CONSTANTS.OTHER}></ModalComponent>
+          <ModalComponent
+            constants={CONSTANTS.CORPORAL_INFORMATION}
+          ></ModalComponent>
+          <ModalComponent
+            constants={CONSTANTS.PHYSICAL_ACTIVITY}
+          ></ModalComponent>
+          <ModalComponent constants={CONSTANTS.PUMP}></ModalComponent>
         </View>
 
         {/* NOTE: commented out while I redesign the user flow. */}
+        {/* <View style={styles.group}><Group groupData={CONSTANTS.CGM}></Group></View> */}
         {/* <View style={styles.group}>
           <Text>Top xx buttons pressed.</Text>
           <Text>

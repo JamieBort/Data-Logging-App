@@ -10,7 +10,7 @@ import {
   wrong_TOKEN,
 } from "@env";
 import Separator from "./../ui/Separator";
-import NewComponent from "./NewComponent";
+import ModalComponent_old from "./ModalComponent_old";
 // TODO: Create a ToggleSwitchImproved file. Once it is working, change the name to ToggleSwitch and replace the old ToggleSwitch file with ToggleSwitchImproved
 // import ToggleSwitch from "./ui/ToggleSwitch";
 
@@ -182,11 +182,11 @@ const Group = (props) => {
       return <Button key={index} title={props2.issue} />;
     });
     return (
-      <NewComponent key={index} title={props1[0]}>
+      <ModalComponent_old key={index} title={props1[0]}>
         {xyz}
         {/* <Button title="first button" />
           <Button title="second button" /> */}
-      </NewComponent>
+      </ModalComponent_old>
     );
   });
 

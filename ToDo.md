@@ -6,6 +6,8 @@ A comprehensive list of what still needs to addressed.
 
 1. Replace all `<Button>` components with `<Pressable>` components.
 
+   Use the `React_Native_pressable` branch for this.
+
 2. Clean up the `./components/Group.js` file.
 
    Refactor the code. Rename variables. Deconstruct the objects differently.
@@ -16,19 +18,17 @@ A comprehensive list of what still needs to addressed.
 
    Come back to the `React_Native_cleanup` branch for this.
 
-3. Rename the `./components/NewComponent.js` file.
+3. Create a new user flow starting from the `./App.js` file. See the two notes regarding the user flow in the `./App.js` file.
 
-4. Create a new user flow starting from the `./App.js` file. See the two notes regarding the user flow in the `./App.js` file.
+4. Possibly replace Alert with a modal.
 
-5. Possibly replace Alert with a modal.
+5. Implement a toggle switch component in the Group component.
 
-6. Implement a toggle switch component in the Group component.
+6. Implement a modal component in the Group component.
 
-7. Implement a modal component in the Group component.
+7. Implement the `Top xx buttons pressed` component.
 
-8. Implement the `Top xx buttons pressed` component.
-
-9. Create a component for each type of data that needs to be entered into the database.
+8. Create a component for each type of data that needs to be entered into the database.
 
    For example:
 
@@ -78,9 +78,9 @@ A comprehensive list of what still needs to addressed.
 
    Create a `React_Native_feature_component` branch for this.
 
-10. Get the `<ToggleButton/>` component working in the `./App.js` file.
+9. Get the `<ToggleButton/>` component working in the `./App.js` file.
 
-11. Add to the dashboard/landing page/home page a button to _edit older data_.
+10. Add to the dashboard/landing page/home page a button to _edit older data_.
 
     Specifically
 
@@ -88,7 +88,7 @@ A comprehensive list of what still needs to addressed.
 
     - and bulk deleting older entries
 
-12. Look into how stable/reliable Airtable is.
+11. Look into how stable/reliable Airtable is.
 
     Can I back it up for example? Suppose I delete all the data manually, can I get it back? Suppose I delete all the data with an api call.
 
@@ -96,20 +96,20 @@ A comprehensive list of what still needs to addressed.
 
     Can I use Google sheets too? Do I want to use both? Do I want to use Google Sheets instead of Airtable?
 
-13. Look into using react-native-config instead of `.env`/`react-native-dotenv`.
+12. Look into using react-native-config instead of `.env`/`react-native-dotenv`.
 
     Also look at https://12factor.net/config
 
-14. Update the steps in the `./Data-Logging-App/ReactNative/README.md` file.
+13. Update the steps in the `./Data-Logging-App/ReactNative/README.md` file.
 
     Make sure to include a reference to `expo start --tunnel`.
 
     And https://trello.com/c/bRzPaKks/1366-expo-catchall-for-learning-directory
 
-15. If I ever use the `Angular`, `Svelte_Native`, or `Vue` Git branches, make sure to remove the following directories that do not correspond: `angular-tour-of-heroes/`, `ReactNative/`, `Svelte/`, and/or `Vue/`.
+14. If I ever use the `Angular`, `Svelte_Native`, or `Vue` Git branches, make sure to remove the following directories that do not correspond: `angular-tour-of-heroes/`, `ReactNative/`, `Svelte/`, and/or `Vue/`.
 
-16. When the `React_Native` branch is ready to be merged into the `dev` branch, move the `./Data-Logging-App/ReactNative/data-logging-app` directory into the `./Data-Logging-App/` directory. (or the `./` directory.)
+15. When the `React_Native` branch is ready to be merged into the `dev` branch, move the `./Data-Logging-App/ReactNative/data-logging-app` directory into the `./Data-Logging-App/` directory. (or the `./` directory.)
 
-17. Determine whether I should use `<View>` and when it is/is not needed - when I am not getting any warnings to use one.
+16. Determine whether I should use `<View>` and when it is/is not needed - when I am not getting any warnings to use one.
 
-18. Consider getting rid of the `<Separator />` component.
+17. Consider getting rid of the `<Separator />` component.

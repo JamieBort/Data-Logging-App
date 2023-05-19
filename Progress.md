@@ -114,6 +114,10 @@ Done with this.
 
 > Remove the `CONSTANTS_old` and the `Variables` variables from the `./constants/Constants.js` file.
 
+Done with this.
+
+> Rename the `./components/NewComponent.js` file to `./components/ModalComponent.js`.
+
 ##### React_Native_attempt03
 
 STATUS
