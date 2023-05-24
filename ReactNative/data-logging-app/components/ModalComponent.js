@@ -17,7 +17,7 @@ const ModalComponent = (props) => {
   // console.log("props:", props);
   // console.log("props.constants:", props.constants);
   // console.log("props.constants.name:", props.constants.name);
-  console.log("props.constants.items:", props.constants.items);
+  // console.log("props.constants.items:", props.constants.items);
   // console.log(
   //   "props.constants.styles.color:",
   //   props.constants.styles.color,
@@ -25,25 +25,43 @@ const ModalComponent = (props) => {
   // );
   const [modalVisible, setModalVisible] = useState(false);
 
-  const entries = Object.entries(props.constants.items);
-  // console.log("entries:", entries);
-
-  const item = entries.map((props1, index) => {
-    // console.log("index:", index);
-    // console.log("props1:", props1);
-    const issues = props1[1].issues;
-    // console.log("props1[1].issues:", issues);
-    const xyz = issues.map((props2, index) => {
-      // console.log("props2:", props2);
-      // console.log("props2.issue:", props2.issue);
-      return (
-        <Pressable key={index} style={styles.pressableList}>
-          <Text>{props2.issue}</Text>
-        </Pressable>
-      );
-    });
-    return <View key={index}>{xyz}</View>;
+  // console.log(Object.keys(props.constants.items));
+  const items = Object.keys(props.constants.items);
+  // console.log(items);
+  const item = items.map((item, index) => {
+    // console.log("Item:", item, "index:", index);
+    return (
+      <Pressable
+        key={index}
+        style={styles.pressableList}
+        onPress={() => console.log("List issues")}
+      >
+        <Text>{item}</Text>
+      </Pressable>
+    );
   });
+
+  // const entries = Object.entries(props.constants.items);
+  // console.log("entries:", entries);
+  // console.log("entries[0]:", entries[0]);
+  // console.log("entries[0]:", entries[1]);
+
+  // const item = entries.map((props1, index) => {
+  //   // console.log("index:", index);
+  //   // console.log("props1:", props1);
+  //   const issues = props1[1].issues;
+  //   // console.log("props1[1].issues:", issues);
+  //   const xyz = issues.map((props2, index) => {
+  //     // console.log("props2:", props2);
+  //     // console.log("props2.issue:", props2.issue);
+  //     return (
+  //       <Pressable key={index} style={styles.pressableList}>
+  //         <Text>{props2.issue}</Text>
+  //       </Pressable>
+  //     );
+  //   });
+  //   return <View key={index}>{xyz}</View>;
+  // });
 
   return (
     <View style={styles.centeredView}>

@@ -641,14 +641,14 @@ export const CONSTANTS = {
             issue: "Replace old transmitter for new transmitter",
             dataToCollect: [
               "TimeStamp",
-              {
-                chooseOne: [
-                  "duration/elapsed time",
-                  "current time -> TimeStamp",
-                ],
-              },
-              { "Record a related event?": Boolean },
-              { "comment field required": Boolean },
+              // {
+              //   chooseOne: [
+              //     "duration/elapsed time",
+              //     "current time -> TimeStamp",
+              //   ],
+              // },
+              // { "Record a related event?": Boolean },
+              // { "comment field required": Boolean },
               "Lot Number",
               "Transmitter Code",
             ],
@@ -658,28 +658,28 @@ export const CONSTANTS = {
               "Remove old transmitter and then replace the same old transmitter",
             dataToCollect: [
               "TimeStamp",
-              {
-                chooseOne: [
-                  "duration/elapsed time",
-                  "current time -> TimeStamp",
-                ],
-              },
-              { "Record a related event?": Boolean },
-              { "comment field required": Boolean },
+              // {
+              //   chooseOne: [
+              //     "duration/elapsed time",
+              //     "current time -> TimeStamp",
+              //   ],
+              // },
+              // { "Record a related event?": Boolean },
+              // { "comment field required": Boolean },
             ],
           },
           {
             issue: "Record an error, alert, or warning.",
             dataToCollect: [
               "TimeStamp",
-              {
-                chooseOne: [
-                  "duration/elapsed time",
-                  "current time -> TimeStamp",
-                ],
-              },
-              { "Record a related event?": Boolean },
-              { "comment field required": Boolean },
+              // {
+              //   chooseOne: [
+              //     "duration/elapsed time",
+              //     "current time -> TimeStamp",
+              //   ],
+              // },
+              // { "Record a related event?": Boolean },
+              // { "comment field required": Boolean },
             ],
           },
         ],

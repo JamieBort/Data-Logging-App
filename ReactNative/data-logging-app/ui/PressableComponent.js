@@ -2,28 +2,42 @@
 
 import React, { useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import PressableComponent2 from "../PressableComponent2";
 
 const PressableComponent = (props) => {
-  // const [timesPressed, setTimesPressed] = useState(0);
+  // console.log("props:", props);
+  // console.log("props.issues:", props.issues);
+  // console.log("props.issues.issues:", props.issues.issues);
+  const [isVisible, setIsVisible] = useState(false);
 
-  // let textLog = "";
-  // if (timesPressed > 1) {
-  //   textLog = timesPressed + "x onPress";
-  // } else if (timesPressed > 0) {
-  //   textLog = "onPress";
-  // }
+  // const [issues] = props.issues.issues;
+  const issues = props.issues.issues;
+  // console.log("issues:", issues);
 
-  // console.log("props.acolor:", props.color);
+  const issue = issues.map((param, index) => {
+    // console.log("param:", param);
+    // console.log("index:", index);
+    // console.log("param.issue:", param.issue);
+    // console.log("param.dataToCollect:", param.dataToCollect);
+
+    return (
+      <PressableComponent2
+        dataToCollect={param.dataToCollect}
+        title={param.issue}
+        key={index}
+      >
+        {/* <Text>{param.issue}</Text> */}
+      </PressableComponent2>
+    );
+  });
 
   return (
     <View style={styles.container}>
       <Pressable
-        // onPress={() => {
-        //   setTimesPressed((current) => current + 1);
-        // }}
-
         onPress={() => {
-          console.log("Pressable is pressed.");
+          console.log(props.title, "is pressed.");
+          setIsVisible(!isVisible);
+          // props.setIsVisible(!props.isVisible);
         }}
         style={({ pressed }) => [
           {
@@ -33,16 +47,15 @@ const PressableComponent = (props) => {
           { backgroundColor: props.color },
         ]}
       >
-        <Text style={styles.logBox}>{props.title}</Text>
-
-        {/* {({ pressed }) => (
-          <Text style={styles.text}>{pressed ? "Pressed!" : "Press Me"}</Text>
-        )} */}
+        <View style={styles.logBox}>
+          {/* <View> */}
+          <Text style={{ padding: 10, backgroundColor: "lightblue" }}>
+            {props.title}
+          </Text>
+          {isVisible ? <View>{issue}</View> : null}
+        </View>
       </Pressable>
-
-      {/* <View style={styles.logBox}>
-        <Text testID="pressable_press_console">{textLog}</Text>
-      </View> */}
+      {/* {item} */}
     </View>
   );
 };

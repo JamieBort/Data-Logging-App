@@ -29,8 +29,9 @@ import { CONSTANTS, CONSTANTS_old } from "./constants/Constants";
 // import ListAllComponent from "./ListAllComponent";
 import Group from "./components/Group";
 import Separator from "./ui/Separator";
-// import PressableComponent from "./ui/PressableComponent";
+import PressableComponent from "./ui/PressableComponent";
 import ModalComponent from "./components/ModalComponent";
+import TogglePressable from "./TogglePressable";
 
 // // console.log("CONSTANTS_old:", CONSTANTS_old);
 // console.log("CONSTANTS_old.CGM:", CONSTANTS_old.CGM);
@@ -40,6 +41,17 @@ import ModalComponent from "./components/ModalComponent";
 
 const App = () => {
   const [lastEvent, setLastEvent] = useState(["There is no entry."]);
+  // const [isVisible, setIsVisible] = useState(false);
+  const [isStatus, setIsStatus] = useState(() => {
+    const bar = Object.entries(CONSTANTS.CGM.items);
+    const barObj = {};
+    for (let index = 0; index < bar.length; index++) {
+      barObj[index] = false;
+    }
+    return barObj;
+  });
+
+  const items = Object.entries(CONSTANTS.CGM.items);
 
   // // POST event in Data Logging Base base in Airtable.
   // const postAnEvent = async (param) => {
@@ -147,6 +159,132 @@ const App = () => {
     Alert.alert("lastEvent Name:", lastEvent[1]);
   };
 
+  // // For CGM
+  // const items = Object.entries(CONSTANTS.CGM.items);
+  // // console.log(items);
+  // const pressableComponent = items.map((item, index) => {
+  //   // console.log("item:", item);
+  //   // console.log("index:", index);
+  //   // console.log("item[0]:", item[0]);
+  //   // console.log("item[1]:", item[1]);
+  //   // console.log("item[1].issues:", item[1].issues);
+  //   const [title, issues] = item;
+  //   // console.log("title:", title);
+  //   // console.log("issues:", issues);
+
+  //   // console.log("CONSTANTS.CGM.items:", CONSTANTS.CGM).items;
+  //   // const [isVisible, setIsVisible] = useState(false);
+  //   return (
+  //     <PressableComponent
+  //       // isVisible={isVisible}
+  //       // setIsVisible={setIsVisible()}
+  //       key={index}
+  //       title={title}
+  //       issues={issues}
+  //     ></PressableComponent>
+  //   );
+  // });
+
+  const handleVisibility = (param) => {
+    const handleReset = (param) => {
+      // Use this to reset the isVisible status of the TogglePressable component.
+      console.log(
+        "The TogglePresseable component that will be reset is:",
+        param[0],
+        "\nsuch that the status will be changed to FALSE.",
+      );
+      param[1] = false;
+      // console.log(param);
+      return param;
+    };
+    // console.log("param:", param);
+    // console.log("items:", items);
+    // // console.log("items[0]:", items[0]);
+    // for (let index = 0; index < items.length; index++) {
+    //   const element = items[index];
+    //   // console.log("element:", element);
+    //   console.log("element[0]:", element[0]);
+    // }
+
+    const entries = new Map([param]);
+    const obj = Object.fromEntries(entries);
+
+    setIsStatus(() => {
+      // Checking for more than one
+      // if more than one is true, return the newest one as true
+
+      let foo = { ...isStatus };
+      // console.log("foo:", foo);
+
+      // // NOTE: Option 1
+      // for (const iterator in foo) {
+      //   foo[iterator] = false;
+      // }
+      // handleReset(param);
+      // return { ...foo, ...obj };
+
+      // // NOTE: Option 2
+      // for (const property in foo) {
+      //   if (property != param[0]) {
+      //     foo[property] = false;
+      //   } else foo[property] = true;
+      // }
+
+      // NOTE: Option 3
+      for (let index = 0; index < items.length; index++) {
+        const element = items[index];
+        // console.log("element:", element);
+        // console.log("element[0]:", element[0]);
+        if (element[0] === param[0]) {
+          // console.log("element[0]===param[0]:", element[0], param[0]);
+          foo[index] = true;
+        } else {
+          // console.log("element[0]!=param[0]:", element[0], param[0]);
+          foo[index] = false;
+        }
+      }
+
+      // foo = { 1: true };
+      // console.log("foo:", foo);
+      return { ...isStatus, ...foo };
+    });
+  };
+
+  console.log("isStatus:", isStatus);
+
+  const test = ["one", "two", "three"];
+
+  const tests = test.map((issue, index) => {
+    // console.log("issue:", issue);
+    for (const property in isStatus) {
+      // console.log(`${property}: ${isStatus[property]}`);
+      if (isStatus[property] == false) {
+        return null;
+      } else {
+        return <li key={index}>{issue}</li>;
+      }
+    }
+    return <li key={index}>{issue}</li>;
+  });
+
+  // const items = Object.entries(CONSTANTS.CGM.items);
+  // console.log("items:", items);
+  const togglePressable = items.map((item, index) => {
+    // console.log("item:", item[1]);
+    return (
+      <TogglePressable
+        key={index}
+        item={item}
+        handleVisibility={handleVisibility}
+        isStatus={isStatus}
+      >
+        <ul>{tests}</ul>
+
+        {/* {isVisible ? <ul>{tests}</ul> : null} */}
+      </TogglePressable>
+    );
+  });
+
   return (
     // TODO: The view bleeds into the top bar of my phone. Fix this.
     <View style={styles.container}>
@@ -155,18 +293,21 @@ const App = () => {
       </View>
       <ScrollView>
         {/* NOTE: New user flow. */}
+
         <View style={styles.group}>
-          <ModalComponent constants={CONSTANTS.CGM}></ModalComponent>
-          <ModalComponent constants={CONSTANTS.FOOD_INSULIN}></ModalComponent>
-          <ModalComponent constants={CONSTANTS.OTHER}></ModalComponent>
-          <ModalComponent
-            constants={CONSTANTS.CORPORAL_INFORMATION}
-          ></ModalComponent>
-          <ModalComponent
-            constants={CONSTANTS.PHYSICAL_ACTIVITY}
-          ></ModalComponent>
-          <ModalComponent constants={CONSTANTS.PUMP}></ModalComponent>
+          <Text>Toggle Pressable</Text>
+          {togglePressable}
         </View>
+
+        {/* <View style={styles.group}>
+          <Text>Pressable Component</Text>
+          {pressableComponent}
+        </View> */}
+
+        {/* <View style={styles.group}>
+          <Text>Modal Component</Text>
+          <ModalComponent constants={CONSTANTS.CGM}></ModalComponent>
+        </View> */}
 
         {/* NOTE: commented out while I redesign the user flow. */}
         {/* <View style={styles.group}><Group groupData={CONSTANTS.CGM}></Group></View> */}
